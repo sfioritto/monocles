@@ -1,5 +1,7 @@
 from twisted.web import proxy, http
 from twisted.internet import reactor
+from readability.readability import Document
+import urllib
 
 class MonoclesProxyClient(proxy.ProxyClient):
     
@@ -19,7 +21,10 @@ class MonoclesProxyClient(proxy.ProxyClient):
     def handleResponseEnd(self):
         if not self._finished:
             if self.text:
-                text = self.buffer
+                readable_article = Document(self.buffer).summary()
+                readable_title = Document(self.buffer).short_title()
+                text = readable_article
+                text = text.encode("utf-8")
             else:
                 text = self.buffer
             self.father.responseHeaders.setRawHeaders("content-length", [len(text)])
