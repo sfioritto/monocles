@@ -3,6 +3,7 @@ from twisted.internet import reactor
 from readability.readability import Document
 import urllib
 
+
 class ProxyClient(proxy.ProxyClient):
     
     def __init__(self, *args, **kwargs):
@@ -15,8 +16,10 @@ class ProxyClient(proxy.ProxyClient):
             self.text = True
         proxy.ProxyClient.handleHeader(self, key, value)
 
+
     def handleResponsePart(self, buffer):
         self.buffer += buffer
+
 
     def handleResponseEnd(self):
         if not self._finished:
@@ -41,6 +44,7 @@ class ProxyClient(proxy.ProxyClient):
 class ProxyClientFactory(proxy.ProxyClientFactory):
     protocol = ProxyClient
 
+
 class ProxyRequest(proxy.ProxyRequest):
     
     protocols = {'http': ProxyClientFactory}
@@ -53,8 +57,10 @@ class ProxyRequest(proxy.ProxyRequest):
 class Proxy(http.HTTPChannel):
     requestFactory = ProxyRequest
 
+
 factory = http.HTTPFactory()
 factory.protocol = Proxy
+
 
 reactor.listenTCP(8080, factory)
 reactor.run()
