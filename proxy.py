@@ -3,7 +3,7 @@ from twisted.internet import reactor
 from readability.readability import Document
 import urllib
 
-class MonoclesProxyClient(proxy.ProxyClient):
+class ProxyClient(proxy.ProxyClient):
     
     def __init__(self, *args, **kwargs):
         proxy.ProxyClient.__init__(self, *args, **kwargs)
@@ -11,7 +11,7 @@ class MonoclesProxyClient(proxy.ProxyClient):
         self.text = False
 
     def handleHeader(self, key, value):
-        if key == "Content-Type" and value == "text/html":
+        if key == "Content-Type" and value.startswith("text/html"):
             self.text = True
         proxy.ProxyClient.handleHeader(self, key, value)
 
@@ -21,34 +21,40 @@ class MonoclesProxyClient(proxy.ProxyClient):
     def handleResponseEnd(self):
         if not self._finished:
             if self.text:
-                readable_article = Document(self.buffer).summary()
-                readable_title = Document(self.buffer).short_title()
-                text = readable_article
-                text = text.encode("utf-8")
+                try:
+                    readable_article = Document(self.buffer).summary()
+                    print readable_article
+                    markup = readable_article
+                    markup = markup.encode("utf-8")
+                except:
+                    
+                    markup = self.buffer
+
             else:
-                text = self.buffer
-            self.father.responseHeaders.setRawHeaders("content-length", [len(text)])
-            self.father.write(text)
+                markup = self.buffer
+                
+            self.father.responseHeaders.setRawHeaders("content-length", [len(markup)])
+            self.father.write(markup)
         proxy.ProxyClient.handleResponseEnd(self)
 
 
-class MonoclesProxyClientFactory(proxy.ProxyClientFactory):
-    protocol = MonoclesProxyClient
+class ProxyClientFactory(proxy.ProxyClientFactory):
+    protocol = ProxyClient
 
 class ProxyRequest(proxy.ProxyRequest):
     
-    protocols = {'http': MonoclesProxyClientFactory}
+    protocols = {'http': ProxyClientFactory}
     ports = {'http': 80 }
     
     def process(self):
         proxy.ProxyRequest.process(self)
         
 
-class MonoclesProxy(http.HTTPChannel):
+class Proxy(http.HTTPChannel):
     requestFactory = ProxyRequest
 
 factory = http.HTTPFactory()
-factory.protocol = MonoclesProxy
+factory.protocol = Proxy
 
 reactor.listenTCP(8080, factory)
 reactor.run()
