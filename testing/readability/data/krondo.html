@@ -1,0 +1,3408 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+	<title>krondo &raquo; Twisted Introduction</title>
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0 - all posts" href="http://krondo.com/?feed=rss2" />
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0 - all comments" href="http://krondo.com/?feed=comments-rss2" />
+	<link rel="pingback" href="http://krondo.com/xmlrpc.php" />
+
+	<!-- style START -->
+	<style type="text/css" media="screen">@import url( http://krondo.com/wp-content/themes/blocks2/style.css );</style>
+		<!--[if IE]>
+		<link rel="stylesheet" href="http://krondo.com/wp-content/themes/blocks2/ie.css" type="text/css" media="screen" />
+	<![endif]-->
+	<!-- style END -->
+
+	<!-- script START -->
+	<script type="text/javascript" src="http://krondo.com/wp-content/themes/blocks2/js/base.js"></script>
+	<script type="text/javascript" src="http://krondo.com/wp-content/themes/blocks2/js/menu.js"></script>
+	<!-- script END -->
+
+		<link rel="alternate" type="application/rss+xml" title="krondo &raquo; Twisted Introduction Comments Feed" href="http://krondo.com/?feed=rss2&#038;page_id=1327" />
+<link rel='stylesheet' id='thickbox-css'  href='http://krondo.com/wp-includes/js/thickbox/thickbox.css?ver=20111117' type='text/css' media='all' />
+<script type='text/javascript' src='http://krondo.com/wp-includes/js/jquery/jquery.js?ver=1.7.1'></script>
+<script type='text/javascript' src='http://krondo.com/wp-includes/js/comment-reply.js?ver=20090102'></script>
+<script type='text/javascript' src='http://apps.joliprint.com/joliprint/js/popin/joliprint-popin.js.jspz'></script>
+<script type='text/javascript' src='http://apps.joliprint.com/joliprint/js/joliprint.js'></script>
+<script type='text/javascript' src='http://krondo.com/wp-content/plugins/joliprint/js/wp_joliprint-min.js?ver=1.3.0'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://krondo.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://krondo.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='next' title='Ultimate' href='http://krondo.com/?page_id=2480' />
+<meta name="generator" content="WordPress 3.3.1" />
+<link rel='canonical' href='http://krondo.com/?page_id=1327' />
+<link rel='shortlink' href='http://wp.me/P1qgjk-lp' />
+<script type="text/javascript" src="http://krondo.com/wp-content/plugins/kindle-this/kindle-this.js"></script>
+	
+<!-- START: Syntax Highlighter ComPress -->
+<script type="text/javascript" src="http://krondo.com/wp-content/plugins/syntax-highlighter-compress/scripts/shCore.js"></script>
+<script type="text/javascript" src="http://krondo.com/wp-content/plugins/syntax-highlighter-compress/scripts/shAutoloader.js"></script>
+<link type="text/css" rel="stylesheet" href="http://krondo.com/wp-content/plugins/syntax-highlighter-compress/styles/shCoreDefault.css"/>
+<!-- END: Syntax Highlighter ComPress -->
+
+  
+<meta name='joliprint.siteurl' content='http://krondo.com' />
+<meta name='joliprint.title' content='Twisted Introduction' />
+<meta name='joliprint.author' content='dave' />
+<meta name='joliprint.date' content='August 9, 2009' />
+<meta name='joliprint.sitename' content='krondo' /><script type='text/javascript' language='javascript'>
+var joliprint_button_config = {
+	'urloptions':'ver=1.3.0'
+	,'_ga_tracking':true
+	,'button':'joliprint-icon'
+	,'label':'joliprint'
+	,'labelposition':'after'
+};</script></head>
+
+
+<body>
+	<div id="wrap">
+		<div id="container">
+
+<!-- header START -->
+<div id="header">
+	<div id="title">
+		<h1><a href="http://krondo.com/">krondo</a></h1>
+		<div id="tagline">The website of Dave Peticolas</div>
+	</div>
+
+	<!-- WordPress searchbox -->
+	<div class="searchbox">
+		<form action="http://krondo.com/" method="get">
+			<div class="content">
+				<input type="text" class="textfield" name="s" size="24" value="" />
+				<input type="submit" class="button" value="Search" />
+			</div>
+		</form>
+	</div>
+
+	<div class="fixed"></div>
+</div>
+<!-- header END -->
+
+<!-- content START -->
+<div id="content">
+
+	<!-- menubar START -->
+	<div id="navigation">
+		<ul id="menubar">
+			<li class="page_item"><a title="Home" href="http://krondo.com/">Home</a></li>
+			<li class="page_item page-item-1327 current_page_item"><a href="http://krondo.com/?page_id=1327">Twisted Introduction</a></li>
+<li class="page_item page-item-2480"><a href="http://krondo.com/?page_id=2480">Ultimate</a></li>
+<li class="page_item page-item-2492"><a href="http://krondo.com/?page_id=2492">Software</a></li>
+<li class="page_item page-item-2511"><a href="http://krondo.com/?page_id=2511">Programmer&#8217;s Editors</a></li>
+		</ul>
+		<div id="subscribe" class="feed">
+			<a title="Subscribe to this blog..." class="feedlink" href="http://krondo.com/?feed=rss2"><abbr title="Really Simple Syndication">RSS</abbr> feed</a>
+							<ul>
+					<li><a rel="external nofollow" title="Subscribe with Xian Guo"	href="http://www.xianguo.com/subscribe.php?url=http://krondo.com/?feed=rss2">					Xian Guo	</a></li>
+					<li><a rel="external nofollow" title="Subscribe with Zhua Xia"	href="http://www.zhuaxia.com/add_channel.php?url=http://krondo.com/?feed=rss2">					Zhua Xia	</a></li>
+					<li><a rel="external nofollow" title="Subscribe with Yodao"		href="http://reader.yodao.com/#url=http://krondo.com/?feed=rss2">								Yodao	</a></li>
+					<li><a rel="external nofollow" title="Subscribe with Google"		href="http://fusion.google.com/add?feedurl=http://krondo.com/?feed=rss2">						Google	</a></li>
+					<li><a rel="external nofollow" title="Subscribe with netvibes"	href="http://www.netvibes.com/subscribe.php?url=http://krondo.com/?feed=rss2">					netvibes	</a></li>
+					<li><a rel="external nofollow" title="Subscribe with newsgator"	href="http://www.newsgator.com/ngs/subscriber/subfext.aspx?url=http://krondo.com/?feed=rss2">	newsgator</a></li>
+					<li><a rel="external nofollow" title="Subscribe with Bloglines"	href="http://www.bloglines.com/sub/http://krondo.com/?feed=rss2">								Bloglines</a></li>
+					<li><a rel="external nofollow" title="Subscribe with iNezha"		href="http://inezha.com/add?url=http://krondo.com/?feed=rss2">									iNezha	</a></li>
+				</ul>
+					</div>
+				
+		<span id="copyright">
+			&copy; 2002-2012 krondo		</span>
+		<div class="fixed"></div>
+	</div>
+	<!-- menubar END -->
+
+	<!-- main START -->
+	<div id="main">
+<div class="post" id="post-1327">
+	<h2 class="title">Twisted Introduction</h2>
+	<div class="meta">
+		<div class="info">Update: Jul 28th, 2011</div>
+		<div class="comments"></div>
+		<div class="fixed"></div>
+	</div>
+
+	<div class="content">
+		<p>This multi-part series introduces Asynchronous Programming and the <a href="http://twistedmatrix.com">Twisted</a> networking framework.</p>
+<ol>
+<li><a href="?p=1209">In Which We Begin at the Beginning</a></li>
+<li><a href="?p=1247">Slow Poetry and the Apocalypse</a></li>
+<li><a href="?p=1333">Our Eye-beams Begin to Twist</a></li>
+<li><a href="?p=1445">Twisted Poetry</a></li>
+<li><a href="?p=1522">Twistier Poetry</a></li>
+<li><a href="?p=1595">And Then We Took It Higher</a></li>
+<li><a href="?p=1682">An Interlude, Deferred</a></li>
+<li><a href="?p=1778">Deferred Poetry</a></li>
+<li><a href="?p=1825">A Second Interlude, Deferred</a></li>
+<li><a href="?p=1956">Poetry Transformed</a></li>
+<li><a href="?p=2048">Your Poetry is Served</a></li>
+<li><a href="?p=2101">A Poetry Transformation Server</a></li>
+<li><a href="?p=2159">Deferred All The Way Down</a></li>
+<li><a href="?p=2205">When a Deferred Isn&#8217;t</a></li>
+<li><a href="?p=2273">Tested Poetry</a></li>
+<li><a href="?p=2345">Twisted Daemonologie</a></li>
+<li><a href="?p=2441">Just Another Way to Spell “Callback”</a></li>
+<li><a href="?p=2571">Deferreds En Masse</a></li>
+<li><a href="?p=2601">I Thought I Wanted It But I Changed My Mind</a></li>
+<li><a href="?p=2692">Wheels within Wheels: Twisted and Erlang</a></li>
+<li><a href="?p=2814">Lazy is as Lazy Doesn&#8217;t: Twisted and Haskell</a></li>
+<li><a href="?p=2874">The End</a></li>
+</ol>
+<p><a href="http://stackoverflow.com/users/95735/">Piotr Dobrogost</a> has converted the entire series into complete <a href="http://krondo.com/wp-content/uploads/2009/08/twisted-intro.html">html</a> and <a href="http://krondo.com/wp-content/uploads/2009/08/twisted-intro.pdf">pdf</a> versions.</p>
+<p>This introduction is being translated into other languages:</p>
+<ul>
+<li><a href="http://skitazaki.appspot.com/translation/twisted-intro-ja/index.html">Japanese</a> by Shigeru Kitazaki</li>
+<li><a href="http://timgluz.wordpress.com/2010/07/14/sissejuhatus-asunkroonsesse-maailma/">Estonian</a> by <a href="http://timgluz.wordpress.com">Tim Gluz</a></li>
+<li><a href="http://ninaevseenko.github.com/async_twisted_ru/">Russian</a> by Nina Evseenko</li>
+<li><a href="http://blog.sina.com.cn/s/blog_704b6af70100py9n.html">Chinese</a> by Yang Xiaowei and <a href="https://github.com/luocheng/twisted-intro-cn">Cheng Luo</a></li>
+</ul>
+<span class="joliprint_button" data-title="Twisted Introduction" data-url="http://krondo.com/?page_id=1327"></span>		<div class="fixed"></div>
+	</div>
+</div>
+
+<script type="text/javascript" src="http://krondo.com/wp-content/themes/blocks2/js/comment.js"></script>
+
+
+
+	<ol class="commentlist">
+			<li id="comment-323" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/3568a09b905320d61fa53a6b9d072f1a?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<span class="authorname" id="commentauthor-323">
+				
+				Julius
+									</span>
+								<div class="date">Dec 10th, 2009 at 07:17</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=323#respond' onclick='return addComment.moveForm("comment-323", "323", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-323', 'comment-323', 'commentbody-323', 'comment');">Quote</a> | 
+												<a href="#comment-323">#1</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-323">
+					<p>the index link on this page:</p>
+<p><a href="http://krondo.com/blog/?p=1825" rel="nofollow">http://krondo.com/blog/?p=1825</a></p>
+<p>links back to your main page, and not to the index.</p>
+<p>great tutorial btw <img src='http://krondo.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-325" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/0ddef3bc3b79920acd2acf230ef4ea32?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-325" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Dec 10th, 2009 at 19:40</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=325#respond' onclick='return addComment.moveForm("comment-325", "325", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-325', 'comment-325', 'commentbody-325', 'comment');">Quote</a> | 
+												<a href="#comment-325">#2</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-325">
+					<p>Ah, wordpress cut-n-paste gets me again! Thanks <img src='http://krondo.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+	<li id="comment-760" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/7f1f217ee15c052823a6a614520da593?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<span class="authorname" id="commentauthor-760">
+				
+				rt
+									</span>
+								<div class="date">Mar 24th, 2010 at 08:34</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=760#respond' onclick='return addComment.moveForm("comment-760", "760", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-760', 'comment-760', 'commentbody-760', 'comment');">Quote</a> | 
+												<a href="#comment-760">#3</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-760">
+					<p>Hi, Dave. Do you mind if i&#8217;l translate this twisted intro to russian and publish it?</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-762" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/0ddef3bc3b79920acd2acf230ef4ea32?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-762" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Mar 24th, 2010 at 20:00</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=762#respond' onclick='return addComment.moveForm("comment-762", "762", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-762', 'comment-762', 'commentbody-762', 'comment');">Quote</a> | 
+												<a href="#comment-762">#4</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-762">
+					<p>I don&#8217;t mind at all, be my guest! Be sure to send me the link <img src='http://krondo.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-765" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/7f1f217ee15c052823a6a614520da593?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<span class="authorname" id="commentauthor-765">
+				
+				rt
+									</span>
+								<div class="date">Mar 25th, 2010 at 10:05</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=765#respond' onclick='return addComment.moveForm("comment-765", "765", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-765', 'comment-765', 'commentbody-765', 'comment');">Quote</a> | 
+												<a href="#comment-765">#5</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-765">
+					<p>Thank you! I will!</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+	<li id="comment-807" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/f24a441058c3b680623bccead796a923?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<span class="authorname" id="commentauthor-807">
+				
+				Ed
+									</span>
+								<div class="date">Apr 7th, 2010 at 23:19</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=807#respond' onclick='return addComment.moveForm("comment-807", "807", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-807', 'comment-807', 'commentbody-807', 'comment');">Quote</a> | 
+												<a href="#comment-807">#6</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-807">
+					<p>Hello Dave,<br />
+I find your intro on Twisted to be the best I have found to date, clear and covers important details that support a real understanding of Twisted. I would like to ask if in the future you have any plans for other Twisted tutorials.  Just for an example tutorial; as the intro above couldn&#8217;t cover some deep areas of Twisted, I was thinking a multiple part (over time) tutorial that each covers say different abstractions. I would love to support you and the work you do in making Twisted a learning joy for me, a first time. Please let me know if any money I can send that will help.  </p>
+<p>Ed.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-808" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/0ddef3bc3b79920acd2acf230ef4ea32?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-808" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Apr 7th, 2010 at 23:33</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=808#respond' onclick='return addComment.moveForm("comment-808", "808", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-808', 'comment-808', 'commentbody-808', 'comment');">Quote</a> | 
+												<a href="#comment-808">#7</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-808">
+					<p>Hey Ed, thanks for the kind words! I appreciate your offer, but I&#8217;m happy to make this tutorial a labor of love. I plan to have a few more parts in this series and then take a break for a while. It&#8217;s hard work <img src='http://krondo.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' />  I&#8217;m not sure whether I&#8217;m going to write more Twisted tutorials after that, but if you make it through the end of mine, then I think you&#8217;ll be well prepared to dive into the <a href="http://twistedmatrix.com/trac/wiki/Documentation" rel="nofollow">main documentation</a> of Twisted itself. Also, Jp Calderone has a lengthy series that goes into the details of the Twisted Web framework <a href="http://jcalderone.livejournal.com/tag/sixty%20seconds" rel="nofollow">over here</a>.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+	<li id="comment-811" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/f24a441058c3b680623bccead796a923?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<span class="authorname" id="commentauthor-811">
+				
+				Ed
+									</span>
+								<div class="date">Apr 8th, 2010 at 05:28</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=811#respond' onclick='return addComment.moveForm("comment-811", "811", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-811', 'comment-811', 'commentbody-811', 'comment');">Quote</a> | 
+												<a href="#comment-811">#8</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-811">
+					<p>Thanks Dave, just thinking such work a labor of love &#8230;wow.<br />
+I did look over the link you gave, and like it. Dave you take care, and I look forward to the parts you plan to add here, as I&#8217;m learning Twisted to build a larger tool set in python and your tutorial has been a great help in that direction.</p>
+<p>Ed.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-813" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/0ddef3bc3b79920acd2acf230ef4ea32?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-813" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Apr 8th, 2010 at 18:29</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=813#respond' onclick='return addComment.moveForm("comment-813", "813", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-813', 'comment-813', 'commentbody-813', 'comment');">Quote</a> | 
+												<a href="#comment-813">#9</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-813">
+					<p>Good luck with your tool set!</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+	<li id="comment-822" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/f24a441058c3b680623bccead796a923?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<span class="authorname" id="commentauthor-822">
+				
+				Ed
+									</span>
+								<div class="date">Apr 12th, 2010 at 20:52</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=822#respond' onclick='return addComment.moveForm("comment-822", "822", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-822', 'comment-822', 'commentbody-822', 'comment');">Quote</a> | 
+												<a href="#comment-822">#10</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-822">
+					<p>Hello, I understand this is not an interactive tutorial, if I may ask a question please.  I find in part 5 something that I wish to understand; the word &#8220;buildFactory&#8221; has had me scratch my head because I can&#8217;t seem to find it mentioned anywhere I have looked as portocol interfaces and others, along with the tutorial pages 4 and 6.  Also, have not found a reference to it on web searches I have done too. Where do I find it or do I just lack some background in Twisted I need.</p>
+<p>Ed.<br />
+Thank you.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-823" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/0ddef3bc3b79920acd2acf230ef4ea32?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-823" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Apr 12th, 2010 at 21:07</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=823#respond' onclick='return addComment.moveForm("comment-823", "823", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-823', 'comment-823', 'commentbody-823', 'comment');">Quote</a> | 
+												<a href="#comment-823">#11</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-823">
+					<p>Hey Ed, you found a typo! That should have been <code>buildProtocol</code>. I&#8217;ve fixed the text of Part 5, thanks for the close reading!</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+	<li id="comment-824" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/f24a441058c3b680623bccead796a923?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<span class="authorname" id="commentauthor-824">
+				
+				Ed
+									</span>
+								<div class="date">Apr 12th, 2010 at 21:38</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=824#respond' onclick='return addComment.moveForm("comment-824", "824", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-824', 'comment-824', 'commentbody-824', 'comment');">Quote</a> | 
+												<a href="#comment-824">#12</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-824">
+					<p>Dave,</p>
+<p>thank you for the help.</p>
+<p>Ed.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+	<li id="comment-859" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/104db6ac9406aa777a0525a0c4a5d75e?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<span class="authorname" id="commentauthor-859">
+				
+				Jo
+									</span>
+								<div class="date">Apr 22nd, 2010 at 04:33</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=859#respond' onclick='return addComment.moveForm("comment-859", "859", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-859', 'comment-859', 'commentbody-859', 'comment');">Quote</a> | 
+												<a href="#comment-859">#13</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-859">
+					<p>Great intro!</p>
+<p>Would be nice, if you could release the whole serie as a pdf.</p>
+<p>Jo.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-863" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/0ddef3bc3b79920acd2acf230ef4ea32?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-863" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Apr 22nd, 2010 at 18:29</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=863#respond' onclick='return addComment.moveForm("comment-863", "863", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-863', 'comment-863', 'commentbody-863', 'comment');">Quote</a> | 
+												<a href="#comment-863">#14</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-863">
+					<p>Thanks! Once I finish the series, I&#8217;ll look into possibilities there.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+	<li id="comment-3904" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-3904" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Jan 5th, 2011 at 20:21</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=3904#respond' onclick='return addComment.moveForm("comment-3904", "3904", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-3904', 'comment-3904', 'commentbody-3904', 'comment');">Quote</a> | 
+												<a href="#comment-3904">#15</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-3904">
+					<p>I added joliprint links to each article, which generates a pdf from my posts. Might be useful, not sure.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+	<li id="comment-1108" class="comment pingcomment">
+
+		<div class="info pinginfo">
+						<div class="author">
+									<a class="authorname" id="commentauthor-1108" href="http://jathan.com/2010/05/28/intro-to-twisted/" rel="external nofollow">
+				
+				jathanism &raquo; Blog Archive &raquo; Intro to Twisted
+									</a>
+								<div class="date">May 28th, 2010 at 14:02</div>
+			</div>
+			<div class="count">
+												<a href="#comment-1108">#16</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+		
+		<div class="fixed"></div>
+
+</li>
+	<li id="comment-1127" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/a5e18e5ef36d3a07519213346bdf8d75?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<span class="authorname" id="commentauthor-1127">
+				
+				Shigeru
+									</span>
+								<div class="date">Jun 3rd, 2010 at 07:37</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=1127#respond' onclick='return addComment.moveForm("comment-1127", "1127", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-1127', 'comment-1127', 'commentbody-1127', 'comment');">Quote</a> | 
+												<a href="#comment-1127">#17</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-1127">
+					<p>Thanks Dave for your excellent work!<br />
+I&#8217;m working on translating this series into Japanese. I&#8217;ve finished around part5.<br />
+Is it okay to keep publishing them in my space?<br />
+  <a href="http://skitazaki.appspot.com/translation/twisted-intro-ja/index.html" rel="nofollow">http://skitazaki.appspot.com/translation/twisted-intro-ja/index.html</a></p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-1129" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/0ddef3bc3b79920acd2acf230ef4ea32?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-1129" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Jun 3rd, 2010 at 18:47</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=1129#respond' onclick='return addComment.moveForm("comment-1129", "1129", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-1129', 'comment-1129', 'commentbody-1129', 'comment');">Quote</a> | 
+												<a href="#comment-1129">#18</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-1129">
+					<p>Absolutely! I put a link to your site on the index page above. Thanks for doing that.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+	<li id="comment-1130" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/0ddef3bc3b79920acd2acf230ef4ea32?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-1130" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Jun 3rd, 2010 at 19:21</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=1130#respond' onclick='return addComment.moveForm("comment-1130", "1130", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-1130', 'comment-1130', 'commentbody-1130', 'comment');">Quote</a> | 
+												<a href="#comment-1130">#19</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-1130">
+					<p>Also, could you tell me your full name, so I can mention you with the link?</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-1131" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/a5e18e5ef36d3a07519213346bdf8d75?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<span class="authorname" id="commentauthor-1131">
+				
+				Shigeru
+									</span>
+								<div class="date">Jun 3rd, 2010 at 20:02</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=1131#respond' onclick='return addComment.moveForm("comment-1131", "1131", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-1131', 'comment-1131', 'commentbody-1131', 'comment');">Quote</a> | 
+												<a href="#comment-1131">#20</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-1131">
+					<p>Thank you very much. My name is Shigeru Kitazaki.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-1132" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/0ddef3bc3b79920acd2acf230ef4ea32?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-1132" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Jun 3rd, 2010 at 20:35</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=1132#respond' onclick='return addComment.moveForm("comment-1132", "1132", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-1132', 'comment-1132', 'commentbody-1132', 'comment');">Quote</a> | 
+												<a href="#comment-1132">#21</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-1132">
+					<p>Nice to meet you, Shigeru <img src='http://krondo.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+	<li id="comment-1867" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/099330cb432231e815d6145f8239115d?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-1867" href="http://timgluz.wordpress.com" rel="external nofollow">
+				
+				timgluz
+									</a>
+								<div class="date">Jul 9th, 2010 at 06:40</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=1867#respond' onclick='return addComment.moveForm("comment-1867", "1867", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-1867', 'comment-1867', 'commentbody-1867', 'comment');">Quote</a> | 
+												<a href="#comment-1867">#22</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-1867">
+					<p>Hi!</p>
+<p>Thanks for hard work, i read all articles and my head-ache is gone <img src='http://krondo.com/wp-includes/images/smilies/icon_biggrin.gif' alt=':D' class='wp-smiley' /><br />
+Even twisted book,that i lent from library of uni, was too hard to understand at the beginning, but no more&#8230;</p>
+<p>Btw, if anyone want pdf format &#8211; you can download it from my google docs: <a href="https://docs.google.com/fileview?id=1kKQM0G6CvqU3BZKG9pyc2h37oZpdUjC7vG9JWA0Bk9ba42e5ZpKyZpp8T2dc&#038;hl=en&#038;authkey=CJThyr8L" rel="nofollow">https://docs.google.com/fileview?id=1kKQM0G6CvqU3BZKG9pyc2h37oZpdUjC7vG9JWA0Bk9ba42e5ZpKyZpp8T2dc&#038;hl=en&#038;authkey=CJThyr8L</a></p>
+<p>And at the moment i&#8217;m working on estonian translation.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-1876" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/0ddef3bc3b79920acd2acf230ef4ea32?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-1876" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Jul 9th, 2010 at 18:36</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=1876#respond' onclick='return addComment.moveForm("comment-1876", "1876", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-1876', 'comment-1876', 'commentbody-1876', 'comment');">Quote</a> | 
+												<a href="#comment-1876">#23</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-1876">
+					<p>Glad it was helpful for you! And thanks for the pdf, can you tell me how to go about doing that?<br />
+Send me the link to your translation and I&#8217;ll put it on the main index page.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+	<li id="comment-1889" class="comment pingcomment">
+
+		<div class="info pinginfo">
+						<div class="author">
+									<a class="authorname" id="commentauthor-1889" href="http://timgluz.wordpress.com/2010/07/10/py-tasuta-lounad-on-otsas-konkurentsust-helpimas/" rel="external nofollow">
+				
+				[Py] Tasuta lõunad on otsas, konkurentsust helpimas &laquo; Timgluz&#039;i küberruumi projektsioon
+									</a>
+								<div class="date">Jul 10th, 2010 at 10:00</div>
+			</div>
+			<div class="count">
+												<a href="#comment-1889">#24</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+		
+		<div class="fixed"></div>
+
+</li>
+	<li id="comment-1890" class="comment pingcomment">
+
+		<div class="info pinginfo">
+						<div class="author">
+									<a class="authorname" id="commentauthor-1890" href="http://timgluz.wordpress.com/2010/07/10/py-asunkroonne-arvutus-twisted-naitel/" rel="external nofollow">
+				
+				[Py] Asünkroonne arvutus Twisted näitel &laquo; Timgluz&#039;i küberruumi projektsioon
+									</a>
+								<div class="date">Jul 10th, 2010 at 10:08</div>
+			</div>
+			<div class="count">
+												<a href="#comment-1890">#25</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+		
+		<div class="fixed"></div>
+
+</li>
+	<li id="comment-1960" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/9c412da742a2b98e3bf29dc217cf3a04?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<span class="authorname" id="commentauthor-1960">
+				
+				jitendra
+									</span>
+								<div class="date">Jul 14th, 2010 at 02:39</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=1960#respond' onclick='return addComment.moveForm("comment-1960", "1960", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-1960', 'comment-1960', 'commentbody-1960', 'comment');">Quote</a> | 
+												<a href="#comment-1960">#26</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-1960">
+					<p>Hi timgluz,<br />
+can you tell how to download your pdf&#8230;it is asking for username/passwd when I click on the above link.</p>
+<p>thanx</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+	<li id="comment-2901" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/df13d29fbc02d6979b4e6d3a3ccb4e4a?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<span class="authorname" id="commentauthor-2901">
+				
+				bino
+									</span>
+								<div class="date">Aug 31st, 2010 at 08:20</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=2901#respond' onclick='return addComment.moveForm("comment-2901", "2901", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-2901', 'comment-2901', 'commentbody-2901', 'comment');">Quote</a> | 
+												<a href="#comment-2901">#27</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-2901">
+					<p>Dear Dave<br />
+I&#8217;m sure your writeup is a great source of knowledge.</p>
+<p>But caused by the lame of my brain, I fail to understand how to adopt it to my problem.</p>
+<p>I need to write application that :<br />
+1. Have to services in it:<br />
+1.a. a TCP server (just like a basic echo server)<br />
+1.b. an XMPP-Client/bot<br />
+2. Every msg come from XMPP-server, will wrote to StdOut (it&#8217;ll be extended inthe future)<br />
+3. Every msg received by TCP-server part, will be forwarded by the xmpp-client to XMPP-server.</p>
+<p>I post my code at pastebin:<br />
+1. echobot.py : <a href="http://pastebin.com/Mn4bRvCb" rel="nofollow">http://pastebin.com/Mn4bRvCb</a><br />
+2. echobot.tac : <a href="http://pastebin.com/BgjMKiMC" rel="nofollow">http://pastebin.com/BgjMKiMC</a><br />
+3. the occured error : <a href="http://pastebin.com/6Rdge4L5" rel="nofollow">http://pastebin.com/6Rdge4L5</a></p>
+<p>Kindly please give me any enlightment.</p>
+<p>Sincerely<br />
+-bino-</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-2905" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/0ddef3bc3b79920acd2acf230ef4ea32?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-2905" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Aug 31st, 2010 at 19:02</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=2905#respond' onclick='return addComment.moveForm("comment-2905", "2905", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-2905', 'comment-2905', 'commentbody-2905', 'comment');">Quote</a> | 
+												<a href="#comment-2905">#28</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-2905">
+					<p>Hey bino, I might not have time to look into your example to closely. But the traceback just looks like you are using an undefined name.<br />
+I&#8217;m not too familiar with wokkel, but perhaps you mean self.send()?</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+	<li id="comment-2937" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/84b6e4ca9a6e15969649b4728224378b?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<span class="authorname" id="commentauthor-2937">
+				
+				Laurens Van Houtven
+									</span>
+								<div class="date">Sep 2nd, 2010 at 15:45</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=2937#respond' onclick='return addComment.moveForm("comment-2937", "2937", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-2937', 'comment-2937', 'commentbody-2937', 'comment');">Quote</a> | 
+												<a href="#comment-2937">#29</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-2937">
+					<p>I think your tutorials are really awesome, and I love how you&#8217;re consistently putting so much work into this while remaining responsive and approachable.</p>
+<p>This was *long* overdue, but the official documentation page now links back to you:</p>
+<p><a href="http://twistedmatrix.com/trac/wiki/Documentation" rel="nofollow">http://twistedmatrix.com/trac/wiki/Documentation</a></p>
+<p>I couldn&#8217;t figure out if marketing your tutorials as good-for-newbies or not was doing you a disservice or not; I&#8217;m just mainly using them as a pointer for newbies who are willing to learn. If you disagree with the wording, please feel free to e-mail me about it.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-2940" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/0ddef3bc3b79920acd2acf230ef4ea32?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-2940" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Sep 2nd, 2010 at 18:39</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=2940#respond' onclick='return addComment.moveForm("comment-2940", "2940", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-2940', 'comment-2940', 'commentbody-2940', 'comment');">Quote</a> | 
+												<a href="#comment-2940">#30</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-2940">
+					<p>Thank you, I appreciate the kind words! I am specifically aiming this tutorial for people who are new to Twisted and, more importantly, new to asynchronous programming. So your description is apt.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+	<li id="comment-3094" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/17d64a565c6e7b69b94cfebbdedc68af?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-3094" href="http://blog.mrpau.com" rel="external nofollow">
+				
+				Cyril Pauya
+									</a>
+								<div class="date">Sep 15th, 2010 at 16:55</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=3094#respond' onclick='return addComment.moveForm("comment-3094", "3094", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-3094', 'comment-3094', 'commentbody-3094', 'comment');">Quote</a> | 
+												<a href="#comment-3094">#31</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-3094">
+					<p>Finally, a very good introduction + tutorials + how-to in Twisted!  </p>
+<p>Keep them coming, maybe even publish it as a book later? <img src='http://krondo.com/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </p>
+<p>Thanks much! <img src='http://krondo.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-3095" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/0ddef3bc3b79920acd2acf230ef4ea32?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-3095" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Sep 15th, 2010 at 18:03</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=3095#respond' onclick='return addComment.moveForm("comment-3095", "3095", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-3095', 'comment-3095', 'commentbody-3095', 'comment');">Quote</a> | 
+												<a href="#comment-3095">#32</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-3095">
+					<p>You&#8217;re welcome!</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+	<li id="comment-3175" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/47af7ccc79b304ab712dc1389ad1b37c?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-3175" href="http://ibidem.homeip.net" rel="external nofollow">
+				
+				Morten
+									</a>
+								<div class="date">Sep 25th, 2010 at 02:21</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=3175#respond' onclick='return addComment.moveForm("comment-3175", "3175", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-3175', 'comment-3175', 'commentbody-3175', 'comment');">Quote</a> | 
+												<a href="#comment-3175">#33</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-3175">
+					<p>This guide looks good (I haven&#8217;t actually read much of it yet <img src='http://krondo.com/wp-includes/images/smilies/icon_smile.gif' alt=':-)' class='wp-smiley' /> ).</p>
+<p>Given the length, it would be better to have a PDF for an e-reader, or printing it out, but the PDF mentioned earlier in the comments only go up to part 10.</p>
+<p>Any plans to produce an updated PDF? Are the parts that are in the PDF up-to-date, or has there been edits, so that one would be better off just reading the whole guide online?</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-3176" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/0ddef3bc3b79920acd2acf230ef4ea32?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-3176" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Sep 25th, 2010 at 07:49</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=3176#respond' onclick='return addComment.moveForm("comment-3176", "3176", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-3176', 'comment-3176', 'commentbody-3176', 'comment');">Quote</a> | 
+												<a href="#comment-3176">#34</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-3176">
+					<p>There have been a few edits of the earlier parts, but no dramatic changes. I&#8217;m going to look into packaging options once I finish the parts I initially planned to write, which will take me to Part 23.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+	<li id="comment-3903" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-3903" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Jan 5th, 2011 at 20:20</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=3903#respond' onclick='return addComment.moveForm("comment-3903", "3903", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-3903', 'comment-3903', 'commentbody-3903', 'comment');">Quote</a> | 
+												<a href="#comment-3903">#35</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-3903">
+					<p>BTW, I added &#8216;joliprint&#8217; links for all my posts. That&#8217;s a website that claims they can produce a PDF of any webpage. It might be useful for you, I&#8217;m not sure.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+	<li id="comment-3813" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/b09b880e5a9b67a6623f44dd5b1e3368?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<span class="authorname" id="commentauthor-3813">
+				
+				Mike Stoddart
+									</span>
+								<div class="date">Dec 20th, 2010 at 11:16</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=3813#respond' onclick='return addComment.moveForm("comment-3813", "3813", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-3813', 'comment-3813', 'commentbody-3813', 'comment');">Quote</a> | 
+												<a href="#comment-3813">#36</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-3813">
+					<p>This is amazing &#8211; thanks! Now I just need to find the time to read it all. <img src='http://krondo.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-3814" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/0ddef3bc3b79920acd2acf230ef4ea32?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-3814" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Dec 20th, 2010 at 14:53</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=3814#respond' onclick='return addComment.moveForm("comment-3814", "3814", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-3814', 'comment-3814', 'commentbody-3814', 'comment');">Quote</a> | 
+												<a href="#comment-3814">#37</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-3814">
+					<p>Good luck <img src='http://krondo.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+	<li id="comment-3985" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/68fcac08bf4369ee4cb9025237b1fdf3?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<span class="authorname" id="commentauthor-3985">
+				
+				sangeetk
+									</span>
+								<div class="date">Jan 25th, 2011 at 03:10</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=3985#respond' onclick='return addComment.moveForm("comment-3985", "3985", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-3985', 'comment-3985', 'commentbody-3985', 'comment');">Quote</a> | 
+												<a href="#comment-3985">#38</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-3985">
+					<p>Dear Dave,</p>
+<p>I have converted the twisted tutorial into .mobi format so that I can read it on my kindle.  Do you mind if I publish the ebook version of this tutorial?</p>
+<p>Regards,<br />
+Sangeet Kumar</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-3988" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-3988" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Jan 25th, 2011 at 05:41</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=3988#respond' onclick='return addComment.moveForm("comment-3988", "3988", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-3988', 'comment-3988', 'commentbody-3988', 'comment');">Quote</a> | 
+												<a href="#comment-3988">#39</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-3988">
+					<p>Hi Sangeet, I don&#8217;t mind at all. Could you send me the link so I can add it to the main tutorial page?</p>
+<p>dave</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+	<li id="comment-3986" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/68fcac08bf4369ee4cb9025237b1fdf3?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<span class="authorname" id="commentauthor-3986">
+				
+				Sangeet Kumar
+									</span>
+								<div class="date">Jan 25th, 2011 at 03:14</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=3986#respond' onclick='return addComment.moveForm("comment-3986", "3986", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-3986', 'comment-3986', 'commentbody-3986', 'comment');">Quote</a> | 
+												<a href="#comment-3986">#40</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-3986">
+					<p>Hi Dave,</p>
+<p>I have converted your tutorial into .mobi format to read in my kindle, so do you mind if I publish the ebook version of this tutorial.</p>
+<p>Regards,<br />
+Sangeet</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-4436" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/4ff5b55e4c0a9f9fd41a7f018cc2f4d8?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<span class="authorname" id="commentauthor-4436">
+				
+				tcb
+									</span>
+								<div class="date">Apr 3rd, 2011 at 18:39</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=4436#respond' onclick='return addComment.moveForm("comment-4436", "4436", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-4436', 'comment-4436', 'commentbody-4436', 'comment');">Quote</a> | 
+												<a href="#comment-4436">#41</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-4436">
+					<p>Hello,<br />
+Am enjoying this tutorial very much and interested in where I can obtain the Kindle-compatible version to try out on the Kindle I just got my wife for HER birthday <img src='http://krondo.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+<p>TCB</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-4438" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-4438" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Apr 3rd, 2011 at 22:04</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=4438#respond' onclick='return addComment.moveForm("comment-4438", "4438", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-4438', 'comment-4438', 'commentbody-4438', 'comment');">Quote</a> | 
+												<a href="#comment-4438">#42</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-4438">
+					<p>Sounds like you&#8217;ll need to get a second one <img src='http://krondo.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' />  I just installed a Kindle plugin, and now there<br />
+should be a Kindle It! section on the right hand toolbar where you can send a post to your Kindle.<br />
+Let me know how that works.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+	<li id="comment-4023" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/d04ab2422a8f061608f58708de9bb138?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<span class="authorname" id="commentauthor-4023">
+				
+				Jason
+									</span>
+								<div class="date">Jan 31st, 2011 at 19:52</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=4023#respond' onclick='return addComment.moveForm("comment-4023", "4023", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-4023', 'comment-4023', 'commentbody-4023', 'comment');">Quote</a> | 
+												<a href="#comment-4023">#43</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-4023">
+					<p>I&#8217;ve been skimming through this, but one thing I haven&#8217;t seen is an example of a two-way protocol eg. a poetry server that takes a poem name as input and returns the requested poem. Do you cover this at all?</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-4024" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-4024" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Jan 31st, 2011 at 21:09</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=4024#respond' onclick='return addComment.moveForm("comment-4024", "4024", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-4024', 'comment-4024', 'commentbody-4024', 'comment');">Quote</a> | 
+												<a href="#comment-4024">#44</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-4024">
+					<p>I do, Part 12 has a two-way protocol that involves a request and a reply.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+	<li id="comment-4072" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/d04ab2422a8f061608f58708de9bb138?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<span class="authorname" id="commentauthor-4072">
+				
+				Jason
+									</span>
+								<div class="date">Feb 8th, 2011 at 21:50</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=4072#respond' onclick='return addComment.moveForm("comment-4072", "4072", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-4072', 'comment-4072', 'commentbody-4072', 'comment');">Quote</a> | 
+												<a href="#comment-4072">#45</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-4072">
+					<p>Thanks for that <img src='http://krondo.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' />  Am I also right in thinking that the factories are &#8220;single use only&#8221;, eg. once you use a PoetryClientFactory to get one poem, you can&#8217;t use it again?</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-4073" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-4073" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Feb 8th, 2011 at 21:58</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=4073#respond' onclick='return addComment.moveForm("comment-4073", "4073", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-4073', 'comment-4073', 'commentbody-4073', 'comment');">Quote</a> | 
+												<a href="#comment-4073">#46</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-4073">
+					<p>Factories are actually multi-use. For example, the client factory in Part 5 is used for every poem you download, and actually<br />
+keeps track of the number of poems we&#8217;ve gotten so far so it knows when to quit the program. That&#8217;s solved a little differently<br />
+in later versions, but it illustrates that factories can be used over and over again, and often are. Protocols, on the other hand,<br />
+are created and used for a single connection.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-4075" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/d04ab2422a8f061608f58708de9bb138?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<span class="authorname" id="commentauthor-4075">
+				
+				Jason
+									</span>
+								<div class="date">Feb 8th, 2011 at 22:43</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=4075#respond' onclick='return addComment.moveForm("comment-4075", "4075", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-4075', 'comment-4075', 'commentbody-4075', 'comment');">Quote</a> | 
+												<a href="#comment-4075">#47</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-4075">
+					<p>But in, say, twisted-client-8/get-poetry.py, the &#8220;PoetryClientFactory&#8221; keeps a single Deferred which is called back upon completion. This can&#8217;t be done more than once&#8230; have I misunderstood, or is this a different usage?</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-4078" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-4078" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Feb 9th, 2011 at 09:29</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=4078#respond' onclick='return addComment.moveForm("comment-4078", "4078", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-4078', 'comment-4078', 'commentbody-4078', 'comment');">Quote</a> | 
+												<a href="#comment-4078">#48</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-4078">
+					<p>You&#8217;re absolutely right. For that case, the factory is a single-use object. So I guess I should have said that factories <em>can</em> be multi-use, but don&#8217;t necessarily have to be. Server factories are almost always multi-use, since most servers accept many connections. Client factories, on the other hand, are probably more of a mixed bag in that respect.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-4082" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/d04ab2422a8f061608f58708de9bb138?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<span class="authorname" id="commentauthor-4082">
+				
+				Jason
+									</span>
+								<div class="date">Feb 9th, 2011 at 19:01</div>
+			</div>
+			<div class="count">
+																									<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-4082', 'comment-4082', 'commentbody-4082', 'comment');">Quote</a> | 
+												<a href="#comment-4082">#49</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-4082">
+					<p>Okay, I see what you mean now <img src='http://krondo.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' />  Thanks for the excellent guide, by the way!</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+	<li id="comment-4083" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-4083" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Feb 9th, 2011 at 20:43</div>
+			</div>
+			<div class="count">
+																									<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-4083', 'comment-4083', 'commentbody-4083', 'comment');">Quote</a> | 
+												<a href="#comment-4083">#50</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-4083">
+					<p>Thank you!</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+	<li id="comment-4095" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/cc6ba972566344901e32ae16f51d049a?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<span class="authorname" id="commentauthor-4095">
+				
+				heng
+									</span>
+								<div class="date">Feb 12th, 2011 at 00:32</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=4095#respond' onclick='return addComment.moveForm("comment-4095", "4095", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-4095', 'comment-4095', 'commentbody-4095', 'comment');">Quote</a> | 
+												<a href="#comment-4095">#51</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-4095">
+					<p>great articles! far better than  in my opinion. you should write a book with the name , lol.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+	<li id="comment-4096" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/cc6ba972566344901e32ae16f51d049a?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<span class="authorname" id="commentauthor-4096">
+				
+				heng
+									</span>
+								<div class="date">Feb 12th, 2011 at 00:33</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=4096#respond' onclick='return addComment.moveForm("comment-4096", "4096", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-4096', 'comment-4096', 'commentbody-4096', 'comment');">Quote</a> | 
+												<a href="#comment-4096">#52</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-4096">
+					<p>great articles! far better than &#8216;twisted essentials&#8217; in my opinion. you should write a book with the name &#8216;asyn-model and twisted&#8217;, lol.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-4098" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-4098" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Feb 12th, 2011 at 07:15</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=4098#respond' onclick='return addComment.moveForm("comment-4098", "4098", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-4098', 'comment-4098', 'commentbody-4098', 'comment');">Quote</a> | 
+												<a href="#comment-4098">#53</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-4098">
+					<p>Thank you very much!</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+	<li id="comment-4178" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/bd682e8ffbd23fe0394159c3b7d4f219?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<span class="authorname" id="commentauthor-4178">
+				
+				Victor
+									</span>
+								<div class="date">Feb 28th, 2011 at 02:43</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=4178#respond' onclick='return addComment.moveForm("comment-4178", "4178", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-4178', 'comment-4178', 'commentbody-4178', 'comment');">Quote</a> | 
+												<a href="#comment-4178">#54</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-4178">
+					<p>You might want to highlight the code in chapters using this: <a href="http://www.neathighlighter.com/" rel="nofollow">http://www.neathighlighter.com/</a></p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-4180" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/bd682e8ffbd23fe0394159c3b7d4f219?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<span class="authorname" id="commentauthor-4180">
+				
+				Victor
+									</span>
+								<div class="date">Feb 28th, 2011 at 06:51</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=4180#respond' onclick='return addComment.moveForm("comment-4180", "4180", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-4180', 'comment-4180', 'commentbody-4180', 'comment');">Quote</a> | 
+												<a href="#comment-4180">#55</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-4180">
+					<p>from twisted.internet import reactor<br />
+reactor.run&#040;&#041;</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-4182" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-4182" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Feb 28th, 2011 at 08:52</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=4182#respond' onclick='return addComment.moveForm("comment-4182", "4182", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-4182', 'comment-4182', 'commentbody-4182', 'comment');">Quote</a> | 
+												<a href="#comment-4182">#56</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-4182">
+					<p>Wrong window? <img src='http://krondo.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-4183" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/bd682e8ffbd23fe0394159c3b7d4f219?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<span class="authorname" id="commentauthor-4183">
+				
+				Victor
+									</span>
+								<div class="date">Feb 28th, 2011 at 10:33</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=4183#respond' onclick='return addComment.moveForm("comment-4183", "4183", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-4183', 'comment-4183', 'commentbody-4183', 'comment');">Quote</a> | 
+												<a href="#comment-4183">#57</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-4183">
+					<p>No, i was trying to insert some code highlighted with HTML. As the post area does not have help, i didn&#8217;t know if it will work. It didn&#8217;t.<br />
+And i didn&#8217;t want to add another comment stating this <img src='http://krondo.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-4184" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-4184" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Feb 28th, 2011 at 11:24</div>
+			</div>
+			<div class="count">
+																									<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-4184', 'comment-4184', 'commentbody-4184', 'comment');">Quote</a> | 
+												<a href="#comment-4184">#58</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-4184">
+					<p>Ah, no worries. I don&#8217;t get that many posts <img src='http://krondo.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+	<li id="comment-4181" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-4181" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Feb 28th, 2011 at 08:52</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=4181#respond' onclick='return addComment.moveForm("comment-4181", "4181", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-4181', 'comment-4181', 'commentbody-4181', 'comment');">Quote</a> | 
+												<a href="#comment-4181">#59</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-4181">
+					<p>I&#8217;ve been meaning to look into something like that, thank you for the link!</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+	<li id="comment-4234" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-4234" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Mar 10th, 2011 at 19:42</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=4234#respond' onclick='return addComment.moveForm("comment-4234", "4234", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-4234', 'comment-4234', 'commentbody-4234', 'comment');">Quote</a> | 
+												<a href="#comment-4234">#60</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-4234">
+					<p>Ok, I went through and highlighted the code using a wordpress plugin.<br />
+Hopefully it looks a little spiffier.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+	<li id="comment-4453" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/45e28461624f3b247dabc293dc909cc5?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-4453" href="http://piotr.dobrogost.pl" rel="external nofollow">
+				
+				Piotr Dobrogost
+									</a>
+								<div class="date">Apr 4th, 2011 at 13:35</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=4453#respond' onclick='return addComment.moveForm("comment-4453", "4453", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-4453', 'comment-4453', 'commentbody-4453', 'comment');">Quote</a> | 
+												<a href="#comment-4453">#61</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-4453">
+					<p>Thanks for your work on &#8220;Twisted Introduction&#8221;.<br />
+Is there up to date PDF version available?</p>
+<p>(I was directed here from #python IRC channel.)</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-4454" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-4454" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Apr 4th, 2011 at 13:40</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=4454#respond' onclick='return addComment.moveForm("comment-4454", "4454", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-4454', 'comment-4454', 'commentbody-4454', 'comment');">Quote</a> | 
+												<a href="#comment-4454">#62</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-4454">
+					<p>There isn&#8217;t a PDF of the entire thing, but each post has a &#8216;joliprint&#8217; link at the end<br />
+which will create a PDF of that article. If you have a Kindle, I added a widget on the<br />
+right to send a post your free Kindle account as well.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+	<li id="comment-4485" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/45e28461624f3b247dabc293dc909cc5?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-4485" href="http://piotr.dobrogost.pl" rel="external nofollow">
+				
+				Piotr Dobrogost
+									</a>
+								<div class="date">Apr 7th, 2011 at 16:23</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=4485#respond' onclick='return addComment.moveForm("comment-4485", "4485", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-4485', 'comment-4485', 'commentbody-4485', 'comment');">Quote</a> | 
+												<a href="#comment-4485">#63</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-4485">
+					<p>Joliprint looses formatting of code completely making it unreadable. I tried readability addon but it makes code look bad too.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-4488" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-4488" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Apr 7th, 2011 at 19:20</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=4488#respond' onclick='return addComment.moveForm("comment-4488", "4488", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-4488', 'comment-4488', 'commentbody-4488', 'comment');">Quote</a> | 
+												<a href="#comment-4488">#64</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-4488">
+					<p>Ah, too bad. Back to the drawing board <img src='http://krondo.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+	<li id="comment-4499" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/45e28461624f3b247dabc293dc909cc5?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-4499" href="http://piotr.dobrogost.pl" rel="external nofollow">
+				
+				Piotr Dobrogost
+									</a>
+								<div class="date">Apr 8th, 2011 at 12:41</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=4499#respond' onclick='return addComment.moveForm("comment-4499", "4499", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-4499', 'comment-4499', 'commentbody-4499', 'comment');">Quote</a> | 
+												<a href="#comment-4499">#65</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-4499">
+					<p>I raised this issue using Feedback option on joliprint.com In the meantime I could create PDFs by cutting out unneeded elements from DOM using Firebug and then print to PDF using PDF Creator. I could send you one article so you could see if it looks ok.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-4503" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-4503" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Apr 8th, 2011 at 17:52</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=4503#respond' onclick='return addComment.moveForm("comment-4503", "4503", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-4503', 'comment-4503', 'commentbody-4503', 'comment');">Quote</a> | 
+												<a href="#comment-4503">#66</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-4503">
+					<p>Wow, thanks! Hopefully the joliprint people can fix that and it will just work. But in the meantime if you want to send me that article that would be cool, though I&#8217;d hate to have you do a lot of busywork if it&#8217;s a pain.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+	<li id="comment-4506" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/45e28461624f3b247dabc293dc909cc5?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-4506" href="http://piotr.dobrogost.pl" rel="external nofollow">
+				
+				Piotr Dobrogost
+									</a>
+								<div class="date">Apr 9th, 2011 at 06:05</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=4506#respond' onclick='return addComment.moveForm("comment-4506", "4506", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-4506', 'comment-4506', 'commentbody-4506', 'comment');">Quote</a> | 
+												<a href="#comment-4506">#67</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-4506">
+					<p>I couldn&#8217;t find your email anywhere on krondo.com&#8230;</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-4508" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-4508" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Apr 9th, 2011 at 11:38</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=4508#respond' onclick='return addComment.moveForm("comment-4508", "4508", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-4508', 'comment-4508', 'commentbody-4508', 'comment');">Quote</a> | 
+												<a href="#comment-4508">#68</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-4508">
+					<p>Oh, right, it&#8217;s <a href="mailto:dave@krondo.com">dave@krondo.com</a>.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+	<li id="comment-4681" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/14852a1031bd1bb6cdb122b3b7ff73f6?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-4681" href="http://orpheelafondlummis.net" rel="external nofollow">
+				
+				Orphée Lafond-Lummis
+									</a>
+								<div class="date">Apr 24th, 2011 at 23:53</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=4681#respond' onclick='return addComment.moveForm("comment-4681", "4681", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-4681', 'comment-4681', 'commentbody-4681', 'comment');">Quote</a> | 
+												<a href="#comment-4681">#69</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-4681">
+					<p>Thanks a lot for this tutorial. It is incredibly well done and includes wonderful nerdy jokes. Great stuff.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-4684" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-4684" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Apr 25th, 2011 at 07:09</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=4684#respond' onclick='return addComment.moveForm("comment-4684", "4684", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-4684', 'comment-4684', 'commentbody-4684', 'comment');">Quote</a> | 
+												<a href="#comment-4684">#70</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-4684">
+					<p>You are welcome, glad you liked it!</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+	<li id="comment-5839" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/8515c359f26f93aa861422a5d6e5bf12?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<span class="authorname" id="commentauthor-5839">
+				
+				Fred
+									</span>
+								<div class="date">Jul 30th, 2011 at 21:01</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=5839#respond' onclick='return addComment.moveForm("comment-5839", "5839", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-5839', 'comment-5839', 'commentbody-5839', 'comment');">Quote</a> | 
+												<a href="#comment-5839">#71</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-5839">
+					<p>Really like your introduce!</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-5841" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-5841" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Jul 30th, 2011 at 22:23</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=5841#respond' onclick='return addComment.moveForm("comment-5841", "5841", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-5841', 'comment-5841', 'commentbody-5841', 'comment');">Quote</a> | 
+												<a href="#comment-5841">#72</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-5841">
+					<p>Thanks!</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+	<li id="comment-5928" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/ec44087a71811265e2fef2c1cabc645f?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<span class="authorname" id="commentauthor-5928">
+				
+				Lukas
+									</span>
+								<div class="date">Aug 10th, 2011 at 05:58</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=5928#respond' onclick='return addComment.moveForm("comment-5928", "5928", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-5928', 'comment-5928', 'commentbody-5928', 'comment');">Quote</a> | 
+												<a href="#comment-5928">#73</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-5928">
+					<p>Hello Dave,</p>
+<p>i am writing my Thesis right now about performance on the Internet and wonder which kind of licese is your tutorial using. Or in other words, am I allowed to use three images from your work. Mainly those about sync and async Modell.<br />
+Thanks for your work!</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-5929" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-5929" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Aug 10th, 2011 at 08:17</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=5929#respond' onclick='return addComment.moveForm("comment-5929", "5929", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-5929', 'comment-5929', 'commentbody-5929', 'comment');">Quote</a> | 
+												<a href="#comment-5929">#74</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-5929">
+					<p>Hey Lukas, I guess I should give the particular license some thought. I shall do so!</p>
+<p>But the short answer is that you are perfectly welcome to use the figures as long<br />
+as you give me credit for them.</p>
+<p>thanks,<br />
+dave</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+	<li id="comment-6099" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/cbdce3595aa804407d268d0fd3c560f4?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<span class="authorname" id="commentauthor-6099">
+				
+				sma
+									</span>
+								<div class="date">Aug 30th, 2011 at 19:28</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=6099#respond' onclick='return addComment.moveForm("comment-6099", "6099", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-6099', 'comment-6099', 'commentbody-6099', 'comment');">Quote</a> | 
+												<a href="#comment-6099">#75</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-6099">
+					<p>Hi, how would one handle a situation where the server closes the port?  I don&#8217;t get any callbacks to the connectionlost function in a factory.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-6100" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-6100" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Aug 30th, 2011 at 19:54</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=6100#respond' onclick='return addComment.moveForm("comment-6100", "6100", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-6100', 'comment-6100', 'commentbody-6100', 'comment');">Quote</a> | 
+												<a href="#comment-6100">#76</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-6100">
+					<p>Hi sma, on a factory the callbacks you are looking for are &#8216;clientConnectionLost&#8217; and &#8216;clientConnectionFailed&#8217;.<br />
+The first one is called when a connection is lost after it was connected. The second is called if the attempt to<br />
+connect never succeeded in the first place.</p>
+<p>The &#8216;connectionLost&#8217; callback is actually a callback on the Protocol, which is another place you can handle<br />
+lost connections (but not failed connections, those can only be handled by the factory).</p>
+<p>Make sense?</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+	<li id="comment-7289" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/8587986ff3f11ba5abdc8602859cb254?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-7289" href="http://lcme.ucoz.ru/forum/" rel="external nofollow">
+				
+				Pastafarianist
+									</a>
+								<div class="date">Jan 5th, 2012 at 17:42</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=7289#respond' onclick='return addComment.moveForm("comment-7289", "7289", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-7289', 'comment-7289', 'commentbody-7289', 'comment');">Quote</a> | 
+												<a href="#comment-7289">#77</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-7289">
+					<p>Hi Dave.<br />
+First, thank you for the great job you have done. I believe, every reader of this excellent tutorial deeply appreciates the effort you put into it. *applause*</p>
+<p>If you don&#8217;t mind, I have a couple of questions regarding Twisted in particucular and programming in general. Hope you could answer them <img src='http://krondo.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+<p>Suppose you have a protocol that is almost completely symmetric, i.e. it doesn&#8217;t matter who the server is and who the client is. However, a few cases when this actually matters should be handled. For this purpose one could make two distinct but very similar implementations, subclassing both ClientFactory and ServerFactory, then doing connectTCP on a ClientFactory subclass instance and listenTCP on the ServerFactory subclass instance. But this sounds quite ridiculous, doesn&#8217;t it? So, alternatively, one could subclass the generic Factory class and use it for both serving and being a client. However, here arises a problem I&#8217;ve bumped into recently: how could one tell whether he is accepting a connection or connecting himself from within the connectionMade callback on Factory subclass?</p>
+<p>And there&#8217;s something more generic. Suppose you have a large project that has to handle both the network interaction and (ugly, huh?) a GUI. How would you structure such a project? I&#8217;ve come up with a solution where you have a base object which is in charge for everything and stores references to other objects which are responsible for the specific parts of the program. For instance, you could have a base class called Application and it could store references to classes like NetworkController, GUI, DiskController and so on. (Here I use the words &#8220;class&#8221; and &#8220;object&#8221; interchangeably, hope you&#8217;re not going to find me and make me write &#8220;Class is not an object&#8221; 9001 times for that.) These &#8220;child&#8221; objects, in turn, store references to the Application itself, so whenever a class from the network-responsible part has to reach the GUI to tell it that the bandwidth is exhausted and immediate action has to be taken, it simply calls something like self.app.gui.TellTheUserWeAreScrewed(). However, I believe there exists a better approach but I can&#8217;t just figure out what it is <img src='http://krondo.com/wp-includes/images/smilies/icon_sad.gif' alt=':(' class='wp-smiley' />  Hope you can help me.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-7290" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-7290" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Jan 5th, 2012 at 20:26</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=7290#respond' onclick='return addComment.moveForm("comment-7290", "7290", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-7290', 'comment-7290', 'commentbody-7290', 'comment');">Quote</a> | 
+												<a href="#comment-7290">#78</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-7290">
+					<p>Glad you liked the series! I will address the first question now. The second is much larger <img src='http://krondo.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+<p>I think your alternative solution (subclassing from Factory) will work, but you would need<br />
+to use two instances, one for listening and one for connecting. The instances will need to<br />
+know for which end of the protocol they are creating protocols for. You would provide that<br />
+information when you create them. Make sense?</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-7294" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/8587986ff3f11ba5abdc8602859cb254?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-7294" href="http://lcme.ucoz.ru/forum/" rel="external nofollow">
+				
+				Pastafarianist
+									</a>
+								<div class="date">Jan 6th, 2012 at 08:34</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=7294#respond' onclick='return addComment.moveForm("comment-7294", "7294", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-7294', 'comment-7294', 'commentbody-7294', 'comment');">Quote</a> | 
+												<a href="#comment-7294">#79</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-7294">
+					<p>Absolutely! Thank you for providing the answer so quickly. I&#8217;m so ashamed I didn&#8217;t come with this myself&#8230;</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-7296" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-7296" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Jan 6th, 2012 at 10:13</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=7296#respond' onclick='return addComment.moveForm("comment-7296", "7296", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-7296', 'comment-7296', 'commentbody-7296', 'comment');">Quote</a> | 
+												<a href="#comment-7296">#80</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-7296">
+					<p>Don&#8217;t be, it&#8217;s always a learning process.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+	<li id="comment-7475" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-7475" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Feb 2nd, 2012 at 19:34</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=7475#respond' onclick='return addComment.moveForm("comment-7475", "7475", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-7475', 'comment-7475', 'commentbody-7475', 'comment');">Quote</a> | 
+												<a href="#comment-7475">#81</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-7475">
+					<p>Hey there, so I&#8217;ve been thinking about your second question. It&#8217;s a big question <img src='http://krondo.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' />  It basically turns into the question &#8220;how should you write software&#8221;, since most really useful programs end up getting fairly complicated.</p>
+<p>I don&#8217;t have a real answer to your question, even though I&#8217;ve written a lot of software, some of it ending up kind of big. To me there is a legitimate viewpoint that interprets most of the major innovations in software (functions, modules, classes, types, etc.) as different ways<br />
+to answer this question, basically different strategies for dealing with complexity.</p>
+<p>But here are some general rules of thumb that I think most programmers would agree with:</p>
+<p> + Build your software out of small components and make the interfaces to those components as small as possible.</p>
+<p> + Try to keep the dependencies of any one component small in number.</p>
+<p>Following this strategy will make it easier to test your components and to change them over time.</p>
+<p>Although it is more controversial, I also think there is some value in the idea of <a href="http://en.wikipedia.org/wiki/Dependency_injection" rel="nofollow">Dependency Injection</a>, a pattern where components declare their dependencies rather than explicitly create them. Then, during runtime, the dependencies are &#8216;injected&#8217; by the context, usually some sort of configuration system. This also makes it very easy to, say, substitute a mock component during testing.</p>
+<p>The situation you are describing where you have on big object that all the others depend on is a common one that people end up with, I think. And whether it is good enough for your projects depends on your situation. For smallish programs, I think you can get away with that, as long as you keep that top-level object very simple (basically it&#8217;s just a container of other things without methods of its own and acts kind of like a dependency injection configuration).</p>
+<p>Anyway, good luck on your project, if you haven&#8217;t already finished <img src='http://krondo.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+	<li id="comment-7313" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/f0e86195c5846221082e9eb9744f4809?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-7313" href="http://miseguridadsatelital.com" rel="external nofollow">
+				
+				ricardo il grande
+									</a>
+								<div class="date">Jan 9th, 2012 at 10:23</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=7313#respond' onclick='return addComment.moveForm("comment-7313", "7313", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-7313', 'comment-7313', 'commentbody-7313', 'comment');">Quote</a> | 
+												<a href="#comment-7313">#82</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-7313">
+					<p>Hi Dave, great tutorial.<br />
+ I now have a running twisted daemon working fine and dandy which (listens) receives information over the internet from a number of gsm devices.</p>
+<p>The  problem is that this device&#8217;s ip/port change every so often and when this hapens it leaves the open connection socket listening for more data(not in time wait or finished state)  and creates another socket. eventually the machine runs out of sockets and everything starts to fail.</p>
+<p>So far I have to restart the daemon every now and then to workarround this issue. but that&#8217;s just the lamest solution. and it&#8217;s not even a solution because even if a get a cron job to do it,  when I scale the amount of devices it will become unpractical.</p>
+<p>I tried to set a timeout but since there is not any specific response that the server is waiting for then timeout is never met.</p>
+<p>So, is there a way close sockets aotumatically when they have say 180 seconds idle, or a way to tell the sockets to close after each transmission, or any other solution that I can implement, or something that I should change in my implementation. or anything you can think of that will still work when I have at least 1000 devices transmitting every 90 seconds.</p>
+<p>I am running in a centos 5 server VPS. python 2.4</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-7314" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-7314" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Jan 9th, 2012 at 10:58</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=7314#respond' onclick='return addComment.moveForm("comment-7314", "7314", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-7314', 'comment-7314', 'commentbody-7314', 'comment');">Quote</a> | 
+												<a href="#comment-7314">#83</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-7314">
+					<p>Hi Ricardo, when you say you tried to set a timeout, what do you mean?<br />
+I&#8217;m not sure which timeout setting you were using.</p>
+<p>But in any case, you should be able to do this in a pretty straightforward way.<br />
+In your Protocol implementation you will want to set a timeout each time a<br />
+connection is made (you can do that in the Protocol __init__) and then refresh<br />
+the timeout when any data is received (you can do that in the dataReceived method).</p>
+<p>The timeout itself can be a DelayedCall that you create with reactor.callLater.<br />
+That object has an api that let&#8217;s you reschedule the delay so you can refresh<br />
+the timeout. If the timeout is reached, you will want to call .transport.loseConnection()<br />
+to break the connection.</p>
+<p>Make sense?</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+	<li id="comment-7330" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/f0e86195c5846221082e9eb9744f4809?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-7330" href="http://miseguridadsatelital.com" rel="external nofollow">
+				
+				ricardo il grande
+									</a>
+								<div class="date">Jan 12th, 2012 at 07:36</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=7330#respond' onclick='return addComment.moveForm("comment-7330", "7330", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-7330', 'comment-7330', 'commentbody-7330', 'comment');">Quote</a> | 
+												<a href="#comment-7330">#84</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-7330">
+					<p>it does make sense, let me see if I get this straight,<br />
+Every time I open a new socket i statr a countdown timer (say 120 seconds) and every time I receive data I update the timer (back to 120 seconds) so that if 120 seconde shall pass with no activity whatsoever I close the socket using the loseConnection method.<br />
+sound pretty nifty,<br />
+what I don&#8217;t get is how do I do that.<br />
+what should i do in the protocol init and in the data received , do you have an example?<br />
+Thank you very much for your help.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+	<li id="comment-7331" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/f0e86195c5846221082e9eb9744f4809?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-7331" href="http://miseguridadsatelital.com" rel="external nofollow">
+				
+				ricardo il grande
+									</a>
+								<div class="date">Jan 12th, 2012 at 07:51</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=7331#respond' onclick='return addComment.moveForm("comment-7331", "7331", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-7331', 'comment-7331', 'commentbody-7331', 'comment');">Quote</a> | 
+												<a href="#comment-7331">#85</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-7331">
+					<p>I tried to use a method called connection.timeout but it never worked for me.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-7336" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-7336" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Jan 12th, 2012 at 16:30</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=7336#respond' onclick='return addComment.moveForm("comment-7336", "7336", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-7336', 'comment-7336', 'commentbody-7336', 'comment');">Quote</a> | 
+												<a href="#comment-7336">#86</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-7336">
+					<p>What kind of object is &#8216;connection&#8217;? I&#8217;m not sure what API you are referring to.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+	<li id="comment-7332" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/f0e86195c5846221082e9eb9744f4809?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-7332" href="http://miseguridadsatelital.com" rel="external nofollow">
+				
+				ricardo il grande
+									</a>
+								<div class="date">Jan 12th, 2012 at 08:35</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=7332#respond' onclick='return addComment.moveForm("comment-7332", "7332", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-7332', 'comment-7332', 'commentbody-7332', 'comment');">Quote</a> | 
+												<a href="#comment-7332">#87</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-7332">
+					<p>ok, now if I have 128 sockets in my machine this solution will only allow me 128 clients to be connected in a two minute frame since the devices send data every 90 seconds (roughly). and when i do loose the connection the device has to login again prior to sending data. so it still makes me a bit unconfortable, isn&#8217;t thre a way that many clients can share a socket. or that I could take care of saying 1000 devices even if I only have 128 sockets. or that it can drop a socket whithout droping the connection or without leeting the device know his connectio has been dropped. so that it does&#8217;t feel the need to relogin all the time</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-7335" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-7335" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Jan 12th, 2012 at 16:28</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=7335#respond' onclick='return addComment.moveForm("comment-7335", "7335", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-7335', 'comment-7335', 'commentbody-7335', 'comment');">Quote</a> | 
+												<a href="#comment-7335">#88</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-7335">
+					<p>With TCP connections each connection will use one socket,<br />
+there is no way for two different clients to share the same<br />
+TCP socket.</p>
+<p>Is 128 just a hypothetical number or are you really limited<br />
+to 128 sockets? That seems pretty small.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+	<li id="comment-7333" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/f0e86195c5846221082e9eb9744f4809?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-7333" href="http://miseguridadsatelital.com" rel="external nofollow">
+				
+				ricardo il grande
+									</a>
+								<div class="date">Jan 12th, 2012 at 09:05</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=7333#respond' onclick='return addComment.moveForm("comment-7333", "7333", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-7333', 'comment-7333', 'commentbody-7333', 'comment');">Quote</a> | 
+												<a href="#comment-7333">#89</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-7333">
+					<p>BTW the part of the reactor.callLater that i don&#8217;t get is, how do I update the call later, I thought that i could only make call something later and that&#8217;s it. not that i could keep adjusting the timer, it a wicked idea that opens up many watchdog like possibilities.<br />
+I will check the documentation on the call later api.<br />
+forgive my typos, i need to get a new keyboard soon.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-7334" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-7334" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Jan 12th, 2012 at 16:26</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=7334#respond' onclick='return addComment.moveForm("comment-7334", "7334", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-7334', 'comment-7334', 'commentbody-7334', 'comment');">Quote</a> | 
+												<a href="#comment-7334">#90</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-7334">
+					<p>Hey Ricardo, check out the documentation<br />
+for callLater &#8212; the return value is an IDelayedCall object with an API you can use to adjust the timeout (or cancel the call).</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+	<li id="comment-7340" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/f0e86195c5846221082e9eb9744f4809?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-7340" href="http://miseguridadsatelital.com" rel="external nofollow">
+				
+				ricardo il grande
+									</a>
+								<div class="date">Jan 13th, 2012 at 06:02</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=7340#respond' onclick='return addComment.moveForm("comment-7340", "7340", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-7340', 'comment-7340', 'commentbody-7340', 'comment');">Quote</a> | 
+												<a href="#comment-7340">#91</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-7340">
+					<p>Hey Dave I am using the twisted.internet API<br />
+I did check on the call later, and the only issue would be the one with the sockets, since i am on a virtual private server (shared server) thats all i get and I tried to change the ammount of socketsit by modifiying  /proc/sys/net/core/somaxconn but even as root I am unable to change it.  Likely it only chageable by the administrators.</p>
+<p>Now on the other hand the devices I am listening to areable to speack UDP also,<br />
+Do you in you expert opinion think that it would be a good idea to switch to udp?<br />
+would that allow me to have unlimited clients?<br />
+what is the tradeoff?</p>
+<p>Is there a way for me to drop the socket without letting the device know and the making a new one 90 seconds later when it transmits again, only to drop it right after the package has been received.</p>
+<p>I get 100 Byte packages every 90 seconds from remote devices informating me the current state of a number of variables via gprs/internet.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-7341" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-7341" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Jan 13th, 2012 at 06:21</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=7341#respond' onclick='return addComment.moveForm("comment-7341", "7341", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-7341', 'comment-7341', 'commentbody-7341', 'comment');">Quote</a> | 
+												<a href="#comment-7341">#92</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-7341">
+					<p>Hey Ricardo, if you close a TCP socket, the TCP protocol<br />
+will take care of informing the other side that the connection<br />
+has been dropped. At that point it is up to the client to do<br />
+the right thing and reconnect if needed &#8212; you&#8217;ll have to test<br />
+to see if these devices will do that.</p>
+<p>With a bash shell, the command: &#8216;ulimit -n&#8217; tells you the number<br />
+of open file descriptors (sockets) you can have. You can try to<br />
+increase it with &#8216;ulimit -n XXX&#8217; where &#8216;XXX&#8217; is the number you<br />
+want.</p>
+<p>It sounds like UDP is an option here. It would allow you to have<br />
+essentially unlimited clients since UDP is a connectionless protocol.<br />
+As I am sure you know, UDP does not guarantee delivery. Is it ok if<br />
+sometimes packets are not delivered? If so, UDP could be a nice fit<br />
+for you. Otherwise you would have to implement your own retry<br />
+mechanism under UDP, essentially replicating parts of TCP anyway.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+	<li id="comment-7342" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/f0e86195c5846221082e9eb9744f4809?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-7342" href="http://miseguridadsatelital.com" rel="external nofollow">
+				
+				ricardo il grande
+									</a>
+								<div class="date">Jan 13th, 2012 at 06:40</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=7342#respond' onclick='return addComment.moveForm("comment-7342", "7342", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-7342', 'comment-7342', 'commentbody-7342', 'comment');">Quote</a> | 
+												<a href="#comment-7342">#93</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-7342">
+					<p>they do indeed, but its apin that every time they are first reconnecting, then relogin which is not needed, and then sending a package, then i do loseConnection to free the socket, but i do get the same behavior all over again, and i was expecting  to just get the data package.<br />
+thats because the connection is been closes cleanly, yet if there were a way that I could drop it (not claenly close it) in such a manner that the device wouldn&#8217;t know,  then when it transmits again the reactor.listen on the port  would listen to the incoming package open a socket, process it, and close it again, so that the socket is used only in the time it takes the package to be delivered.<br />
+I did this and i got recursive attempts to login  from the device which were satisfactorily responded from the server.<br />
+that is the device would succesfully login, then the connection lost close the connection and then the device attempts to login again instead of just transmitting the data.</p>
+<p>The devices did what i want them to when I had my first issue which was that the gprs would rotate the ip/port of the device and the device would open another socket when it sended the next data package(not trying to relogin), leaving the other socket in an established state, eventually making the server run out of sockets even when I had only one or two devices.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+<ul class='children'>
+	<li id="comment-7343" class="comment admincomment">
+
+		<div class="info admininfo">
+			<div class="pic"><img alt='' src='http://1.gravatar.com/avatar/fcc237fd34a8e504f7224df0c58cc0b3?s=24&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-7343" href="http://krondo.com" rel="external nofollow">
+				
+				dave
+									</a>
+								<div class="date">Jan 13th, 2012 at 06:57</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=7343#respond' onclick='return addComment.moveForm("comment-7343", "7343", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-7343', 'comment-7343', 'commentbody-7343', 'comment');">Quote</a> | 
+												<a href="#comment-7343">#94</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-7343">
+					<p>I&#8217;m not entirely following you, but there&#8217;s no way to drop a socket without<br />
+closing it &#8212; they mean the same thing.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+</ul>
+</li>
+	<li id="comment-7710" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/067a6e602ab1ed51bacdb0e84fd76942?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-7710" href="http://gps.autoboom-vl.ru" rel="external nofollow">
+				
+				Maxim Bibikov
+									</a>
+								<div class="date">Mar 11th, 2012 at 14:30</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=7710#respond' onclick='return addComment.moveForm("comment-7710", "7710", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-7710', 'comment-7710', 'commentbody-7710', 'comment');">Quote</a> | 
+												<a href="#comment-7710">#95</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-7710">
+					<p>Hi, ricardo. If you still reading this, I&#8217;m doing the same thing with gps/gprs trackers which has mostly the same behaviour. And I found that the &#8216;timeout&#8217; solution is quite appropriate in our situation (I use TCP connections). The only difference is that I don&#8217;t know exactly refresh time interval for each device, so I use some alogirithm to predict timeout value. </p>
+<p>BTW if you have the list of open connectoins where each connection mapped to the gps device (I do), then for every new login request from the device you could consider all old connections already in list is lost, so you could manually &#8216;lose&#8217; them.</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+	<li id="comment-7711" class="comment regularcomment">
+
+		<div class="info regularinfo">
+			<div class="pic"><img alt='' src='http://0.gravatar.com/avatar/067a6e602ab1ed51bacdb0e84fd76942?s=24&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D24&amp;r=G' class='avatar avatar-24 photo' height='24' width='24' /></div>			<div class="author">
+									<a class="authorname" id="commentauthor-7711" href="http://gps.autoboom-vl.ru" rel="external nofollow">
+				
+				Maxim Bibikov
+									</a>
+								<div class="date">Mar 11th, 2012 at 14:36</div>
+			</div>
+			<div class="count">
+															<a class='comment-reply-link' href='/?page_id=1327&#038;replytocom=7711#respond' onclick='return addComment.moveForm("comment-7711", "7711", "respond", "1327")'>Reply</a> | 										<a href="javascript:void(0);" onclick="MGJS_CMT.quote('commentauthor-7711', 'comment-7711', 'commentbody-7711', 'comment');">Quote</a> | 
+												<a href="#comment-7711">#96</a>
+			</div>
+			<div class="fixed"></div>
+		</div>
+
+					<div class="content">
+				
+				<div id="commentbody-7711">
+					<p>Another thing for ricardo &#8211; if you&#8217;re limited in number of simultaneously opened TCP connections, then you could try to close connection after receiving first data packet (which is after login packet). In that case, each next portion of data will be consisting off two packets: login and data</p>
+				</div>
+			</div>
+		
+		<div class="fixed"></div>
+
+</li>
+	</ol>
+
+
+
+	<div id="respond">
+	<form id="commentform" action="http://krondo.com/wp-comments-post.php" method="post">
+
+					<a rel="nofollow" id="cancel-comment-reply-link" href="/?page_id=1327#respond" style="display:none;">Cancel reply</a>		
+		<!-- comment info -->
+					
+			<div id="author_info">
+				<div class="row">
+					<input type="text" name="author" id="author" class="textfield" value="" size="24" tabindex="1" />
+					<label for="author" class="small">Name (required)</label>
+				</div>
+				<div class="row">
+					<input type="text" name="email" id="email" class="textfield" value="" size="24" tabindex="2" />
+					<label for="email" class="small">E-Mail (will not be published) (required)</label>
+				</div>
+				<div class="row">
+					<input type="text" name="url" id="url" class="textfield" value="" size="24" tabindex="3" />
+					<label for="url" class="small">Website</label>
+				</div>
+			</div>
+
+			
+		
+	<!-- comment input -->
+	<div class="row">
+		<textarea name="comment" id="comment" tabindex="4" rows="8" cols="50"></textarea>
+	</div>
+
+	<!-- comment submit and rss -->
+	<div id="submitbox">
+		<a class="feed" href="feed:http://krondo.com/?feed=comments-rss2">Subscribe to comments feed</a>
+		<input name="submit" type="submit" id="submit" class="button" tabindex="5" value="Submit Comment" />
+				<input type="hidden" name="comment_post_ID" value="1327" />
+		<div class="fixed"></div>
+	</div>
+
+			<input type='hidden' name='comment_post_ID' value='1327' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+	
+	<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="84b75bb0ec" /></p><p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;" /> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p><p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;" /> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p>
+	</form>
+	</div>
+
+	
+
+	</div>
+	<!-- main END -->
+
+		
+<!-- sidebar START -->
+<div id="sidebar">
+
+	<!-- showcase -->
+	
+<div class="widget widget_meta"><h3>Meta</h3>			<ul>
+						<li><a href="http://krondo.com/wp-login.php">Log in</a></li>
+			<li><a href="http://krondo.com/?feed=rss2" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://krondo.com/?feed=comments-rss2" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>
+						</ul>
+</div><div class="widget widget_categories"><h3>Categories</h3>		<ul>
+	<li class="cat-item cat-item-6"><a href="http://krondo.com/?cat=6" title="View all posts filed under Blather">Blather</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://krondo.com/?cat=7" title="View all posts filed under Books">Books</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="http://krondo.com/?cat=13" title="Programmer&#039;s Editors">Editors</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="http://krondo.com/?cat=10" title="View all posts filed under Erlang">Erlang</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="http://krondo.com/?cat=3" title="View all posts filed under Music">Music</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="http://krondo.com/?cat=12" title="View all posts filed under Pictures">Pictures</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="http://krondo.com/?cat=8" title="View all posts filed under Programming">Programming</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="http://krondo.com/?cat=9" title="View all posts filed under Python">Python</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://krondo.com/?cat=4" title="View all posts filed under Recordings">Recordings</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://krondo.com/?cat=5" title="View all posts filed under Software">Software</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="http://krondo.com/?cat=1" title="View all posts filed under Uncategorized">Uncategorized</a>
+</li>
+		</ul>
+</div><div class="widget widget_links"><h3>Blogroll</h3>
+	<ul class='xoxo blogroll'>
+<li><a href="http://bethdeitchman.com/blog" rel="spouse sweetheart" title="Beth, an actor. Also, my wife.">bethdeitchman</a></li>
+<li><a href="http://heifer.org">Heifer International</a></li>
+<li><a href="http://www.kiva.org" title="Make your own micro-loans.">Kiva</a></li>
+<li><a href="http://picasaweb.google.com/dave.peticolas" rel="me" title="My Picasa albums">Krondo pictures</a></li>
+<li><a href="https://github.com/jdavisp3" rel="me" title="My Git Repositories">my git repos</a></li>
+<li><a href="http://puttermeister.blogspot.com" title="Amy, a putterer.">Puttermeister</a></li>
+<li><a href="http://nature.org">The Nature Conservancy</a></li>
+<li><a href="http://water.org" title="Charity Water">water.org</a></li>
+<li><a href="http://www.webfaction.com?affiliate=dpeticol" title="Awesome web hosting.">webfaction</a></li>
+
+	</ul>
+</div>
+<div class="widget widget_calendar"><h3>&nbsp;</h3><div id="calendar_wrap"><table id="wp-calendar">
+	<caption>March 2012</caption>
+	<thead>
+	<tr>
+		<th scope="col" title="Monday">M</th>
+		<th scope="col" title="Tuesday">T</th>
+		<th scope="col" title="Wednesday">W</th>
+		<th scope="col" title="Thursday">T</th>
+		<th scope="col" title="Friday">F</th>
+		<th scope="col" title="Saturday">S</th>
+		<th scope="col" title="Sunday">S</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td colspan="3" id="prev"><a href="http://krondo.com/?m=201202" title="View posts for February 2012">&laquo; Feb</a></td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next" class="pad">&nbsp;</td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="3" class="pad">&nbsp;</td><td>1</td><td>2</td><td>3</td><td>4</td>
+	</tr>
+	<tr>
+		<td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td>
+	</tr>
+	<tr>
+		<td>12</td><td>13</td><td>14</td><td><a href="http://krondo.com/?m=20120315" title="And We&#8217;re Back">15</a></td><td id="today">16</td><td>17</td><td>18</td>
+	</tr>
+	<tr>
+		<td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td>
+	</tr>
+	<tr>
+		<td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td>
+		<td class="pad" colspan="1">&nbsp;</td>
+	</tr>
+	</tbody>
+	</table></div></div>
+<!-- Start of Kindle This Widget -->
+<div class="widget widget_kindle_this"><h3>Kindle It!</h3>		<div style="font-style:italic;font-size:.9em;">
+        <form  action="#" method="GET" onsubmit="kpg_kindle_it(this);return false;">
+				<span style="color:red;font-weight:bold" id="kpg_kc_1"></span>
+				<fieldset style="border:thin black solid;padding:2px;"><legend>your kindle email address:</legend>
+				<input style="font-size:.9em;" size="16" name="kindle_email" type="text" value="your-id"/>@free.kindle.com</fieldset>
+				<fieldset style="border:thin black solid;padding:2px;"><legend>Approved E-mail:</legend>
+				<input style="font-size:.9em;" size="16" name="from_email" type="text" value="good@email"/><br/>(Approved E-mail that kindle will accept)
+				</fieldset>
+				<input type="submit" name="kpg_ksub" value="send to kindle"/>
+				<input type="hidden" name="kpg_kindle_count" value="1"/>
+				<input type="hidden" name="kpg_kindle_aurl" value="http://krondo.com/wp-admin/admin-ajax.php"/>
+				<input type="hidden" name="kpg_kindle_nonce" value="a607b85dc9"/>
+				<input type="hidden" name="kpg_kindle_posts" value="a:1:{i:0;i:1327;}"/>
+		</form>		</div>		
+		</div>
+<!-- end of Kindle This Widget -->
+<div class="widget widget_archive"><h3>Archives</h3>		<ul>
+			<li><a href='http://krondo.com/?m=201203' title='March 2012'>March 2012</a>&nbsp;(1)</li>
+	<li><a href='http://krondo.com/?m=201202' title='February 2012'>February 2012</a>&nbsp;(2)</li>
+	<li><a href='http://krondo.com/?m=201201' title='January 2012'>January 2012</a>&nbsp;(4)</li>
+	<li><a href='http://krondo.com/?m=201112' title='December 2011'>December 2011</a>&nbsp;(3)</li>
+	<li><a href='http://krondo.com/?m=201111' title='November 2011'>November 2011</a>&nbsp;(2)</li>
+	<li><a href='http://krondo.com/?m=201110' title='October 2011'>October 2011</a>&nbsp;(3)</li>
+	<li><a href='http://krondo.com/?m=201109' title='September 2011'>September 2011</a>&nbsp;(12)</li>
+	<li><a href='http://krondo.com/?m=201108' title='August 2011'>August 2011</a>&nbsp;(7)</li>
+	<li><a href='http://krondo.com/?m=201107' title='July 2011'>July 2011</a>&nbsp;(10)</li>
+	<li><a href='http://krondo.com/?m=201106' title='June 2011'>June 2011</a>&nbsp;(5)</li>
+	<li><a href='http://krondo.com/?m=201105' title='May 2011'>May 2011</a>&nbsp;(3)</li>
+	<li><a href='http://krondo.com/?m=201104' title='April 2011'>April 2011</a>&nbsp;(16)</li>
+	<li><a href='http://krondo.com/?m=201103' title='March 2011'>March 2011</a>&nbsp;(3)</li>
+	<li><a href='http://krondo.com/?m=201102' title='February 2011'>February 2011</a>&nbsp;(2)</li>
+	<li><a href='http://krondo.com/?m=201101' title='January 2011'>January 2011</a>&nbsp;(6)</li>
+	<li><a href='http://krondo.com/?m=201012' title='December 2010'>December 2010</a>&nbsp;(6)</li>
+	<li><a href='http://krondo.com/?m=201011' title='November 2010'>November 2010</a>&nbsp;(9)</li>
+	<li><a href='http://krondo.com/?m=201010' title='October 2010'>October 2010</a>&nbsp;(6)</li>
+	<li><a href='http://krondo.com/?m=201009' title='September 2010'>September 2010</a>&nbsp;(5)</li>
+	<li><a href='http://krondo.com/?m=201008' title='August 2010'>August 2010</a>&nbsp;(6)</li>
+	<li><a href='http://krondo.com/?m=201007' title='July 2010'>July 2010</a>&nbsp;(6)</li>
+	<li><a href='http://krondo.com/?m=201006' title='June 2010'>June 2010</a>&nbsp;(6)</li>
+	<li><a href='http://krondo.com/?m=201005' title='May 2010'>May 2010</a>&nbsp;(10)</li>
+	<li><a href='http://krondo.com/?m=201004' title='April 2010'>April 2010</a>&nbsp;(8)</li>
+	<li><a href='http://krondo.com/?m=201003' title='March 2010'>March 2010</a>&nbsp;(6)</li>
+	<li><a href='http://krondo.com/?m=201002' title='February 2010'>February 2010</a>&nbsp;(2)</li>
+	<li><a href='http://krondo.com/?m=201001' title='January 2010'>January 2010</a>&nbsp;(8)</li>
+	<li><a href='http://krondo.com/?m=200912' title='December 2009'>December 2009</a>&nbsp;(7)</li>
+	<li><a href='http://krondo.com/?m=200911' title='November 2009'>November 2009</a>&nbsp;(3)</li>
+	<li><a href='http://krondo.com/?m=200910' title='October 2009'>October 2009</a>&nbsp;(4)</li>
+	<li><a href='http://krondo.com/?m=200909' title='September 2009'>September 2009</a>&nbsp;(10)</li>
+	<li><a href='http://krondo.com/?m=200908' title='August 2009'>August 2009</a>&nbsp;(11)</li>
+	<li><a href='http://krondo.com/?m=200907' title='July 2009'>July 2009</a>&nbsp;(5)</li>
+	<li><a href='http://krondo.com/?m=200906' title='June 2009'>June 2009</a>&nbsp;(9)</li>
+	<li><a href='http://krondo.com/?m=200905' title='May 2009'>May 2009</a>&nbsp;(5)</li>
+	<li><a href='http://krondo.com/?m=200904' title='April 2009'>April 2009</a>&nbsp;(13)</li>
+	<li><a href='http://krondo.com/?m=200903' title='March 2009'>March 2009</a>&nbsp;(7)</li>
+	<li><a href='http://krondo.com/?m=200902' title='February 2009'>February 2009</a>&nbsp;(7)</li>
+	<li><a href='http://krondo.com/?m=200901' title='January 2009'>January 2009</a>&nbsp;(3)</li>
+	<li><a href='http://krondo.com/?m=200812' title='December 2008'>December 2008</a>&nbsp;(4)</li>
+	<li><a href='http://krondo.com/?m=200811' title='November 2008'>November 2008</a>&nbsp;(11)</li>
+	<li><a href='http://krondo.com/?m=200810' title='October 2008'>October 2008</a>&nbsp;(5)</li>
+	<li><a href='http://krondo.com/?m=200809' title='September 2008'>September 2008</a>&nbsp;(11)</li>
+	<li><a href='http://krondo.com/?m=200808' title='August 2008'>August 2008</a>&nbsp;(14)</li>
+	<li><a href='http://krondo.com/?m=200807' title='July 2008'>July 2008</a>&nbsp;(5)</li>
+	<li><a href='http://krondo.com/?m=200806' title='June 2008'>June 2008</a>&nbsp;(7)</li>
+	<li><a href='http://krondo.com/?m=200805' title='May 2008'>May 2008</a>&nbsp;(6)</li>
+	<li><a href='http://krondo.com/?m=200804' title='April 2008'>April 2008</a>&nbsp;(6)</li>
+	<li><a href='http://krondo.com/?m=200803' title='March 2008'>March 2008</a>&nbsp;(4)</li>
+	<li><a href='http://krondo.com/?m=200802' title='February 2008'>February 2008</a>&nbsp;(6)</li>
+	<li><a href='http://krondo.com/?m=200801' title='January 2008'>January 2008</a>&nbsp;(3)</li>
+	<li><a href='http://krondo.com/?m=200712' title='December 2007'>December 2007</a>&nbsp;(10)</li>
+	<li><a href='http://krondo.com/?m=200711' title='November 2007'>November 2007</a>&nbsp;(13)</li>
+	<li><a href='http://krondo.com/?m=200710' title='October 2007'>October 2007</a>&nbsp;(9)</li>
+	<li><a href='http://krondo.com/?m=200709' title='September 2007'>September 2007</a>&nbsp;(11)</li>
+	<li><a href='http://krondo.com/?m=200708' title='August 2007'>August 2007</a>&nbsp;(17)</li>
+	<li><a href='http://krondo.com/?m=200707' title='July 2007'>July 2007</a>&nbsp;(15)</li>
+	<li><a href='http://krondo.com/?m=200706' title='June 2007'>June 2007</a>&nbsp;(6)</li>
+	<li><a href='http://krondo.com/?m=200705' title='May 2007'>May 2007</a>&nbsp;(6)</li>
+	<li><a href='http://krondo.com/?m=200704' title='April 2007'>April 2007</a>&nbsp;(11)</li>
+	<li><a href='http://krondo.com/?m=200703' title='March 2007'>March 2007</a>&nbsp;(6)</li>
+	<li><a href='http://krondo.com/?m=200702' title='February 2007'>February 2007</a>&nbsp;(8)</li>
+	<li><a href='http://krondo.com/?m=200701' title='January 2007'>January 2007</a>&nbsp;(10)</li>
+	<li><a href='http://krondo.com/?m=200612' title='December 2006'>December 2006</a>&nbsp;(1)</li>
+	<li><a href='http://krondo.com/?m=200611' title='November 2006'>November 2006</a>&nbsp;(12)</li>
+	<li><a href='http://krondo.com/?m=200610' title='October 2006'>October 2006</a>&nbsp;(11)</li>
+	<li><a href='http://krondo.com/?m=200609' title='September 2006'>September 2006</a>&nbsp;(10)</li>
+	<li><a href='http://krondo.com/?m=200608' title='August 2006'>August 2006</a>&nbsp;(7)</li>
+	<li><a href='http://krondo.com/?m=200607' title='July 2006'>July 2006</a>&nbsp;(7)</li>
+	<li><a href='http://krondo.com/?m=200606' title='June 2006'>June 2006</a>&nbsp;(6)</li>
+	<li><a href='http://krondo.com/?m=200605' title='May 2006'>May 2006</a>&nbsp;(8)</li>
+	<li><a href='http://krondo.com/?m=200604' title='April 2006'>April 2006</a>&nbsp;(6)</li>
+	<li><a href='http://krondo.com/?m=200603' title='March 2006'>March 2006</a>&nbsp;(7)</li>
+	<li><a href='http://krondo.com/?m=200602' title='February 2006'>February 2006</a>&nbsp;(5)</li>
+	<li><a href='http://krondo.com/?m=200601' title='January 2006'>January 2006</a>&nbsp;(3)</li>
+	<li><a href='http://krondo.com/?m=200512' title='December 2005'>December 2005</a>&nbsp;(9)</li>
+	<li><a href='http://krondo.com/?m=200511' title='November 2005'>November 2005</a>&nbsp;(9)</li>
+	<li><a href='http://krondo.com/?m=200510' title='October 2005'>October 2005</a>&nbsp;(12)</li>
+	<li><a href='http://krondo.com/?m=200509' title='September 2005'>September 2005</a>&nbsp;(11)</li>
+	<li><a href='http://krondo.com/?m=200508' title='August 2005'>August 2005</a>&nbsp;(13)</li>
+	<li><a href='http://krondo.com/?m=200507' title='July 2005'>July 2005</a>&nbsp;(10)</li>
+	<li><a href='http://krondo.com/?m=200506' title='June 2005'>June 2005</a>&nbsp;(8)</li>
+	<li><a href='http://krondo.com/?m=200504' title='April 2005'>April 2005</a>&nbsp;(7)</li>
+	<li><a href='http://krondo.com/?m=200502' title='February 2005'>February 2005</a>&nbsp;(3)</li>
+	<li><a href='http://krondo.com/?m=200501' title='January 2005'>January 2005</a>&nbsp;(16)</li>
+	<li><a href='http://krondo.com/?m=200411' title='November 2004'>November 2004</a>&nbsp;(3)</li>
+	<li><a href='http://krondo.com/?m=200410' title='October 2004'>October 2004</a>&nbsp;(2)</li>
+	<li><a href='http://krondo.com/?m=200409' title='September 2004'>September 2004</a>&nbsp;(2)</li>
+	<li><a href='http://krondo.com/?m=200408' title='August 2004'>August 2004</a>&nbsp;(4)</li>
+	<li><a href='http://krondo.com/?m=200407' title='July 2004'>July 2004</a>&nbsp;(6)</li>
+	<li><a href='http://krondo.com/?m=200406' title='June 2004'>June 2004</a>&nbsp;(125)</li>
+	<li><a href='http://krondo.com/?m=200405' title='May 2004'>May 2004</a>&nbsp;(67)</li>
+	<li><a href='http://krondo.com/?m=200404' title='April 2004'>April 2004</a>&nbsp;(20)</li>
+	<li><a href='http://krondo.com/?m=200403' title='March 2004'>March 2004</a>&nbsp;(30)</li>
+	<li><a href='http://krondo.com/?m=200402' title='February 2004'>February 2004</a>&nbsp;(25)</li>
+	<li><a href='http://krondo.com/?m=200311' title='November 2003'>November 2003</a>&nbsp;(10)</li>
+	<li><a href='http://krondo.com/?m=200310' title='October 2003'>October 2003</a>&nbsp;(4)</li>
+	<li><a href='http://krondo.com/?m=200309' title='September 2003'>September 2003</a>&nbsp;(12)</li>
+	<li><a href='http://krondo.com/?m=200308' title='August 2003'>August 2003</a>&nbsp;(12)</li>
+	<li><a href='http://krondo.com/?m=200307' title='July 2003'>July 2003</a>&nbsp;(8)</li>
+	<li><a href='http://krondo.com/?m=200306' title='June 2003'>June 2003</a>&nbsp;(2)</li>
+	<li><a href='http://krondo.com/?m=200305' title='May 2003'>May 2003</a>&nbsp;(1)</li>
+	<li><a href='http://krondo.com/?m=200304' title='April 2003'>April 2003</a>&nbsp;(3)</li>
+	<li><a href='http://krondo.com/?m=200303' title='March 2003'>March 2003</a>&nbsp;(8)</li>
+	<li><a href='http://krondo.com/?m=200302' title='February 2003'>February 2003</a>&nbsp;(16)</li>
+	<li><a href='http://krondo.com/?m=200301' title='January 2003'>January 2003</a>&nbsp;(18)</li>
+	<li><a href='http://krondo.com/?m=200212' title='December 2002'>December 2002</a>&nbsp;(21)</li>
+	<li><a href='http://krondo.com/?m=200211' title='November 2002'>November 2002</a>&nbsp;(39)</li>
+	<li><a href='http://krondo.com/?m=200210' title='October 2002'>October 2002</a>&nbsp;(29)</li>
+	<li><a href='http://krondo.com/?m=200209' title='September 2002'>September 2002</a>&nbsp;(76)</li>
+	<li><a href='http://krondo.com/?m=200208' title='August 2002'>August 2002</a>&nbsp;(40)</li>
+		</ul>
+</div>
+<!-- showcase 2 -->
+
+</div>
+<!-- sidebar END -->
+
+	<div class="fixed"></div>
+
+	<!-- footer START -->
+	<div id="footer">
+		<div id="about">
+			Powered by <a href="http://wordpress.org/">WordPress</a>			 | Theme by <a href="http://www.neoease.com/">NeoEase</a>			 | Valid <a href="http://validator.w3.org/check?uri=referer">XHTML 1.1</a> and <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3">CSS 3</a>		</div>
+		<ul id="admin">
+						<li><a href="http://krondo.com/wp-login.php">Log in</a></li>
+			<li id="gotop"><a href="#" onclick="MGJS.goTop();return false;">TOP</a></li>
+		</ul>
+		<div class="fixed"></div>
+	</div>
+	<!-- footer END -->
+
+</div>
+<!-- content END -->
+
+		</div><!-- container -->
+	</div><!-- wrap -->
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-2581538-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>	
+<!-- START: Syntax Highlighter ComPress -->
+<script type="text/javascript">
+    SyntaxHighlighter.autoloader(
+        'applescript			http://krondo.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushAppleScript.js',
+        'actionscript3 as3		http://krondo.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushAS3.js',
+        'bash shell				http://krondo.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushBash.js',
+        'coldfusion cf			http://krondo.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushColdFusion.js',
+        'cpp c					http://krondo.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushCpp.js',
+        'c# c-sharp csharp		http://krondo.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushCSharp.js',
+        'css					http://krondo.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushCss.js',
+        'delphi pascal pas		http://krondo.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushDelphi.js',
+        'diff patch			    http://krondo.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushDiff.js',
+        'erl erlang				http://krondo.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushErlang.js',
+        'groovy					http://krondo.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushGroovy.js',
+        'java					http://krondo.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushJava.js',
+        'jfx javafx				http://krondo.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushJavaFX.js',
+        'js jscript javascript	http://krondo.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushJScript.js',
+        'perl pl				http://krondo.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushPerl.js',
+        'php					http://krondo.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushPhp.js',
+        'text plain				http://krondo.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushPlain.js',
+        'powershell ps          http://krondo.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushPowerShell.js',
+        'py python				http://krondo.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushPython.js',
+        'ruby rails ror rb		http://krondo.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushRuby.js',
+        'sass scss              http://krondo.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushSass.js',
+        'scala					http://krondo.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushScala.js',
+        'sql					http://krondo.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushSql.js',
+        'vb vbnet				http://krondo.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushVb.js',
+        'xml xhtml xslt html	http://krondo.com/wp-content/plugins/syntax-highlighter-compress/scripts/shBrushXml.js'
+    );
+                        SyntaxHighlighter.defaults['tab-size'] = 4;
+    SyntaxHighlighter.all();
+</script>
+<!-- END: Syntax Highlighter ComPress -->
+
+	<script type='text/javascript' src='http://s.gravatar.com/js/gprofiles.js?aa&#038;ver=3.3.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://krondo.com/wp-content/plugins/jetpack/modules/wpgroho.js?ver=3.3.1'></script>
+	<div style="display:none">
+	<div class="grofile-hash-map-3568a09b905320d61fa53a6b9d072f1a">
+	</div>
+	<div class="grofile-hash-map-0ddef3bc3b79920acd2acf230ef4ea32">
+	</div>
+	<div class="grofile-hash-map-7f1f217ee15c052823a6a614520da593">
+	</div>
+	<div class="grofile-hash-map-f24a441058c3b680623bccead796a923">
+	</div>
+	<div class="grofile-hash-map-104db6ac9406aa777a0525a0c4a5d75e">
+	</div>
+	<div class="grofile-hash-map-fcc237fd34a8e504f7224df0c58cc0b3">
+	</div>
+	<div class="grofile-hash-map-a5e18e5ef36d3a07519213346bdf8d75">
+	</div>
+	<div class="grofile-hash-map-099330cb432231e815d6145f8239115d">
+	</div>
+	<div class="grofile-hash-map-9c412da742a2b98e3bf29dc217cf3a04">
+	</div>
+	<div class="grofile-hash-map-df13d29fbc02d6979b4e6d3a3ccb4e4a">
+	</div>
+	<div class="grofile-hash-map-84b6e4ca9a6e15969649b4728224378b">
+	</div>
+	<div class="grofile-hash-map-17d64a565c6e7b69b94cfebbdedc68af">
+	</div>
+	<div class="grofile-hash-map-47af7ccc79b304ab712dc1389ad1b37c">
+	</div>
+	<div class="grofile-hash-map-b09b880e5a9b67a6623f44dd5b1e3368">
+	</div>
+	<div class="grofile-hash-map-68fcac08bf4369ee4cb9025237b1fdf3">
+	</div>
+	<div class="grofile-hash-map-4ff5b55e4c0a9f9fd41a7f018cc2f4d8">
+	</div>
+	<div class="grofile-hash-map-d04ab2422a8f061608f58708de9bb138">
+	</div>
+	<div class="grofile-hash-map-cc6ba972566344901e32ae16f51d049a">
+	</div>
+	<div class="grofile-hash-map-bd682e8ffbd23fe0394159c3b7d4f219">
+	</div>
+	<div class="grofile-hash-map-45e28461624f3b247dabc293dc909cc5">
+	</div>
+	<div class="grofile-hash-map-14852a1031bd1bb6cdb122b3b7ff73f6">
+	</div>
+	<div class="grofile-hash-map-8515c359f26f93aa861422a5d6e5bf12">
+	</div>
+	<div class="grofile-hash-map-ec44087a71811265e2fef2c1cabc645f">
+	</div>
+	<div class="grofile-hash-map-cbdce3595aa804407d268d0fd3c560f4">
+	</div>
+	<div class="grofile-hash-map-8587986ff3f11ba5abdc8602859cb254">
+	</div>
+	<div class="grofile-hash-map-f0e86195c5846221082e9eb9744f4809">
+	</div>
+	<div class="grofile-hash-map-067a6e602ab1ed51bacdb0e84fd76942">
+	</div>
+	</div>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var thickboxL10n = {"next":"Next >","prev":"< Prev","image":"Image","of":"of","close":"Close","noiframes":"This feature requires inline frames. You have iframes disabled or your browser does not support them.","loadingAnimation":"http:\/\/krondo.com\/wp-includes\/js\/thickbox\/loadingAnimation.gif","closeImage":"http:\/\/krondo.com\/wp-includes\/js\/thickbox\/tb-close.png"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://krondo.com/wp-includes/js/thickbox/thickbox.js?ver=3.1-20111117'></script>
+
+	<script src="http://stats.wordpress.com/e-201211.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	st_go({v:'ext',j:'1:1.2.2',blog:'21035566',post:'1327'});
+	var load_cmc = function(){linktracker_init(21035566,1327,2);};
+	if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+	else load_cmc();
+	</script>
+</body>
+</html>
+
+<!-- Performance optimized by W3 Total Cache. Learn more: http://www.w3-edge.com/wordpress-plugins/
+
+Served from: krondo.com @ 2012-03-16 20:26:59 -->
