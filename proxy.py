@@ -20,6 +20,11 @@ class ProxyClient(proxy.ProxyClient):
 
         proxy.ProxyClient.handleHeader(self, key, value)
 
+    def dataReceived(self, data):
+        if self.delimiter not in data and "\n" in data:
+            data = data.replace("\n", self.delimiter)
+        return proxy.ProxyClient.dataReceived(self, data)
+
 
     def handleResponsePart(self, buffer):
         self.buffer += buffer
