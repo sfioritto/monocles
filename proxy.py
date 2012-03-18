@@ -2,7 +2,7 @@ from twisted.web import proxy, http
 from twisted.internet import reactor
 from readability.readability import Document
 import urllib
-import gzip
+import zlib
 import StringIO
 
 
@@ -15,10 +15,11 @@ class ProxyClient(proxy.ProxyClient):
 
 
     def handleHeader(self, key, value):
-        if key == "Content-Type" and value.startswith("text/html"):
+        if key == "Content-Type" and value.startswith("text"):
             self.text = True
 
         proxy.ProxyClient.handleHeader(self, key, value)
+        
 
     def dataReceived(self, data):
         if self.delimiter not in data and "\n" in data:
@@ -33,12 +34,10 @@ class ProxyClient(proxy.ProxyClient):
     def handleResponseEnd(self):
         
         if not self._finished:
-
-            headers = dict(self.father.requestHeaders.getAllRawHeaders())
-            if headers.has_key("content-encoding") and headers["content-encoding"] == "gzip":
-                sio = StringIO.StringIO(self.buffer)
-                gzipf = gzip.GzipFile(fileobj=sio, mode='r')
-                self.buffer = gzipf.read()
+            if self.father.responseHeaders.hasHeader("content-encoding") and \
+                self.father.responseHeaders.getRawHeaders("content-encoding")[0] == "gzip":
+                import pdb; pdb.set_trace()
+                self.buffer = zlib.decompress(self.buffer)
             if self.text:
                 try:
                     readable_article = Document(self.buffer).summary()
