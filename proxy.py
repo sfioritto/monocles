@@ -61,8 +61,8 @@ class ProxyClient(proxy.ProxyClient):
                     # readability module
                     if len(readable_article) > 250: 
                         markup = readable_article
-                        #todo: probably inspect the charset, don't just assume
-                        # utf-8
+                        #accept-charset was set to only utf-8, so assuming
+                        #the response is encoded as utf-8. we'll see how that works out...
                         markup = markup.encode("utf-8")
                     else:
                         markup = self.buffer
@@ -71,7 +71,6 @@ class ProxyClient(proxy.ProxyClient):
 
             else:
                 markup = self.buffer
-
 
             encodings = self.father.requestHeaders.getRawHeaders("accept-encoding")
             if encodings and "gzip" in encodings[0]:
@@ -95,6 +94,11 @@ class ProxyRequest(proxy.ProxyRequest):
     
     protocols = {'http': ProxyClientFactory}
     ports = {'http': 80 }
+
+    def process(self):
+
+        self.requestHeaders.setRawHeaders("accept-charset", ["utf-8"])
+        return proxy.ProxyRequest.process(self)
     
 
 class Proxy(http.HTTPChannel):
