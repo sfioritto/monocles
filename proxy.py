@@ -1,8 +1,10 @@
 from twisted.web import proxy, http
 from twisted.internet import reactor
 from readability.readability import Document
+from StringIO import StringIO
 import gzip
 import io
+
 
 
 class ProxyClient(proxy.ProxyClient):
@@ -69,7 +71,15 @@ class ProxyClient(proxy.ProxyClient):
 
             else:
                 markup = self.buffer
-                
+
+            if "gzip" in self.father.requestHeaders.getRawHeaders("accept-encoding"):
+                self.father.responseHeaders.setRawHeaders("content-encoding", "gzip")
+                sio = StringIO()
+                gzip.GzipFile(fileobj=sio, mode="wb")
+                gzip.write(markup)
+                gzip.close()
+                markup = sio.getvalue()
+
             self.father.responseHeaders.setRawHeaders("content-length", [len(markup)])
             self.father.write(markup)
             return proxy.ProxyClient.handleResponseEnd(self)
