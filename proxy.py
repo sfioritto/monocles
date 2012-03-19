@@ -72,33 +72,19 @@ class ProxyClient(proxy.ProxyClient):
             else:
                 markup = self.buffer
 
-            if "gzip" in self.father.requestHeaders.getRawHeaders("accept-encoding"):
-                self.father.responseHeaders.setRawHeaders("content-encoding", "gzip")
+
+            encodings = self.father.requestHeaders.getRawHeaders("accept-encoding")
+            if encodings and "gzip" in encodings[0]:
+                self.father.responseHeaders.setRawHeaders("content-encoding", ["gzip"])
                 sio = StringIO()
-                gzip.GzipFile(fileobj=sio, mode="wb")
-                gzip.write(markup)
-                gzip.close()
+                gzf = gzip.GzipFile(fileobj=sio, mode="wb")
+                gzf.write(markup)
+                gzf.close()
                 markup = sio.getvalue()
 
             self.father.responseHeaders.setRawHeaders("content-length", [len(markup)])
             self.father.write(markup)
             return proxy.ProxyClient.handleResponseEnd(self)
-
-
-    def ahandleResponseEnd(self):
-
-        if not self._finished:
-            if self.father.responseHeaders.hasHeader("content-encoding") and \
-                self.father.responseHeaders.getRawHeaders("content-encoding")[0] == "gzip":
-                bi = io.BytesIO(self.buffer)
-                gf = gzip.GzipFile(fileobj=bi, mode="rb")
-                self.buffer = gf.read()
-
-
-            self.father.responseHeaders.setRawHeaders("content-length", [len(markup)])
-            self.father.write(markup)
-            
-            proxy.ProxyClient.handleResponseEnd(self)
 
 
 class ProxyClientFactory(proxy.ProxyClientFactory):
@@ -110,10 +96,6 @@ class ProxyRequest(proxy.ProxyRequest):
     protocols = {'http': ProxyClientFactory}
     ports = {'http': 80 }
     
-    def process(self):
-        self.requestHeaders.removeHeader('accept-encoding')
-        proxy.ProxyRequest.process(self)
-        
 
 class Proxy(http.HTTPChannel):
     requestFactory = ProxyRequest
