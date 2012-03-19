@@ -55,8 +55,12 @@ class ProxyClient(proxy.ProxyClient):
             if self.text:
                 try:
                     readable_article = Document(self.buffer).summary()
-                    if len(readable_article) > 250:
+                    # todo: this is kludge, should be determined in
+                    # readability module
+                    if len(readable_article) > 250: 
                         markup = readable_article
+                        #todo: probably inspect the charset, don't just assume
+                        # utf-8
                         markup = markup.encode("utf-8")
                     else:
                         markup = self.buffer
