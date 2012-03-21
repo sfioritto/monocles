@@ -6,6 +6,18 @@ import gzip
 import io
 
 
+def should_bypass(uri):
+
+    splituri = uri.split("?")
+
+    if len(splituri) > 1:
+        querystring = splituri[1]
+        query = dict([(key, value) for key, value in [tuple(pair.split("=")) for pair in querystring.split("&")]])
+        return query.has_key("bypass")
+    
+    else:
+        return False
+
 
 class ProxyClient(proxy.ProxyClient):
     
@@ -46,6 +58,11 @@ class ProxyClient(proxy.ProxyClient):
     def handleResponseEnd(self):
 
         if not self._finished:
+
+            #skip urls with a special query string
+            if should_bypass(self.father.uri):
+                self.father.write(self.buffer)
+                return proxy.ProxyClient.handleResponseEnd(self)
 
             if self.father.responseHeaders.hasHeader("content-encoding") and \
                 self.father.responseHeaders.getRawHeaders("content-encoding")[0] == "gzip":
