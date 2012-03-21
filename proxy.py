@@ -1,4 +1,5 @@
 from twisted.web import proxy, http
+from twisted.python import log
 from twisted.internet import reactor
 from readability.readability import Document
 from StringIO import StringIO
@@ -68,8 +69,8 @@ class ProxyClient(proxy.ProxyClient):
             if bypass:
                 self.father.write(self.buffer)
                 if log:
-                    #TODO: log right here
-                    pass
+                    log.startLogging(open('/var/log/monocles.log', 'w'))
+
                 return proxy.ProxyClient.handleResponseEnd(self)
 
             if self.father.responseHeaders.hasHeader("content-encoding") and \
