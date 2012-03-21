@@ -5,18 +5,22 @@ from StringIO import StringIO
 import gzip
 import io
 
+#TODO:
+# put a url in the top of the page that includes the bypass url.
+# add logging so you can view your logs later and fix the borked urls
 
 def should_bypass(uri):
 
     splituri = uri.split("?")
 
     if len(splituri) > 1:
+        
         querystring = splituri[1]
-        query = dict([(key, value) for key, value in [tuple(pair.split("=")) for pair in querystring.split("&")]])
-        return query.has_key("bypass")
+        query = dict([tuple(pair.split("=")) for pair in querystring.split("&") if len(pair.split("=")) == 2])
+        return query.has_key("bypass"), query.has_key("loggit")
     
     else:
-        return False
+        return False, False
 
 
 class ProxyClient(proxy.ProxyClient):
@@ -60,8 +64,12 @@ class ProxyClient(proxy.ProxyClient):
         if not self._finished:
 
             #skip urls with a special query string
-            if should_bypass(self.father.uri):
+            bypass, log = should_bypass(self.father.uri)
+            if bypass:
                 self.father.write(self.buffer)
+                if log:
+                    #TODO: log right here
+                    pass
                 return proxy.ProxyClient.handleResponseEnd(self)
 
             if self.father.responseHeaders.hasHeader("content-encoding") and \
