@@ -3,12 +3,20 @@ from twisted.python import log
 from twisted.internet import reactor
 from readability.readability import Document
 from StringIO import StringIO
+from lxml.etree import tounicode
 import gzip
 import io
+import lxml
 
+
+
+log.startLogging(open('/var/log/monocles.log', 'a'), setStdout=False)
 #TODO:
-# put a url in the top of the page that includes the bypass url.
-# add logging so you can view your logs later and fix the borked urls
+# strip logging query strings from URI before sending a request
+# put a url in the top of the page that includes the bypass url and a bypass and loggit option
+# include some basic css so that it's not so damn wide.
+
+
 
 def should_bypass(uri):
 
@@ -39,7 +47,7 @@ class ProxyClient(proxy.ProxyClient):
             self.text = True
 
         proxy.ProxyClient.handleHeader(self, key, value)
-        
+
 
     def dataReceived(self, data):
 
@@ -65,11 +73,11 @@ class ProxyClient(proxy.ProxyClient):
         if not self._finished:
 
             #skip urls with a special query string
-            bypass, log = should_bypass(self.father.uri)
+            bypass, loggit = should_bypass(self.father.uri)
             if bypass:
                 self.father.write(self.buffer)
-                if log:
-                    log.startLogging(open('/var/log/monocles.log', 'w'))
+                if loggit:
+                    log.msg("MONOCLES: %s" % self.father.uri)
 
                 return proxy.ProxyClient.handleResponseEnd(self)
 
@@ -87,9 +95,6 @@ class ProxyClient(proxy.ProxyClient):
                     # readability module
                     if len(readable_article) > 250: 
                         markup = readable_article
-                        #accept-charset was set to only utf-8, so assuming
-                        #the response is encoded as utf-8. we'll see how that works out...
-                        markup = markup.encode("utf-8")
                     else:
                         markup = self.buffer
                 except:
@@ -98,6 +103,15 @@ class ProxyClient(proxy.ProxyClient):
             else:
                 markup = self.buffer
 
+            # todo, trouble shoot this.
+            # What happens when putting something in this broken markup-- will chrome figure it out?
+            # you should also just put in a style tag here to make things look a little nicer.
+            e = lxml.html.document_fromstring(markup)
+            e.body.insert(0, lxml.html.fragment_fromstring('<a href="www.google.com">test</a>'))
+            markup = tounicode(e)
+            #accept-charset was set to only utf-8, so assuming
+            #the response is encoded as utf-8. we'll see how that works out...
+            markup = markup.encode("utf-8")
             encodings = self.father.requestHeaders.getRawHeaders("accept-encoding")
             if encodings and "gzip" in encodings[0]:
                 self.father.responseHeaders.setRawHeaders("content-encoding", ["gzip"])
@@ -106,6 +120,7 @@ class ProxyClient(proxy.ProxyClient):
                 gzf.write(markup)
                 gzf.close()
                 markup = sio.getvalue()
+
 
             self.father.responseHeaders.setRawHeaders("content-length", [len(markup)])
             self.father.write(markup)
