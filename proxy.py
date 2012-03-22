@@ -7,6 +7,8 @@ from lxml.etree import tounicode
 import gzip
 import io
 import lxml
+import urlparse
+import urllib
 
 
 
@@ -95,6 +97,31 @@ class ProxyClient(proxy.ProxyClient):
                     # readability module
                     if len(readable_article) > 250: 
                         markup = readable_article
+                        # TODO: you should also just put in a style tag here to make things look a little nicer.
+                        e = lxml.html.document_fromstring(markup)
+
+                        bypassq = {"bypass" : "true"}
+                        loggitq = {"bypass" : "true",
+                                  "loggit" : "true"}
+                        
+                        url_parts = list(urlparse.urlparse(self.father.uri))
+                        query = dict(urlparse.parse_qsl(url_parts[4]))
+                        
+                        query.update(bypassq)
+                        url_parts[4] = urllib.urlencode(query)
+                        bypass = urlparse.urlunparse(url_parts)
+
+                        query.update(loggitq)
+                        url_parts[4] = urllib.urlencode(query)
+                        loggit = urlparse.urlunparse(url_parts)
+                        
+                        
+                        e.body.insert(0, lxml.html.fragment_fromstring('<p><a href="%s">bypass</a></p>' % bypass))
+                        e.body.insert(0, lxml.html.fragment_fromstring('<p><a href="%s">bypass and log</a></p>' % loggit))
+                        markup = tounicode(e)
+                        #accept-charset was set to only utf-8, so assuming
+                        #the response is encoded as utf-8. we'll see how that works out...
+                        markup = markup.encode("utf-8")
                     else:
                         markup = self.buffer
                 except:
@@ -103,15 +130,7 @@ class ProxyClient(proxy.ProxyClient):
             else:
                 markup = self.buffer
 
-            # todo, trouble shoot this.
-            # What happens when putting something in this broken markup-- will chrome figure it out?
-            # you should also just put in a style tag here to make things look a little nicer.
-            e = lxml.html.document_fromstring(markup)
-            e.body.insert(0, lxml.html.fragment_fromstring('<a href="www.google.com">test</a>'))
-            markup = tounicode(e)
-            #accept-charset was set to only utf-8, so assuming
-            #the response is encoded as utf-8. we'll see how that works out...
-            markup = markup.encode("utf-8")
+
             encodings = self.father.requestHeaders.getRawHeaders("accept-encoding")
             if encodings and "gzip" in encodings[0]:
                 self.father.responseHeaders.setRawHeaders("content-encoding", ["gzip"])
