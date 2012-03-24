@@ -6,11 +6,12 @@ body{
     line-height: 20px;
 }
 
-.story-header{
+.story-header, body h1{
     font-family: verdana, non-serif;
     font-size: 20px;
     color: rgb(80, 80, 80);
     margin: 0px 0px 20px 0px;
+    font-weight: normal;
 }
 
 body, .caption{
@@ -34,3 +35,15 @@ body, .caption{
     font-size: 10px;
 }
 
+body p{
+    margin: 25px 0px;
+}
+
+.mnav p{
+    float: left;
+    margin: 0px 15px 5px 0px;
+}
+
+.clear{
+    clear: both;
+}

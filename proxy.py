@@ -117,9 +117,14 @@ class ProxyClient(proxy.ProxyClient):
                         loggit = urlparse.urlunparse(url_parts)
                         
 
-                        css = open("styles.css").read()
-                        e.body.insert(0, lxml.html.fragment_fromstring('<p><a href="%s">bypass</a></p>' % bypass))
-                        e.body.insert(0, lxml.html.fragment_fromstring('<p><a href="%s">bypass and log</a></p>' % loggit))
+                        with open("styles.css") as styles:
+                            css = styles.read()
+
+                        with open("nav.html") as nhtml:
+                            nav = nhtml.read()
+
+                        e.body.insert(0, lxml.html.fragment_fromstring('<div class="clear"></div>'))
+                        e.body.insert(0, lxml.html.fragment_fromstring(nav % (bypass, loggit)))
                         e.body.insert(0, lxml.html.fragment_fromstring('<style>%s</style>' % css))
 
                         markup = tounicode(e)
@@ -146,6 +151,10 @@ class ProxyClient(proxy.ProxyClient):
 
 
             self.father.responseHeaders.setRawHeaders("content-length", [len(markup)])
+
+            #TODO: turn off after done developing, for now don't ever cache anything.
+            self.father.responseHeaders.removeHeader("cache-control")
+
             self.father.write(markup)
             return proxy.ProxyClient.handleResponseEnd(self)
 
