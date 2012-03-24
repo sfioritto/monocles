@@ -69,6 +69,7 @@ class ProxyClient(proxy.ProxyClient):
     def handleEndHeaders(self):
         # this flag used in dataReceived, this function is in the http client
         self.haveAllHeaders = True;
+        
 
     def handleResponseEnd(self):
 
@@ -115,9 +116,12 @@ class ProxyClient(proxy.ProxyClient):
                         url_parts[4] = urllib.urlencode(query)
                         loggit = urlparse.urlunparse(url_parts)
                         
-                        
+
+                        css = open("styles.css").read()
                         e.body.insert(0, lxml.html.fragment_fromstring('<p><a href="%s">bypass</a></p>' % bypass))
                         e.body.insert(0, lxml.html.fragment_fromstring('<p><a href="%s">bypass and log</a></p>' % loggit))
+                        e.body.insert(0, lxml.html.fragment_fromstring('<style>%s</style>' % css))
+
                         markup = tounicode(e)
                         #accept-charset was set to only utf-8, so assuming
                         #the response is encoded as utf-8. we'll see how that works out...
