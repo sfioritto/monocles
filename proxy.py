@@ -3,11 +3,9 @@ from twisted.python import log
 from twisted.internet import reactor
 from readability.readability import Document
 from StringIO import StringIO
-from lxml.etree import tounicode
-from monocles.lib.proxy import should_bypass, get_bypass_uris
+from monocles.lib.proxy import should_bypass, get_bypass_urls, styled_markup
 import gzip
 import io
-import lxml
 import urlparse
 import urllib
 
@@ -64,6 +62,7 @@ class ProxyClient(proxy.ProxyClient):
 
             #skip urls with a special query string
             bypass, loggit = should_bypass(self.father.uri)
+            
             if bypass:
                 self.father.write(self.buffer)
                 if loggit:
@@ -81,26 +80,13 @@ class ProxyClient(proxy.ProxyClient):
             if self.text:
                 try:
                     readable_article = Document(self.buffer).summary()
-                    # todo: this is kludge, should be determined in
-                    # readability module
+
+                    #todo: better way to determine if you shouldn't try to beautify the document.
                     if len(readable_article) > 250: 
-                        markup = readable_article
-                        # TODO: you should also just put in a style tag here to make things look a little nicer.
-                        e = lxml.html.document_fromstring(markup)
 
                         bypass, loggit = get_bypass_urls(self.father.uri)
+                        markup = styled_markup(readable_article, bypass, loggit)
 
-                        with open("styles.css") as styles:
-                            css = styles.read()
-
-                        with open("nav.html") as nhtml:
-                            nav = nhtml.read()
-
-                        e.body.insert(0, lxml.html.fragment_fromstring('<div class="clear"></div>'))
-                        e.body.insert(0, lxml.html.fragment_fromstring(nav % (bypass, loggit)))
-                        e.body.insert(0, lxml.html.fragment_fromstring('<style>%s</style>' % css))
-
-                        markup = tounicode(e)
                         #accept-charset was set to only utf-8, so assuming
                         #the response is encoded as utf-8. we'll see how that works out...
                         markup = markup.encode("utf-8")

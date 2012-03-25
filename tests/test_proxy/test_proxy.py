@@ -30,6 +30,17 @@ def test_get_bypass_urls():
 
     b, l = proxy.get_bypass_urls(url)
     assert b == bypass
-    print l
     assert l == bypasslog
 
+
+def test_clean_and_add_styles():
+
+    markup = open("tests/test_proxy/data/original.html").read()
+    cleaned = open("tests/test_proxy/data/clean.html").read()
+
+    bypass = "http://www.wired.com/epicenter/2012/03/ff_facebookipo/?bypass=true"
+    loggit = "http://www.wired.com/epicenter/2012/03/ff_facebookipo/?bypass=true&loggit=true"
+    result = proxy.styled_markup(markup, bypass, loggit)
+    result = result.encode("utf-8")
+
+    assert result == cleaned

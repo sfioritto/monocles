@@ -1,5 +1,8 @@
 import urlparse
 import urllib
+import lxml
+from lxml import html
+from lxml.etree import tounicode
 
 def should_bypass(url):
 
@@ -33,3 +36,21 @@ def get_bypass_urls(url):
     loggit = urlparse.urlunparse(url_parts)
 
     return bypass, loggit
+
+
+def styled_markup(orig, bypass, loggit):
+
+    with open("styles.css") as styles:
+        css = styles.read()
+        
+    with open("nav.html") as nhtml:
+        nav = nhtml.read()
+        
+    e = lxml.html.document_fromstring(orig)
+    e.body.insert(0, lxml.html.fragment_fromstring('<div class="clear"></div>'))
+    e.body.insert(0, lxml.html.fragment_fromstring(nav % (bypass, loggit)))
+    e.body.insert(0, lxml.html.fragment_fromstring('<style>%s</style>' % css))
+    
+    markup = tounicode(e)
+    return markup
+
