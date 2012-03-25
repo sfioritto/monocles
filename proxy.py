@@ -4,6 +4,7 @@ from twisted.internet import reactor
 from readability.readability import Document
 from StringIO import StringIO
 from lxml.etree import tounicode
+from monocles.lib.proxy import should_bypass, get_bypass_uris
 import gzip
 import io
 import lxml
@@ -18,20 +19,6 @@ log.startLogging(open('/var/log/monocles.log', 'a'), setStdout=False)
 # put a url in the top of the page that includes the bypass url and a bypass and loggit option
 # include some basic css so that it's not so damn wide.
 
-
-
-def should_bypass(uri):
-
-    splituri = uri.split("?")
-
-    if len(splituri) > 1:
-        
-        querystring = splituri[1]
-        query = dict([tuple(pair.split("=")) for pair in querystring.split("&") if len(pair.split("=")) == 2])
-        return query.has_key("bypass"), query.has_key("loggit")
-    
-    else:
-        return False, False
 
 
 class ProxyClient(proxy.ProxyClient):
@@ -101,21 +88,7 @@ class ProxyClient(proxy.ProxyClient):
                         # TODO: you should also just put in a style tag here to make things look a little nicer.
                         e = lxml.html.document_fromstring(markup)
 
-                        bypassq = {"bypass" : "true"}
-                        loggitq = {"bypass" : "true",
-                                  "loggit" : "true"}
-                        
-                        url_parts = list(urlparse.urlparse(self.father.uri))
-                        query = dict(urlparse.parse_qsl(url_parts[4]))
-                        
-                        query.update(bypassq)
-                        url_parts[4] = urllib.urlencode(query)
-                        bypass = urlparse.urlunparse(url_parts)
-
-                        query.update(loggitq)
-                        url_parts[4] = urllib.urlencode(query)
-                        loggit = urlparse.urlunparse(url_parts)
-                        
+                        bypass, loggit = get_bypass_urls(self.father.uri)
 
                         with open("styles.css") as styles:
                             css = styles.read()
