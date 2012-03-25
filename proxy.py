@@ -3,9 +3,13 @@ from twisted.python import log
 from twisted.internet import reactor
 from readability.readability import Document
 from StringIO import StringIO
-from monocles.lib.proxy import should_bypass, get_bypass_urls, styled_markup
+from monocles.lib.proxy import should_bypass, \
+    get_bypass_urls, \
+    styled_markup, \
+    gunzip, \
+    is_gzipped
+
 import gzip
-import io
 import urlparse
 import urllib
 
@@ -70,17 +74,14 @@ class ProxyClient(proxy.ProxyClient):
 
                 return proxy.ProxyClient.handleResponseEnd(self)
 
-            if self.father.responseHeaders.hasHeader("content-encoding") and \
-                self.father.responseHeaders.getRawHeaders("content-encoding")[0] == "gzip":
+            if is_gzipped(self.father.responseHeaders):
                 self.father.responseHeaders.removeHeader("content-encoding")
-                bi = io.BytesIO(self.buffer)
-                gf = gzip.GzipFile(fileobj=bi, mode="rb")
-                self.buffer = gf.read()
+                self.buffer = gunzip(self.buffer)
+
 
             if self.text:
                 try:
                     readable_article = Document(self.buffer).summary()
-
                     #todo: better way to determine if you shouldn't try to beautify the document.
                     if len(readable_article) > 250: 
 
@@ -112,7 +113,12 @@ class ProxyClient(proxy.ProxyClient):
             self.father.responseHeaders.setRawHeaders("content-length", [len(markup)])
 
             #TODO: turn off after done developing, for now don't ever cache anything.
-            self.father.responseHeaders.removeHeader("cache-control")
+            self.father.responseHeaders.removeHeader("etag")
+            self.father.responseHeaders.setRawHeaders("cache-control", ["no-store",
+                                                                         "no-cache",
+                                                                         "must-revalidate",
+                                                                         "post-check=0",
+                                                                         "pre-check=0"])
 
             self.father.write(markup)
             return proxy.ProxyClient.handleResponseEnd(self)

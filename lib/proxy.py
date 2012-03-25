@@ -1,6 +1,8 @@
 import urlparse
 import urllib
 import lxml
+import gzip
+import io
 from lxml import html
 from lxml.etree import tounicode
 
@@ -53,4 +55,18 @@ def styled_markup(orig, bypass, loggit):
     
     markup = tounicode(e)
     return markup
+
+
+def is_gzipped(headers):
+    """
+    Takes a twisted response header object.
+    """
+    return headers.hasHeader("content-encoding") and \
+        headers.getRawHeaders("content-encoding")[0] == "gzip"
+
+
+def gunzip(buffer):
+    bi = io.BytesIO(buffer)
+    gf = gzip.GzipFile(fileobj=bi, mode="rb")
+    return gf.read()
 
