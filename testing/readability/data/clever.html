@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta http-equiv='Content-Type' content='text/html;charset=utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='YOUR MOM'>
+    <meta name='viewport' content='width=700'>
+    <title>On The Use of Code in Weblog Titles</title>
+    <link rel="icon"            href="http://tomayko.com/favicon.png"         type="image/png">
+    <link rel="home index"      href="http://tomayko.com/"                    type="text/html">
+    <link rel="me author"       href="http://tomayko.com/about"               type="text/html">
+    <link rel="alternate"       href="http://tomayko.com/feed"                type="application/atom+xml" title="Ryan Tomayko">
+    <link rel="alternate"       href="http://tomayko.com/writings/feed"       type="application/atom+xml" title="Just the Writings">
+    <link rel="alternate"       href="http://tomayko.com/linkings/feed"       type="application/atom+xml" title="Just the Linkings">
+    <link rel="alternate"       href="http://tomayko.com/comments/feed"       type="application/atom+xml" title="Comments">
+    <link rel="stylesheet"      href="/css/tomayko.css?1303732276"              type="text/css" media="all">
+    <link rel="stylesheet"      href="/css/small-device.css?1303732276"               type="text/css" media="only screen and (max-width: 480px)">
+    <link rel="openid.server"   href="http://www.myopenid.com/server">
+    <link rel="openid.delegate" href="http://rtomayko.myopenid.com/">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.2.3.js"></script>
+    <script type="text/javascript" src="/js/tomayko.js?1303732276"></script>
+    </head>
+<body>
+  <div id='container'>
+    <div id='header'>
+  <p><a href="/about" rel="me author">Ryan Tomayko</a></p>
+  <h1 id='title'>On The Use of Code in Weblog Titles</h1>
+  <p class='date'>Thursday, March 06, 2008</p>
+</div>
+
+<div id='content' class='entry'>
+
+  <div id='body'><p>So you&rsquo;ve decided to start a weblog and have a really clever idea for titling it based on a snippet of code you find particularly novel. <em>Rad!</em></p>
+
+<p>It&rsquo;s been done before, though; a lot, in fact. And there&rsquo;s a couple of things you should consider before making a decision with such long term implications. Let&rsquo;s take a look at the ins and outs of clever weblog titles and get a feel for what you&rsquo;ll be up against&hellip;</p>
+
+<h3><a href="http://weblog.jamisbuck.org/">Jamis Buck</a>:</h3>
+
+<pre><code>the { buckblogs :here }
+assorted_ramblings.by JamisBuck
+</code></pre>
+
+<p>Both lines are valid Ruby syntax that express no useful semantic. Your clever idea should be more clever.</p>
+
+<h3><a href="http://fishbowl.pastiche.org/">Charles Miller&rsquo;s The Fish Bowl</a></h3>
+
+<pre><code>tail -f /dev/mind &gt; blog
+</code></pre>
+
+<p>This tagline insinuates that Charles&rsquo;s brain is accessible via a special device file (enabled by a kernel module, presumably). <code>tail(1)</code> reads from the end of the device, writing what it finds to <code>stdout</code>. With the <code>-f</code> argument, it runs until interrupted and &ldquo;follows&rdquo; the file, writing anything new as it becomes available. Here, though, <code>stdout</code> is being redirected to a file named &ldquo;blog&rdquo; in the current working directory. We can speculate that &ldquo;blog&rdquo; is actually a fifo node, the read side of which is connected to <code>netcat(1)</code> and is being carted up to pastiche.org where it&rsquo;s <del>piped through a series of <code>sed(1)</code> filters that convert Charles&rsquo;s raw thoughts into standard SQL99 <code>INSERT</code> statements</del>.</p>
+
+<p><strong>UPDATE:</strong> No SQL and no <code>sed(1)</code> filters required. <a href="#comment-70386">It&rsquo;s exactly as I had suspected</a>: Charles&rsquo;s raw thoughts are actually native Perl DBI calls.</p>
+
+<p>If your clever title is hardcore-Unix-hacker type clever, give up now.</p>
+
+<h3><a href="http://onestepback.org/">Jim Weirich</a>:</h3>
+
+<pre><code>{ | one, step, back | }
+</code></pre>
+
+<p>Your clever title should not ignore established coding conventions (spaces around block parameters).</p>
+
+<p><strong>UPDATE:</strong> I figured I&rsquo;d put my money where my mouth is and contribute instead of just whining:</p>
+
+<pre><code>[rtomayko@beandip]$ sendmail &lt;&lt;EOF
+To: jim@weirichhouse.org
+Subject: [PATCH] onestepback.org - coding convention FIX
+
+--- onestepback.org    2008-03-10 05:32:40.000000000 -0400
++++ onestepback.org    2008-03-10 05:32:41.000000000 -0400
+@@ -1 +1 @@
+-{ | one, step, back | }
++{ |one,step,back| }
+EOF
+</code></pre>
+
+<p><a href="http://onestepback.org/index.cgi/Humor/RenameTitle.red">FTW!</a></p>
+
+<h3><a href="http://blog.brightredglow.com/">Brian Ford</a>:</h3>
+
+<pre><code>def euler(x); cos(x) + i*sin(x); end
+</code></pre>
+
+<p>If the cleverness of your title relies on pure mathematical beauty, give up now. It is simply not possible to come up with anything better than <a href="http://en.wikipedia.org/wiki/Euler%27s_formula">Euler&rsquo;s formula</a>. Seriously.</p>
+
+<h3><del><a href="http://blog.hasmanythrough.com/">Josh Susser</a></del></h3>
+
+
+
+
+<pre><del><code>has_many :through</code></del></pre>
+
+
+
+
+<p><del>Your clever title should not be semantically misleading. Josh's title declares that the containing model has a 1:N relationship with a model whose plural form is "Through". It is more likely that the intended semantic was to declare that the containing model had a 1:N relationship with some other model through some other model. For instance, ...</del></p>
+
+
+<p><strong>UPDATE:</strong> <a href="#comment-69734">That didn&rsquo;t go over well.</a> =/</p>
+
+<h3><a href="http://m.onkey.org/">Pratik Naik</a>:</h3>
+
+<pre><code>has_many :bugs, :through =&gt; :rails
+</code></pre>
+
+<p>Admitting the shortcomings of your programming environment in your clever weblog title is highly encouraged.</p>
+
+<h3><a href="http://www.akitaonrails.com/">Fabio Akita</a>:</h3>
+
+<pre><code>%w(Akita On Rails) * 2.0
+</code></pre>
+
+<p>This is valid Ruby code, somehow. The first part creates a three element array (<code>["Akita", "On", "Rails"]</code>). Multiplying this by 2.0 yields <code>["Akita", "On", "Rails", "Akita", "On", "Rails"]</code>. If your clever weblog title isn&rsquo;t feeling clever enough, multiple by the current version of the web.</p>
+
+<h3><a href="http://bob.pythonmac.org/">Bob Ippolito</a>:</h3>
+
+<pre><code>from __future__ import *
+</code></pre>
+
+<p>This might be my favorite use of code in a weblog title. Python has a special <code>__future__</code> module that acts as a sort of staging area for experimental language features that are to be introduced in developing versions of Python. You can get those features in current/stable versions by importing them explicitly by name. Importing everything from <code>__future__</code> is both technically impossible (it raises a <code>SyntaxError</code>) and insanely cool.</p>
+
+<p>If your clever weblog title can top Bob&rsquo;s, you have my official blessing.</p></div>
+
+  <div id='appendix'>
+    <p class='tags'>
+      More on <a rel='tag directory' href='http://tomayko.com/topics/reference'>reference</a> <a rel='tag directory' href='http://tomayko.com/topics/blogging'>blogging</a> <a rel='tag directory' href='http://tomayko.com/topics/unix'>unix</a> <a rel='tag directory' href='http://tomayko.com/topics/funny'>funny</a> <a rel='tag directory' href='http://tomayko.com/topics/ruby'>ruby</a> <a rel='tag directory' href='http://tomayko.com/topics/coding'>coding</a> <a rel='tag directory' href='http://tomayko.com/topics/haha'>haha</a> <a rel='tag directory' href='http://tomayko.com/topics/sarcasm'>sarcasm</a>
+    </p>
+  </div>
+
+  <div id='comments'>
+    <h2>Comments</h2>
+    <ol class='comments'>
+    <li class='comment container' id='comment-69680'>
+        <div class='body'><p>Hehe, nice</p>
+</div>
+        <p class='comment-meta'>
+          &mdash; <span class='commentor'>Nico</span>
+          on Thursday, March 06, 2008 at 11:41 PM
+
+          <a href="#comment-69680" title="Permanent link to this comment">#</a>
+        </p>
+      </li>
+    <li class='comment container' id='comment-69697'>
+        <div class='body'><p>hehe, thanks for linking me :–) though the 2.0 is not for web 2.0 but for Rails 2.0 ;–)</p>
+</div>
+        <p class='comment-meta'>
+          &mdash; <a class='commentor' href='http://www.akitaonrails.com'>AkitaOnRails</a>
+          on Friday, March 07, 2008 at 12:18 AM
+
+          <a href="#comment-69697" title="Permanent link to this comment">#</a>
+        </p>
+      </li>
+    <li class='comment container' id='comment-69702'>
+        <div class='body'><p>Akita:</p>
+
+<p>You’ll have to change it even sooner, then!</p>
+</div>
+        <p class='comment-meta'>
+          &mdash; <a class='commentor' href='http://www.joegrossberg.com'>Joe Grossberg</a>
+          on Friday, March 07, 2008 at 12:36 AM
+
+          <a href="#comment-69702" title="Permanent link to this comment">#</a>
+        </p>
+      </li>
+    <li class='comment container' id='comment-69707'>
+        <div class='body'><p>lol :–) If a 3.0 is released soon, with more great new features, I’ll be glad to change.</p>
+</div>
+        <p class='comment-meta'>
+          &mdash; <a class='commentor' href='http://www.akitaonrails.com'>AkitaOnRails</a>
+          on Friday, March 07, 2008 at 12:39 AM
+
+          <a href="#comment-69707" title="Permanent link to this comment">#</a>
+        </p>
+      </li>
+    <li class='comment container' id='comment-69723'>
+        <div class='body'><p>Hey Ryan,</p>
+
+<p>what about DEV_MEM.dump_to(:blog) ?</p>
+
+<p>:–)</p>
+</div>
+        <p class='comment-meta'>
+          &mdash; <a class='commentor' href='http://blog.mmediasys.com'>Luis Lavena</a>
+          on Friday, March 07, 2008 at 01:17 AM
+
+          <a href="#comment-69723" title="Permanent link to this comment">#</a>
+        </p>
+      </li>
+    <li class='comment container' id='comment-69730'>
+        <div class='body'><p>I once used
+apt-get install knowledge</p>
+</div>
+        <p class='comment-meta'>
+          &mdash; <a class='commentor' href='http://blog.youxu.info'>You Xu</a>
+          on Friday, March 07, 2008 at 01:54 AM
+
+          <a href="#comment-69730" title="Permanent link to this comment">#</a>
+        </p>
+      </li>
+    <li class='comment container' id='comment-69734'>
+        <div class='body'><p>That’s the great thing about inside jokes. Some people get them, the rest don’t. The name of my blog is a very recognizable Rails-ism, and anyone doing Rails development gets it right away. As for long term implications, I’ve never regretted my choice of title. It’s worked well for me, and no one has ever complained about it before now.</p>
+
+<p>What I don’t get is the negative tone of your article. Did you wake up feeling like you had to hate on people for no reason? If you’re shooting for Zed-class notoriety, you’ve got a long way to go.</p>
+</div>
+        <p class='comment-meta'>
+          &mdash; <a class='commentor' href='http://blog.hasmanythrough.com'>josh</a>
+          on Friday, March 07, 2008 at 02:08 AM
+
+          <a href="#comment-69734" title="Permanent link to this comment">#</a>
+        </p>
+      </li>
+    <li class='comment container' id='comment-69758'>
+        <div class='body'><p>I used to have this for my weblog title:</p>
+
+<pre><code>(format nil "Edward ~@R O'Connor" 1450)
+</code></pre>
+
+<p>Common Lisp <a href='http://www.lisp.org/HyperSpec/Body/sec_22-3-2-1.html'>radix format control</a>, <code>~R</code>, takes a <code>@</code> modifier to turn the output into roman numerals. MCDL are my middle initials.</p>
+</div>
+        <p class='comment-meta'>
+          &mdash; <a class='commentor' href='http://edward.oconnor.cx/'>Edward O&#39;Connor</a>
+          on Friday, March 07, 2008 at 03:54 AM
+
+          <a href="#comment-69758" title="Permanent link to this comment">#</a>
+        </p>
+      </li>
+    <li class='comment container' id='comment-69771'>
+        <div class='body'><p>I am dismayed to be left out: my blog is named <a href='http://push.cx'>Push cx</a> because I blew a couple of my formative years hacking in assembly.</p>
+</div>
+        <p class='comment-meta'>
+          &mdash; <a class='commentor' href='http://push.cx'>Peter Harkins</a>
+          on Friday, March 07, 2008 at 04:38 AM
+
+          <a href="#comment-69771" title="Permanent link to this comment">#</a>
+        </p>
+      </li>
+    <li class='comment container' id='comment-69772'>
+        <div class='body'><p>You might not be able to <code>from __future__ import *</code>, but you can certainly: <code>from __future__ import braces</code> in Python. For some reason, I don’t think the BDFL will be implementing them though:</p>
+
+<pre><code>&gt;&gt;&gt; from __future__ import braces
+File "&lt;stdin&gt;", line 1
+SyntaxError: not a chance
+&gt;&gt;&gt;
+</code></pre>
+</div>
+        <p class='comment-meta'>
+          &mdash; <span class='commentor'>Ferry Boender</span>
+          on Friday, March 07, 2008 at 04:44 AM
+
+          <a href="#comment-69772" title="Permanent link to this comment">#</a>
+        </p>
+      </li>
+    <li class='comment container' id='comment-69784'>
+        <div class='body'><p>@Josh:</p>
+
+<p>I didn’t take “Your clever title should not be semantically misleading” as a beat-down, although given that I like your blog, I might be biased into thinking that nobody could possibly have anything bad to say about it.</p>
+
+<p>@Ryan:</p>
+
+<p>I hope you aren’t going to make a habit of pointing it out when people try to be hip but fail. I can’t help but feel my own work would provide you with enough material for a thickish book :–(</p>
+</div>
+        <p class='comment-meta'>
+          &mdash; <a class='commentor' href='http://weblog.raganwald.com'>Reg Braithwaite</a>
+          on Friday, March 07, 2008 at 05:10 AM
+
+          <a href="#comment-69784" title="Permanent link to this comment">#</a>
+        </p>
+      </li>
+    <li class='comment container' id='comment-69795'>
+        <div class='body'><p>mine is called “require ‘brain’” :)</p>
+</div>
+        <p class='comment-meta'>
+          &mdash; <a class='commentor' href='http://szeryf.wordpress.com/'>szeryf</a>
+          on Friday, March 07, 2008 at 05:36 AM
+
+          <a href="#comment-69795" title="Permanent link to this comment">#</a>
+        </p>
+      </li>
+    <li class='comment container' id='comment-69796'>
+        <div class='body'><p>@szeryf:</p>
+
+<p>You ‘require’ something that you don’t have built in :-P</p>
+</div>
+        <p class='comment-meta'>
+          &mdash; <a class='commentor' href='http://blog.mmediasys.com'>Luis Lavena</a>
+          on Friday, March 07, 2008 at 05:40 AM
+
+          <a href="#comment-69796" title="Permanent link to this comment">#</a>
+        </p>
+      </li>
+    <li class='comment container' id='comment-69810'>
+        <div class='body'><p>Reg wrote:</p>
+
+<blockquote><p>I hope you aren’t going to make a habit of pointing it out when people try to be hip but fail. I can’t help but feel my own work would provide you with enough material for a thickish book :–(</p></blockquote>
+
+<p>Not at all. “Lame attempts at hipness” could be the tagline of this blog :) And, for the record, I don’t think “fail” is a word I’d use in any kind of proximity with your blog.</p>
+
+<p>Josh wrote:</p>
+
+<blockquote><p>That’s the great thing about inside jokes. Some people get them, the rest don’t.</p></blockquote>
+
+<p>Clearly.</p>
+</div>
+        <p class='comment-meta'>
+          &mdash; <a class='commentor' href='http://tomayko.com/'>Ryan Tomayko</a>
+          on Friday, March 07, 2008 at 06:22 AM
+
+          <a href="#comment-69810" title="Permanent link to this comment">#</a>
+        </p>
+      </li>
+    <li class='comment container' id='comment-69844'>
+        <div class='body'><p>What do you win by attacking other people?</p>
+</div>
+        <p class='comment-meta'>
+          &mdash; <span class='commentor'>she</span>
+          on Friday, March 07, 2008 at 07:54 AM
+
+          <a href="#comment-69844" title="Permanent link to this comment">#</a>
+        </p>
+      </li>
+    <li class='comment container' id='comment-69849'>
+        <div class='body'><p>brightredglow.com is Brian Ford’s blog, fwiw. Just letting you know since I noticed you have names with all the others. ;~)</p>
+</div>
+        <p class='comment-meta'>
+          &mdash; <a class='commentor' href='http://opposable-thumbs.net'>Thomas</a>
+          on Friday, March 07, 2008 at 08:06 AM
+
+          <a href="#comment-69849" title="Permanent link to this comment">#</a>
+        </p>
+      </li>
+    <li class='comment container' id='comment-69852'>
+        <div class='body'><p>Edited. Thanks Thomas.</p>
+</div>
+        <p class='comment-meta'>
+          &mdash; <a class='commentor' href='http://tomayko.com/'>Ryan Tomayko</a>
+          on Friday, March 07, 2008 at 08:15 AM
+
+          <a href="#comment-69852" title="Permanent link to this comment">#</a>
+        </p>
+      </li>
+    <li class='comment container' id='comment-69855'>
+        <div class='body'><p>People need to grow a pair.</p>
+</div>
+        <p class='comment-meta'>
+          &mdash; <span class='commentor'>Put A. Sockinit</span>
+          on Friday, March 07, 2008 at 08:21 AM
+
+          <a href="#comment-69855" title="Permanent link to this comment">#</a>
+        </p>
+      </li>
+    <li class='comment container' id='comment-69968'>
+        <div class='body'><p>For the Cocoa (er, OPENSTEP?) nerds, there’s always Eri<del>c</del><ins>k</ins> Barzeski’s <a href='http://nslog.com/'>NSLog();</a>.</p>
+</div>
+        <p class='comment-meta'>
+          &mdash; <a class='commentor' href='http://dsandler.org/'>dsandler</a>
+          on Friday, March 07, 2008 at 02:08 PM
+
+          <a href="#comment-69968" title="Permanent link to this comment">#</a>
+        </p>
+      </li>
+    <li class='comment container' id='comment-70386'>
+        <div class='body'><p>Just a quick correction. My blog’s native storage format is Berkeley DB. As such, no SQL is involved in the pipleline.</p>
+
+<p>In truth, I actually <em>think</em> in Perl DBI calls. This may explain some of the more bizarre behaviour of my brain.</p>
+</div>
+        <p class='comment-meta'>
+          &mdash; <a class='commentor' href='http://fishbowl.pastiche.org/'>Charles Miller</a>
+          on Saturday, March 08, 2008 at 07:44 PM
+
+          <a href="#comment-70386" title="Permanent link to this comment">#</a>
+        </p>
+      </li>
+    <li class='comment container' id='comment-70577'>
+        <div class='body'><p>What about to name your company with ruby code? Ask <a href='http://blog.obiefernandez.com/'>Obie</a> and their company: <a href='http://www.hashrocket.com/'>HashRocket</a>.</p>
+</div>
+        <p class='comment-meta'>
+          &mdash; <a class='commentor' href='http://plentz.org'>Diego Pires Plentz</a>
+          on Sunday, March 09, 2008 at 01:23 PM
+
+          <a href="#comment-70577" title="Permanent link to this comment">#</a>
+        </p>
+      </li>
+    <li class='comment container' id='comment-70581'>
+        <div class='body'><p>Ryan, thanks for the code review on my blog title.  Although my blog is currently down as I move it to another server, as soon as I get it up, I plan on revising the title so that it conforms to existing coding standards.</p>
+
+<p>Perhaps I should consider “pair blog naming” in the future to avoid such coding faux pas.</p>
+
+<p>&lt;grin&gt;</p>
+</div>
+        <p class='comment-meta'>
+          &mdash; <a class='commentor' href='http://onestepback.org'>Jim Weirich</a>
+          on Sunday, March 09, 2008 at 01:37 PM
+
+          <a href="#comment-70581" title="Permanent link to this comment">#</a>
+        </p>
+      </li>
+    <li class='comment container' id='comment-70635'>
+        <div class='body'><p>@josh
+Is your comment serious or are you going for some Andy Kaufman shit here?</p>
+
+<p>Ryan’s analyse of blog title pseudo-code is clearly tongue-in-cheek.  He’s celebrating this supreme level of geekiness with a suitably geeky analysis.  It’s meta.  It’s funny.  It may even be ironic.</p>
+
+<p>ps.  Is invoking Zed’s rant the Godwin’s law of the Rails community?
+pps.  Love the blog, whatever you want call it.</p>
+</div>
+        <p class='comment-meta'>
+          &mdash; <span class='commentor'>John</span>
+          on Monday, March 10, 2008 at 07:41 AM
+
+          <a href="#comment-70635" title="Permanent link to this comment">#</a>
+        </p>
+      </li>
+    <li class='comment container' id='comment-72631'>
+        <div class='body'><p>Here’s another one: <a href='http://coderseye.com/about/'>Coder’s Eye</a>
+I like the typo!</p>
+</div>
+        <p class='comment-meta'>
+          &mdash; <span class='commentor'>Anonymous</span>
+          on Sunday, March 23, 2008 at 01:35 PM
+
+          <a href="#comment-72631" title="Permanent link to this comment">#</a>
+        </p>
+      </li>
+    <li class='comment container' id='comment-72703'>
+        <div class='body'><p>Nice! That might be the best one yet:</p>
+
+<pre>page = {name:"page",current=True,author=Bruce Kroeze"}</pre>
+
+
+<p>That looks like some strange mixture of Python (True), JavaScript, and maybe Ruby. I’d bet good money that the most suitable language you can find would produce at least one syntax error.</p>
+</div>
+        <p class='comment-meta'>
+          &mdash; <a class='commentor' href='http://tomayko.com/'>Ryan Tomayko</a>
+          on Monday, March 24, 2008 at 06:05 AM
+
+          <a href="#comment-72703" title="Permanent link to this comment">#</a>
+        </p>
+      </li>
+    <li class='comment container' id='comment-74212'>
+        <div class='body'><p>This is mine. It’s purely because I suck at having <em>actual</em> taglines so I thought I’d just make a lame coding joke.</p>
+
+<pre><code>tail -l 25 /dev/random &gt; /root/blog.txt; ./post !$
+</code></pre>
+
+<p>I was thinking about making my blog output what looks like Ruby code. It’d be nice to see. Whilst Charles thinks in Perl, I think in Ruby all day, even when not at a computer. (A situation that I try to keep rare.)</p>
+</div>
+        <p class='comment-meta'>
+          &mdash; <a class='commentor' href='http://azrael.ismywebsite.com/'>Peter B.</a>
+          on Sunday, April 06, 2008 at 11:48 AM
+
+          <a href="#comment-74212" title="Permanent link to this comment">#</a>
+        </p>
+      </li>
+    <li class='comment container' id='comment-74350'>
+        <div class='body'><p>Well well, Ryan:</p>
+
+<pre><code>&lt;meta http-equiv='X-UA-Compatible' content='YOUR MOM'&gt;
+</code></pre>
+</div>
+        <p class='comment-meta'>
+          &mdash; <a class='commentor' href='http://azrael.ismywebsite.com/'>Peter B.</a>
+          on Monday, April 07, 2008 at 11:15 PM
+
+          <a href="#comment-74350" title="Permanent link to this comment">#</a>
+        </p>
+      </li>
+    <li class='comment container' id='comment-74373'>
+        <div class='body'><p>Ha! Forgot all about that ;) I promised myself I’d leave it in after IE8 finally hit, too, regardless of the consequences.</p>
+</div>
+        <p class='comment-meta'>
+          &mdash; <a class='commentor' href='http://tomayko.com'>Ryan Tomayko</a>
+          on Tuesday, April 08, 2008 at 05:11 AM
+
+          <a href="#comment-74373" title="Permanent link to this comment">#</a>
+        </p>
+      </li>
+    <li class='comment container' id='comment-83457'>
+        <div class='body'><p>the fact that you sent a diff to one of the authors because he didn’t conform to some f-ing coding convention makes you <em>the world’s biggest douche</em></p>
+
+<p>congratulations dick lizzard</p>
+</div>
+        <p class='comment-meta'>
+          &mdash; <span class='commentor'>Fake Ryan Tomayko</span>
+          on Thursday, June 19, 2008 at 05:36 PM
+
+          <a href="#comment-83457" title="Permanent link to this comment">#</a>
+        </p>
+      </li>
+    <li class='comment container' id='comment-93589'>
+        <div class='body'>&lt;script&gt;alert('xx');&lt;/script&gt;
+
+</div>
+        <p class='comment-meta'>
+          &mdash; <span class='commentor'>jimbo</span>
+          on Tuesday, September 02, 2008 at 02:56 AM
+
+          <a href="#comment-93589" title="Permanent link to this comment">#</a>
+        </p>
+      </li>
+    <li class='comment container' id='comment-95477'>
+        <div class='body'><p>haha.. “dick lizzard”</p>
+</div>
+        <p class='comment-meta'>
+          &mdash; <a class='commentor' href='http://greatseth.com'>Seth Thomas Rasmussen</a>
+          on Tuesday, September 16, 2008 at 03:35 PM
+
+          <a href="#comment-95477" title="Permanent link to this comment">#</a>
+        </p>
+      </li>
+    <li class='comment container' id='comment-162661'>
+        <div class='body'></div>
+        <p class='comment-meta'>
+          &mdash; <a class='commentor' href='http://nikond60.blog.ru'>Argunty</a>
+          on Friday, April 03, 2009 at 04:00 PM
+
+          <a href="#comment-162661" title="Permanent link to this comment">#</a>
+        </p>
+      </li>
+    <li class='comment container' id='comment-165053'>
+        <div class='body'><p>emm… informative.</p>
+</div>
+        <p class='comment-meta'>
+          &mdash; <a class='commentor' href='http://www.fotolog.com/untiz'>Argunty</a>
+          on Tuesday, April 07, 2009 at 08:20 AM
+
+          <a href="#comment-165053" title="Permanent link to this comment">#</a>
+        </p>
+      </li>
+    </ol>
+  </div>
+  </div>
+
+
+    <div id='footer'>
+      <p class='rights'>
+        Copyright
+        <a href="http://creativecommons.org/licenses/by-sa/2.5/" rel="license">&copy;</a>
+        2003-2012 by <a rel='me author' href='http://tomayko.com/about'>Ryan Tomayko</a>.
+      </p>
+      <p class='heroku'>
+        Awesomely hosted by <a href='http://heroku.com/'>Heroku</a>.
+      </p>
+    </div>
+  </div>
+  <script src='http://www.google-analytics.com/ga.js' type='text/javascript'></script>
+  <script type="text/javascript">
+  var pageTracker = _gat._getTracker('UA-125803-2');
+  pageTracker._trackPageview();
+  </script>
+  </body>
+</html>
