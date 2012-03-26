@@ -3,6 +3,7 @@ from twisted.python import log
 from twisted.internet import reactor
 from readability.readability import Document
 from StringIO import StringIO
+from boilerpipe.extract import Extractor
 from monocles.lib.proxy import should_bypass, \
     get_bypass_urls, \
     styled_markup, \
@@ -81,7 +82,9 @@ class ProxyClient(proxy.ProxyClient):
 
             if self.text:
                 try:
-                    readable_article = Document(self.buffer).summary()
+#                    readable_article = Document(self.buffer).summary()
+                    extractor = Extractor(extractor='ArticleExtractor', html=self.buffer)
+                    readable_article = extractor.getHTML()
                     #todo: better way to determine if you shouldn't try to beautify the document.
                     if len(readable_article) > 250: 
 
