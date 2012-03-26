@@ -20,17 +20,15 @@ def get_query_values(url):
     return { key: query[key] for key in ["loggit", "bypass", "boilerpipe"] if query.has_key(key)}
 
 
-def get_bypass_urls(url):
+def get_helper_urls(url):
     
     bypassq = {"bypass" : "true"}
     loggitq = {"bypass" : "true",
                "loggit" : "true"}
-    #todo add boilerpipe option here
-    #rename function to reflect this
-    
+    boilerq = {"boilerpipe" : "true"}
     url_parts = list(urlparse.urlparse(url))
-    query = dict(urlparse.parse_qsl(url_parts[4]))
     
+    query = get_query_values(url)
     query.update(bypassq)
     url_parts[4] = urllib.urlencode(query)
     bypass = urlparse.urlunparse(url_parts)
@@ -39,10 +37,14 @@ def get_bypass_urls(url):
     url_parts[4] = urllib.urlencode(query)
     loggit = urlparse.urlunparse(url_parts)
 
-    return bypass, loggit
+    query = get_query_values(url)
+    query.update(boilerq)
+    url_parts[4] = urllib.urlencode(query)
+    boiler = urlparse.urlunparse(url_parts)
+    return bypass, loggit, boiler
 
 
-def styled_markup(orig, bypass, loggit):
+def styled_markup(orig, bypass, loggit, boiler):
 
     with open("styles.css") as styles:
         css = styles.read()
@@ -52,7 +54,7 @@ def styled_markup(orig, bypass, loggit):
         
     e = lxml.html.document_fromstring(orig)
     e.body.insert(0, lxml.html.fragment_fromstring('<div class="clear"></div>'))
-    e.body.insert(0, lxml.html.fragment_fromstring(nav % (bypass, loggit)))
+    e.body.insert(0, lxml.html.fragment_fromstring(nav % (bypass, loggit, boiler)))
     e.body.insert(0, lxml.html.fragment_fromstring('<style>%s</style>' % css))
     
     markup = tounicode(e)

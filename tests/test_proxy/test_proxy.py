@@ -22,15 +22,17 @@ def test_should_bypass():
 
 
 
-def test_get_bypass_urls():
+def test_get_helper_urls():
 
     url = "http://tomayko.com/writings/your-clever-weblog-title"
     bypass = url + "?bypass=true"
     bypasslog = url + "?loggit=true&bypass=true"
+    boilerpipe = url + "?boilerpipe=true"
 
-    b, l = proxy.get_bypass_urls(url)
+    b, l, boiler = proxy.get_helper_urls(url)
     assert b == bypass
     assert l == bypasslog
+    assert boilerpipe == boiler
 
 
 def test_clean_and_add_styles():
@@ -40,7 +42,11 @@ def test_clean_and_add_styles():
 
     bypass = "http://www.wired.com/epicenter/2012/03/ff_facebookipo/?bypass=true"
     loggit = "http://www.wired.com/epicenter/2012/03/ff_facebookipo/?bypass=true&loggit=true"
-    result = proxy.styled_markup(markup, bypass, loggit)
+    boiler = "http://www.wired.com/epicenter/2012/03/ff_facebookipo/?boiler=true"
+    result = proxy.styled_markup(markup, bypass, loggit, boiler)
     result = result.encode("utf-8")
+
+#    with open("tests/test_proxy/data/clean.html", "w") as cleanedf:
+#        cleanedf.write(result)
 
     assert result == cleaned

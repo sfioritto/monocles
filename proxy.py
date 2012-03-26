@@ -5,7 +5,7 @@ from readability.readability import Document
 from StringIO import StringIO
 from boilerpipe.extract import Extractor
 from monocles.lib.proxy import should_bypass, \
-    get_bypass_urls, \
+    get_helper_urls, \
     styled_markup, \
     gunzip, \
     is_gzipped
@@ -88,8 +88,8 @@ class ProxyClient(proxy.ProxyClient):
                     #todo: better way to determine if you shouldn't try to beautify the document.
                     if len(readable_article) > 250: 
 
-                        bypass, loggit = get_bypass_urls(self.father.uri)
-                        markup = styled_markup(readable_article, bypass, loggit)
+                        bypass, loggit, boiler = get_helper_urls(self.father.uri)
+                        markup = styled_markup(readable_article, bypass, loggit, boiler)
 
                         #accept-charset was set to only utf-8, so assuming
                         #the response is encoded as utf-8. we'll see how that works out...
