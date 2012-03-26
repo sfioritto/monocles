@@ -82,9 +82,12 @@ class ProxyClient(proxy.ProxyClient):
 
             if self.text:
                 try:
-#                    readable_article = Document(self.buffer).summary()
-                    extractor = Extractor(extractor='ArticleExtractor', html=self.buffer)
-                    readable_article = extractor.getHTML()
+                    if boiler:
+                        extractor = Extractor(extractor='ArticleExtractor', html=self.buffer)
+                        readable_article = extractor.getHTML()
+                    else:
+                        readable_article = Document(self.buffer).summary()
+                        
                     #todo: better way to determine if you shouldn't try to beautify the document.
                     if len(readable_article) > 250: 
 
@@ -93,6 +96,8 @@ class ProxyClient(proxy.ProxyClient):
 
                         #accept-charset was set to only utf-8, so assuming
                         #the response is encoded as utf-8. we'll see how that works out...
+                        #todo: it didn't work out. sometimes you get no charset and you need to
+                        #default to what the http spec says you should. you'll have to look it up.
                         markup = markup.encode("utf-8")
                     else:
                         markup = self.buffer
