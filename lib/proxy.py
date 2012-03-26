@@ -6,18 +6,18 @@ import io
 from lxml import html
 from lxml.etree import tounicode
 
+
 def should_bypass(url):
 
-    spliturl = url.split("?")
+    query = get_query_values(url)
+    return query.has_key("bypass"), query.has_key("loggit")
 
-    if len(spliturl) > 1:
-        
-        querystring = spliturl[1]
-        query = dict([tuple(pair.split("=")) for pair in querystring.split("&") if len(pair.split("=")) == 2])
-        return query.has_key("bypass"), query.has_key("loggit")
-    
-    else:
-        return False, False
+
+def get_query_values(url):
+
+    parsed = urlparse.urlparse(url)
+    query = dict(urlparse.parse_qsl(parsed.query))
+    return { key: query[key] for key in ["loggit", "bypass", "boilerpipe"] if query.has_key(key)}
 
 
 def get_bypass_urls(url):
@@ -25,6 +25,8 @@ def get_bypass_urls(url):
     bypassq = {"bypass" : "true"}
     loggitq = {"bypass" : "true",
                "loggit" : "true"}
+    #todo add boilerpipe option here
+    #rename function to reflect this
     
     url_parts = list(urlparse.urlparse(url))
     query = dict(urlparse.parse_qsl(url_parts[4]))
