@@ -7,10 +7,10 @@ from lxml import html
 from lxml.etree import tounicode
 
 
-def should_bypass(url):
+def helper_options(url):
 
     query = get_query_values(url)
-    return query.has_key("bypass"), query.has_key("loggit")
+    return query.has_key("bypass"), query.has_key("loggit"), query.has_key("boilerpipe")
 
 
 def get_query_values(url):

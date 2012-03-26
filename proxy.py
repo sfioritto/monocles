@@ -4,7 +4,7 @@ from twisted.internet import reactor
 from readability.readability import Document
 from StringIO import StringIO
 from boilerpipe.extract import Extractor
-from monocles.lib.proxy import should_bypass, \
+from monocles.lib.proxy import helper_options, \
     get_helper_urls, \
     styled_markup, \
     gunzip, \
@@ -66,7 +66,7 @@ class ProxyClient(proxy.ProxyClient):
         if not self._finished:
 
             #skip urls with a special query string
-            bypass, loggit = should_bypass(self.father.uri)
+            bypass, loggit, boiler = helper_options(self.father.uri)
             
             if bypass:
                 self.father.write(self.buffer)

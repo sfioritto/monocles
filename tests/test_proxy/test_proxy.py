@@ -2,23 +2,27 @@ import monocles.lib.proxy as proxy
 from nose.tools import with_setup
 
 
-def test_should_bypass():
+def test_helper_options():
 
     url = "http://tomayko.com/writings/your-clever-weblog-title?bypass=true&loggit=true"
-    bypass, loggit = proxy.should_bypass(url)
-    assert bypass and loggit
+    bypass, loggit, boiler = proxy.helper_options(url)
+    assert bypass and loggit and not boiler
 
     url = "http://tomayko.com/writings/your-clever-weblog-title?bypass=true"
-    bypass, loggit = proxy.should_bypass(url)
-    assert bypass and not loggit
+    bypass, loggit, boiler = proxy.helper_options(url)
+    assert bypass and not loggit and not boiler
 
     url = "http://tomayko.com/writings/your-clever-weblog-title?loggit=true"
-    bypass, loggit = proxy.should_bypass(url)
-    assert not bypass and loggit
+    bypass, loggit, boiler = proxy.helper_options(url)
+    assert not bypass and loggit and not boiler
 
     url = "http://tomayko.com/writings/your-clever-weblog-title"
-    bypass, loggit = proxy.should_bypass(url)
-    assert not bypass and not loggit
+    bypass, loggit, boiler = proxy.helper_options(url)
+    assert not bypass and not loggit and not boiler
+
+    url = "http://tomayko.com/writings/your-clever-weblog-title?boilerpipe=true"
+    bypass, loggit, boiler = proxy.helper_options(url)
+    assert not bypass and not loggit and boiler
 
 
 
