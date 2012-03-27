@@ -8,7 +8,8 @@ from monocles.lib.proxy import helper_options, \
     get_helper_urls, \
     styled_markup, \
     gunzip, \
-    is_gzipped
+    is_gzipped, \
+    should_parse
 
 import gzip
 import urlparse
@@ -35,7 +36,8 @@ class ProxyClient(proxy.ProxyClient):
 
     def handleHeader(self, key, value):
         #TODO: probably don't need to do this, can get headers on self.father
-        if key == "Content-Type" and value.startswith("text"):
+
+        if key == "Content-Type" and should_parse(value.lower()):
             self.text = True
 
         proxy.ProxyClient.handleHeader(self, key, value)

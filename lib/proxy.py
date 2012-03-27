@@ -74,3 +74,12 @@ def gunzip(buffer):
     gf = gzip.GzipFile(fileobj=bi, mode="rb")
     return gf.read()
 
+
+def should_parse(contype):
+
+    contypes = ["text/html", "text/plain"]
+    for ctype in contypes:
+        if contype.startswith(ctype):
+            return True
+    return False
+
