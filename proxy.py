@@ -17,7 +17,7 @@ import urllib
 
 
 
-log.startLogging(open('/var/log/monocles.log', 'a'), setStdout=False)
+log.startLogging(open('monocles.log', 'a'), setStdout=False)
 #TODO:
 # strip logging query strings from URI before sending a request
 # put a url in the top of the page that includes the bypass url and a bypass and loggit option
