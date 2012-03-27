@@ -10,7 +10,11 @@ from lxml.etree import tounicode
 def helper_options(url):
 
     query = get_query_values(url)
-    keys = { key: query[key] for key in ["loggit", "bypass", "boilerpipe"] if query.has_key(key)}
+    keys = {}
+    for key, value in query.items():
+        if key in ["loggit", "bypass", "boilerpipe"]:
+            keys[key] = value
+
     return keys.has_key("bypass"), keys.has_key("loggit"), keys.has_key("boilerpipe")
 
 
