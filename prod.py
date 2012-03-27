@@ -1,7 +1,7 @@
-from twisted.application.internet import TCPClient
+from twisted.application.internet import TCPServer
 from twisted.application.service import Application
 from monocles.proxy import factory
 
 application = Application("monocles")
-service = TCPClient("localhost", 8080, factory)
+service = TCPServer(80, factory)
 service.setServiceParent(application)
