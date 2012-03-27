@@ -1,6 +1,5 @@
 from twisted.web import proxy, http
 from twisted.python import log
-from twisted.internet import reactor
 from readability.readability import Document
 from StringIO import StringIO
 from boilerpipe.extract import Extractor
@@ -155,8 +154,4 @@ class Proxy(http.HTTPChannel):
 
 factory = http.HTTPFactory()
 factory.protocol = Proxy
-
-
-reactor.listenTCP(8080, factory)
-reactor.run()
 
