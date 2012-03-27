@@ -10,14 +10,13 @@ from lxml.etree import tounicode
 def helper_options(url):
 
     query = get_query_values(url)
-    return query.has_key("bypass"), query.has_key("loggit"), query.has_key("boilerpipe")
+    keys = { key: query[key] for key in ["loggit", "bypass", "boilerpipe"] if query.has_key(key)}
+    return keys.has_key("bypass"), keys.has_key("loggit"), keys.has_key("boilerpipe")
 
 
 def get_query_values(url):
-
     parsed = urlparse.urlparse(url)
-    query = dict(urlparse.parse_qsl(parsed.query))
-    return { key: query[key] for key in ["loggit", "bypass", "boilerpipe"] if query.has_key(key)}
+    return dict(urlparse.parse_qsl(parsed.query))
 
 
 def get_helper_urls(url):
@@ -41,6 +40,7 @@ def get_helper_urls(url):
     query.update(boilerq)
     url_parts[4] = urllib.urlencode(query)
     boiler = urlparse.urlunparse(url_parts)
+
     return bypass, loggit, boiler
 
 

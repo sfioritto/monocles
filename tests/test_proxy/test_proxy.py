@@ -28,14 +28,14 @@ def test_helper_options():
 
 def test_get_helper_urls():
 
-    url = "http://tomayko.com/writings/your-clever-weblog-title"
-    bypass = url + "?bypass=true"
-    bypasslog = url + "?loggit=true&bypass=true"
-    boilerpipe = url + "?boilerpipe=true"
+    url = "http://news.ycombinator.com/item?id=3758048"
+    bypass = url + "&bypass=true"
+    bypasslog = url + "&loggit=true&bypass=true"
+    boilerpipe = url + "&boilerpipe=true"
 
     b, l, boiler = proxy.get_helper_urls(url)
     assert b == bypass
-    assert l == bypasslog
+    assert "loggit=true" in bypasslog and "bypass=true" in bypasslog
     assert boilerpipe == boiler
 
 
