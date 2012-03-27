@@ -5,6 +5,7 @@ from monocles.proxy import Proxy
 
 factory = http.HTTPFactory()
 factory.protocol = Proxy
+factory.noisy = False
 
 application = Application("monocles")
 service = TCPServer(80, factory)
