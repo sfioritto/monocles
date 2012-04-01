@@ -120,6 +120,7 @@ class ProxyClient(proxy.ProxyClient):
 
 
             self.father.responseHeaders.setRawHeaders("content-length", [len(markup)])
+            self.father.responseHeaders.setRawHeaders("content-type", ["text/html; charset=utf-8"])
 
             #TODO: turn off after done developing, for now don't ever cache anything.
             self.father.responseHeaders.removeHeader("etag")
@@ -152,6 +153,4 @@ class Proxy(http.HTTPChannel):
     requestFactory = ProxyRequest
 
 
-factory = http.HTTPFactory()
-factory.protocol = Proxy
 
