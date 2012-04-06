@@ -81,7 +81,7 @@ def gunzip(buffer):
 
 def should_parse(contype):
 
-    contypes = ["text/html", "text/plain"]
+    contypes = ["text/html", "application/xhtml+xml"]
     for ctype in contypes:
         if contype.startswith(ctype):
             return True

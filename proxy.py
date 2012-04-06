@@ -102,33 +102,34 @@ class ProxyClient(proxy.ProxyClient):
                         markup = markup.encode("utf-8")
                     else:
                         markup = self.buffer
+
+                    encodings = self.father.requestHeaders.getRawHeaders("accept-encoding")
+                    if encodings and "gzip" in encodings[0]:
+                        self.father.responseHeaders.setRawHeaders("content-encoding", ["gzip"])
+                        sio = StringIO()
+                        gzf = gzip.GzipFile(fileobj=sio, mode="wb")
+                        gzf.write(markup)
+                        gzf.close()
+                        markup = sio.getvalue()
+
+
+                    self.father.responseHeaders.setRawHeaders("content-length", [len(markup)])
+                    self.father.responseHeaders.setRawHeaders("content-type", ["text/html; charset=utf-8"])
+
+                    #TODO: turn off after done developing, for now don't ever cache anything.
+                    self.father.responseHeaders.removeHeader("etag")
+                    self.father.responseHeaders.setRawHeaders("cache-control", ["no-store",
+                                                                                 "no-cache",
+                                                                                 "must-revalidate",
+                                                                                 "post-check=0",
+                                                                                 "pre-check=0"])
+
                 except:
                     markup = self.buffer
 
             else:
                 markup = self.buffer
 
-
-            encodings = self.father.requestHeaders.getRawHeaders("accept-encoding")
-            if encodings and "gzip" in encodings[0]:
-                self.father.responseHeaders.setRawHeaders("content-encoding", ["gzip"])
-                sio = StringIO()
-                gzf = gzip.GzipFile(fileobj=sio, mode="wb")
-                gzf.write(markup)
-                gzf.close()
-                markup = sio.getvalue()
-
-
-            self.father.responseHeaders.setRawHeaders("content-length", [len(markup)])
-            self.father.responseHeaders.setRawHeaders("content-type", ["text/html; charset=utf-8"])
-
-            #TODO: turn off after done developing, for now don't ever cache anything.
-            self.father.responseHeaders.removeHeader("etag")
-            self.father.responseHeaders.setRawHeaders("cache-control", ["no-store",
-                                                                         "no-cache",
-                                                                         "must-revalidate",
-                                                                         "post-check=0",
-                                                                         "pre-check=0"])
 
             self.father.write(markup)
             return proxy.ProxyClient.handleResponseEnd(self)
