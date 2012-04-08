@@ -7,21 +7,6 @@ from lxml import html
 from lxml.etree import tounicode
 
 
-def helper_options(url):
-
-    query = get_query_values(url)
-    keys = {}
-    for key, value in query.items():
-        if key in ["loggit", "bypass", "boilerpipe"]:
-            keys[key] = value
-
-    return keys.has_key("bypass"), keys.has_key("loggit"), keys.has_key("boilerpipe")
-
-
-def get_query_values(url):
-    parsed = urlparse.urlparse(url)
-    return dict(urlparse.parse_qsl(parsed.query))
-
 
 def get_helper_urls(url):
     

@@ -1,10 +1,10 @@
+from monocles.lib.extract import Resource
 from twisted.web import proxy, http
 from twisted.python import log
 from readability.readability import Document
 from StringIO import StringIO
 from boilerpipe.extract import Extractor
-from monocles.lib.proxy import helper_options, \
-    get_helper_urls, \
+from monocles.lib.proxy import get_helper_urls, \
     styled_markup, \
     gunzip, \
     is_gzipped, \
@@ -56,9 +56,11 @@ class ProxyClient(proxy.ProxyClient):
 
         if not self._finished:
 
-            #skip urls with a special query string
-            bypass, loggit, boiler = helper_options(self.father.uri)
-            if bypass:
+
+            import pdb; pdb.set_trace()
+            resource = Resource(self.buffer, self.father.uri)
+            
+            if resource.should_bypass():
                 self.father.write(self.buffer)
                 if loggit:
                     log.msg("MONOCLES: %s" % self.father.uri)
@@ -66,7 +68,8 @@ class ProxyClient(proxy.ProxyClient):
                 return proxy.ProxyClient.handleResponseEnd(self)
                 
 
-            if should_parse(ctype.lower())
+            ctype = self.father.responseHeaders.getRawHeaders("content-type")
+            if should_parse(ctype.lower()):
 
                 if is_gzipped(self.father.responseHeaders):
                     self.father.responseHeaders.removeHeader("content-encoding")
