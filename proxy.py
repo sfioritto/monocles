@@ -4,7 +4,8 @@ from twisted.python import log
 
 from monocles.lib.proxy import gunzip, \
     is_gzipped, \
-    accepts_gzipped
+    accepts_gzipped, \
+    gzip
 
 
 log.startLogging(open('monocles.log', 'a'), setStdout=False)

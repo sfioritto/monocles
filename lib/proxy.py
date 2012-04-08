@@ -1,4 +1,5 @@
-import gzip
+import io
+import gzip as gziplib
 from StringIO import StringIO
 
 def accepts_gzipped(encodings):
@@ -14,15 +15,16 @@ def is_gzipped(headers):
 
 
 def gunzip(buffer):
+
     bi = io.BytesIO(buffer)
-    gf = gzip.GzipFile(fileobj=bi, mode="rb")
+    gf = gziplib.GzipFile(fileobj=bi, mode="rb")
     return gf.read()
 
 
 def gzip(markup):
 
     sio = StringIO()
-    gzf = gzip.GzipFile(fileobj=sio, mode="wb")
+    gzf = gziplib.GzipFile(fileobj=sio, mode="wb")
     gzf.write(markup)
     gzf.close()
     return sio.getvalue()
