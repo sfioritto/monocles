@@ -2,6 +2,18 @@ import io
 import gzip as gziplib
 from StringIO import StringIO
 
+
+def should_parse(father):
+    
+    ctype = father.responseHeaders.getRawHeaders("content-type")[0]
+    contypes = ["text/html", "application/xhtml+xml"]
+    for ctype in contypes:
+        if contype.startswith(ctype):
+            return True
+    return False
+
+
+
 def accepts_gzipped(encodings):
 
     return encodings and "gzip" in encodings[0]

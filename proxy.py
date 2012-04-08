@@ -1,11 +1,12 @@
-from monocles.lib.extract import Resource, should_parse
+from monocles.lib.extract import Resource
 from twisted.web import proxy, http
 from twisted.python import log
 
 from monocles.lib.proxy import gunzip, \
     is_gzipped, \
     accepts_gzipped, \
-    gzip
+    gzip, \
+    should_parse
 
 
 log.startLogging(open('monocles.log', 'a'), setStdout=False)
@@ -48,8 +49,7 @@ class ProxyClient(proxy.ProxyClient):
 
         if not self._finished:
 
-            ctype = self.father.responseHeaders.getRawHeaders("content-type")[0]
-            if should_parse(ctype.lower()):
+            if should_parse(self.father):
 
                 if is_gzipped(self.father.responseHeaders):
                     self.father.responseHeaders.removeHeader("content-encoding")
