@@ -1,17 +1,10 @@
-from monocles.lib.extract import Resource
+from monocles.lib.extract import Resource, should_parse
 from twisted.web import proxy, http
 from twisted.python import log
-from StringIO import StringIO
-from monocles.lib.proxy import get_helper_urls, \
-    styled_markup, \
-    gunzip, \
+
+from monocles.lib.proxy import gunzip, \
     is_gzipped, \
-    should_parse
-
-import gzip
-import urlparse
-import urllib
-
+    accepts_gzipped
 
 
 log.startLogging(open('monocles.log', 'a'), setStdout=False)
@@ -54,16 +47,6 @@ class ProxyClient(proxy.ProxyClient):
 
         if not self._finished:
 
-            resource = Resource(self.buffer, self.father.uri)
-            
-            if resource.should_bypass():
-                self.father.write(self.buffer)
-                if loggit:
-                    log.msg("MONOCLES: %s" % self.father.uri)
-
-                return proxy.ProxyClient.handleResponseEnd(self)
-                
-
             ctype = self.father.responseHeaders.getRawHeaders("content-type")[0]
             if should_parse(ctype.lower()):
 
@@ -71,18 +54,22 @@ class ProxyClient(proxy.ProxyClient):
                     self.father.responseHeaders.removeHeader("content-encoding")
                     self.buffer = gunzip(self.buffer)
 
-                resource.set_content(self.buffer)
-                markup = resource.markup
+                resource = Resource(self.buffer, self.father.uri)
+
                 
-                #todo: write a gzipit function
+                if resource.should_bypass():
+                    self.father.write(self.buffer)
+                    if loggit:
+                        log.msg("MONOCLES: %s" % self.father.uri)
+
+                    return proxy.ProxyClient.handleResponseEnd(self)
+
+                markup = resource.article
+                
                 encodings = self.father.requestHeaders.getRawHeaders("accept-encoding")
-                if encodings and "gzip" in encodings[0]:
+                if accepts_gzipped(encodings):
                     self.father.responseHeaders.setRawHeaders("content-encoding", ["gzip"])
-                    sio = StringIO()
-                    gzf = gzip.GzipFile(fileobj=sio, mode="wb")
-                    gzf.write(markup)
-                    gzf.close()
-                    markup = sio.getvalue()
+                    markup = gzip(markup)
 
 
                 self.father.responseHeaders.setRawHeaders("content-length", [len(markup)])

@@ -1,54 +1,9 @@
-import urlparse
-import urllib
-import lxml
 import gzip
-import io
-from lxml import html
-from lxml.etree import tounicode
+from StringIO import StringIO
 
+def accepts_gzipped(encodings):
 
-
-def get_helper_urls(url):
-    
-    bypassq = {"bypass" : "true"}
-    loggitq = {"bypass" : "true",
-               "loggit" : "true"}
-    boilerq = {"boilerpipe" : "true"}
-    url_parts = list(urlparse.urlparse(url))
-    
-    query = get_query_values(url)
-    query.update(bypassq)
-    url_parts[4] = urllib.urlencode(query)
-    bypass = urlparse.urlunparse(url_parts)
-    
-    query.update(loggitq)
-    url_parts[4] = urllib.urlencode(query)
-    loggit = urlparse.urlunparse(url_parts)
-
-    query = get_query_values(url)
-    query.update(boilerq)
-    url_parts[4] = urllib.urlencode(query)
-    boiler = urlparse.urlunparse(url_parts)
-
-    return bypass, loggit, boiler
-
-
-def styled_markup(orig, bypass, loggit, boiler):
-
-    with open("styles.css") as styles:
-        css = styles.read()
-        
-    with open("nav.html") as nhtml:
-        nav = nhtml.read()
-        
-    e = lxml.html.document_fromstring(orig)
-    e.body.insert(0, lxml.html.fragment_fromstring('<div class="clear"></div>'))
-    e.body.insert(0, lxml.html.fragment_fromstring(nav % (bypass, loggit, boiler)))
-    e.body.insert(0, lxml.html.fragment_fromstring('<style>%s</style>' % css))
-    
-    markup = tounicode(e)
-    return markup
-
+    return encodings and "gzip" in encodings[0]
 
 def is_gzipped(headers):
     """
@@ -64,11 +19,12 @@ def gunzip(buffer):
     return gf.read()
 
 
-def should_parse(contype):
+def gzip(markup):
 
-    contypes = ["text/html", "application/xhtml+xml"]
-    for ctype in contypes:
-        if contype.startswith(ctype):
-            return True
-    return False
+    sio = StringIO()
+    gzf = gzip.GzipFile(fileobj=sio, mode="wb")
+    gzf.write(markup)
+    gzf.close()
+    return sio.getvalue()
+    
 
