@@ -1,9 +1,7 @@
 from monocles.lib.extract import Resource
 from twisted.web import proxy, http
 from twisted.python import log
-from readability.readability import Document
 from StringIO import StringIO
-from boilerpipe.extract import Extractor
 from monocles.lib.proxy import get_helper_urls, \
     styled_markup, \
     gunzip, \
@@ -56,8 +54,6 @@ class ProxyClient(proxy.ProxyClient):
 
         if not self._finished:
 
-
-            import pdb; pdb.set_trace()
             resource = Resource(self.buffer, self.father.uri)
             
             if resource.should_bypass():
@@ -68,28 +64,16 @@ class ProxyClient(proxy.ProxyClient):
                 return proxy.ProxyClient.handleResponseEnd(self)
                 
 
-            ctype = self.father.responseHeaders.getRawHeaders("content-type")
+            ctype = self.father.responseHeaders.getRawHeaders("content-type")[0]
             if should_parse(ctype.lower()):
 
                 if is_gzipped(self.father.responseHeaders):
                     self.father.responseHeaders.removeHeader("content-encoding")
                     self.buffer = gunzip(self.buffer)
 
-                try:
-                    if boiler:
-                        extractor = Extractor(extractor='ArticleExtractor', html=self.buffer)
-                        readable_article = extractor.getHTML()
-                    else:
-                        readable_article = Document(self.buffer).summary()
-                    markup = styled_markup(readable_article, bypass, loggit, boiler)
-                except:
-                    markup = self.buffer
-
-
-                #todo: write an "encode" function, pass it the charset header (so content-type)
-                markup = markup.encode("utf-8")
-
-
+                resource.set_content(self.buffer)
+                markup = resource.markup
+                
                 #todo: write a gzipit function
                 encodings = self.father.requestHeaders.getRawHeaders("accept-encoding")
                 if encodings and "gzip" in encodings[0]:
