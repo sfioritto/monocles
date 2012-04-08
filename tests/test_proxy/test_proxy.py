@@ -48,7 +48,7 @@ def test_clean_and_add_styles():
     bypass = "http://www.wired.com/epicenter/2012/03/ff_facebookipo/?bypass=true"
     loggit = "http://www.wired.com/epicenter/2012/03/ff_facebookipo/?bypass=true&loggit=true"
     boiler = "http://www.wired.com/epicenter/2012/03/ff_facebookipo/?boiler=true"
-    result = proxy.styled_markup(markup, bypass, loggit, boiler)
+    result = extract.styled_markup(markup, bypass, loggit, boiler)
     result = result.encode("utf-8")
 
 #    with open("tests/test_proxy/data/clean.html", "w") as cleanedf:
