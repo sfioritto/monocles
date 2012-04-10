@@ -84,10 +84,9 @@ class Resource(object):
         try:
             if self.boiler:
                 extractor = Extractor(extractor='ArticleExtractor', html=self.content)
-                readable_article = extractor.getHTML()
+                markup = extractor.getHTML()
             else:
-                readable_article = Document(self.content).summary()
-                markup = readable_article
+                markup = Document(self.content).summary()
         except:
             markup = self.content
 
