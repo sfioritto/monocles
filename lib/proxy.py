@@ -7,7 +7,13 @@ from StringIO import StringIO
 def should_parse(father):
 
     ctype = father.responseHeaders.getRawHeaders("content-type")[0]
-    return not_homepage(father.uri) and valid_content_type(ctype) and not_on_blacklist(father.uri)
+    if not_homepage(father.uri) and \
+        valid_content_type(ctype) and \
+        not_on_blacklist(father.uri) and \
+        father.method == "GET":
+        return True
+    else:
+        return False
 
 
 def not_homepage(uri):
@@ -28,12 +34,14 @@ def not_on_blacklist(uri):
     blacklist = ["www.facebook.com",
                  "news.ycombinator.com",
                  "www.google.com",
-                 "en.wikipedia.org"]
+                 "en.wikipedia.org",
+                 "adserver.adtechus.com"]
     return parsed.netloc not in blacklist
 
-def accepts_gzipped(encodings):
 
+def accepts_gzipped(encodings):
     return encodings and "gzip" in encodings[0]
+
 
 def is_gzipped(headers):
     """
