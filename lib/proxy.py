@@ -37,7 +37,8 @@ def not_on_blacklist(uri):
                  "en.wikipedia.org",
                  "adserver.adtechus.com",
                  "www.instapaper.com",
-                 "www.redfin.com"]
+                 "www.redfin.com",
+                 "code.google.com"]
     return parsed.netloc not in blacklist
 
 
