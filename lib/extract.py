@@ -7,14 +7,15 @@ from lxml import html
 from lxml.etree import tounicode
 
 
-def styled_markup(orig, bypass, loggit, boiler):
+def styled_markup(orig, uri):
 
     with open("styles.css") as styles:
         css = styles.read()
         
     with open("nav.html") as nhtml:
         nav = nhtml.read()
-        
+
+    bypass, loggit, boiler = get_helper_urls(uri)
     e = lxml.html.document_fromstring(orig)
     e.body.insert(0, lxml.html.fragment_fromstring('<div class="clear"></div>'))
     e.body.insert(0, lxml.html.fragment_fromstring(nav % (bypass, loggit, boiler)))
@@ -97,7 +98,7 @@ class Resource(object):
     @property
     def article(self):
 
-        markup = styled_markup(self.markup, self.bypass, self.loggit, self.boiler)
+        markup = styled_markup(self.markup, self.uri)
         
         #todo: write an "encode" function, pass it the charset header (so content-type)
         markup = markup.encode("utf-8")
