@@ -22,14 +22,14 @@ class ProxyClient(proxy.ProxyClient):
     def __init__(self, *args, **kwargs):
         proxy.ProxyClient.__init__(self, *args, **kwargs)
         self.buffer = ""
-        self.haveAllHeaders = False
+        self.haveallheaders = False
+        self.shouldparse = False
 
 
     def dataReceived(self, data):
-
         #This is basically for hacker news which doesn't put
         #crlf at the end of headers
-        if not self.haveAllHeaders:
+        if not self.haveallheaders:
             if self.delimiter not in data and "\n" in data:
                 data = data.replace("\n", self.delimiter)
                 
@@ -37,7 +37,8 @@ class ProxyClient(proxy.ProxyClient):
 
 
     def handleResponsePart(self, data):
-        if should_parse(self.father):
+
+        if self.shouldparse:
             self.buffer = self.buffer + data
         else:
             return proxy.ProxyClient.handleResponsePart(self, data)
@@ -45,7 +46,8 @@ class ProxyClient(proxy.ProxyClient):
 
     def handleEndHeaders(self):
         # this flag used in dataReceived, this function is in the http client
-        self.haveAllHeaders = True;
+        self.haveallheaders = True;
+        self.shouldparse = should_parse(self.father)
         
 
     def handleResponseEnd(self):
