@@ -6,14 +6,23 @@ from StringIO import StringIO
 
 def should_parse(father):
 
-    ctype = father.responseHeaders.getRawHeaders("content-type")[0]
+    
+    ctype = get_ctype(father.responseHeaders.getRawHeaders("content-type"))
     if not_homepage(father.uri) and \
+        father.code == 200 and \
         valid_content_type(ctype) and \
         not_on_blacklist(father.uri) and \
         father.method == "GET":
         return True
     else:
         return False
+
+def get_ctype(typeheader):
+
+    if typeheader:
+        return typeheader[0]
+    else:
+        return None
 
 
 def not_homepage(uri):
@@ -39,7 +48,9 @@ def not_on_blacklist(uri):
                  "www.instapaper.com",
                  "www.redfin.com",
                  "code.google.com",
-                 "www.quora.com"]
+                 "www.quora.com",
+                 "www.youtube.com",
+                 "vimeo.com"]
     return parsed.netloc not in blacklist
 
 

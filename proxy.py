@@ -37,7 +37,10 @@ class ProxyClient(proxy.ProxyClient):
 
 
     def handleResponsePart(self, data):
-        self.buffer = self.buffer + data
+        if should_parse(self.father):
+            self.buffer = self.buffer + data
+        else:
+            return proxy.ProxyClient.handleResponsePart(self, data)
 
 
     def handleEndHeaders(self):
