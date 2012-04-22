@@ -45,12 +45,8 @@ def get_query_values(url):
 def helper_options(url):
 
     query = get_query_values(url)
-    keys = {}
-    for key, value in query.items():
-        if key in ["loggit", "bypass", "boilerpipe"]:
-            keys[key] = value
+    return "bypass" in query.keys()
 
-    return keys.has_key("bypass"), keys.has_key("loggit"), keys.has_key("boilerpipe")
 
 
 class Resource(object):
@@ -58,7 +54,7 @@ class Resource(object):
     def __init__(self, content, uri):
         self.content = content
         self.uri = uri
-        self.bypass, self.loggit, self.boiler = helper_options(uri)
+        self.bypass = helper_options(uri)
 
 
     def set_content(self, content):
@@ -89,8 +85,7 @@ class Resource(object):
 
     def should_bypass(self):
         #skip urls with a special query string
-        bypass, loggit, boiler = helper_options(self.uri)
-        return bypass
+        return self.bypass
  
 
     
