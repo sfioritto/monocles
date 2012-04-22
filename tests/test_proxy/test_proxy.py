@@ -34,10 +34,8 @@ def test_get_helper_urls():
     bypasslog = url + "&loggit=true&bypass=true"
     boilerpipe = url + "&boilerpipe=true"
 
-    b, l, boiler = extract.get_helper_urls(url)
+    b = extract.get_helper_urls(url)
     assert b == bypass
-    assert "loggit=true" in bypasslog and "bypass=true" in bypasslog
-    assert boilerpipe == boiler
 
 
 def test_clean_and_add_styles():
@@ -50,8 +48,5 @@ def test_clean_and_add_styles():
     boiler = "http://www.wired.com/epicenter/2012/03/ff_facebookipo/?boiler=true"
     result = extract.styled_markup(markup, "http://www.wired.com/epicenter/2012/03/ff_facebookipo/")
     result = result.encode("utf-8")
-
-#    with open("tests/test_proxy/data/clean.html", "w") as cleanedf:
-#        cleanedf.write(result)
 
     assert result == cleaned

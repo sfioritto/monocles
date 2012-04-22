@@ -70,7 +70,7 @@ class ProxyClient(proxy.ProxyClient):
 
                     return proxy.ProxyClient.handleResponseEnd(self)
 
-                if len(resource.markup) > 250:
+                if len(resource.markup) > 500:
                     markup = resource.article
                 else:
                     markup = self.buffer
