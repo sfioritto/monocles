@@ -3,9 +3,25 @@ import urlparse
 import gzip as gziplib
 from StringIO import StringIO
 
+blacklist = ["www.facebook.com",
+             "news.ycombinator.com",
+             "www.google.com",
+             "en.wikipedia.org",
+             "adserver.adtechus.com",
+             "www.instapaper.com",
+             "www.redfin.com",
+             "code.google.com",
+             "www.quora.com",
+             "www.youtube.com",
+             "vimeo.com"]
+
 
 def should_parse(father):
 
+    """
+    Go through a series of quick tests to determine if this should even be
+    parsed. Anything that shouldn't be parsed is completely bypassed.
+    """
     
     ctype = get_ctype(father.responseHeaders.getRawHeaders("content-type"))
     if not_homepage(father.uri) and \
@@ -25,6 +41,12 @@ def get_ctype(typeheader):
         return None
 
 
+def add_to_blacklist(uri):
+
+    parsed = urlparse.urlparse(uri)
+    blacklist.append(parsed.netloc)
+
+
 def not_homepage(uri):
     parsed = urlparse.urlparse(uri)
     return parsed.path.strip("/")
@@ -40,17 +62,6 @@ def valid_content_type(contype):
 
 def not_on_blacklist(uri):
     parsed = urlparse.urlparse(uri)
-    blacklist = ["www.facebook.com",
-                 "news.ycombinator.com",
-                 "www.google.com",
-                 "en.wikipedia.org",
-                 "adserver.adtechus.com",
-                 "www.instapaper.com",
-                 "www.redfin.com",
-                 "code.google.com",
-                 "www.quora.com",
-                 "www.youtube.com",
-                 "vimeo.com"]
     return parsed.netloc not in blacklist
 
 

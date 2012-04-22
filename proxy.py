@@ -6,7 +6,8 @@ from monocles.lib.proxy import gunzip, \
     is_gzipped, \
     accepts_gzipped, \
     gzip, \
-    should_parse
+    should_parse, \
+    add_to_blacklist
 
 
 log.startLogging(open('monocles.log', 'a'), setStdout=False)
@@ -64,7 +65,12 @@ class ProxyClient(proxy.ProxyClient):
 
                 
                 if resource.should_bypass():
+                    
                     self.father.write(self.buffer)
+
+                    #in memory adds the domain to the blacklist. This usually
+                    #helps to load the original site.
+                    add_to_blacklist(self.father.uri)
                     if loggit:
                         log.msg("MONOCLES: %s" % self.father.uri)
 
