@@ -43,6 +43,7 @@ def get_ctype(typeheader):
 
 def add_to_blacklist(uri):
 
+    global blacklist
     parsed = urlparse.urlparse(uri)
     blacklist.append(parsed.netloc)
 

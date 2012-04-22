@@ -62,7 +62,6 @@ class ProxyClient(proxy.ProxyClient):
                     self.buffer = gunzip(self.buffer)
 
                 resource = Resource(self.buffer, self.father.uri)
-
                 
                 if resource.should_bypass():
                     
