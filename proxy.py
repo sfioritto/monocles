@@ -11,14 +11,14 @@ from monocles.lib.proxy import gunzip, \
 
 
 log.startLogging(open('monocles.log', 'a'), setStdout=False)
-#TODO:
-# strip logging query strings from URI before sending a request
-# put a url in the top of the page that includes the bypass url and a bypass and loggit option
-# include some basic css so that it's not so damn wide.
-
 
 
 class ProxyClient(proxy.ProxyClient):
+
+    """
+    Defines a bunch of handlers for events defined by the twisted
+    proxyClient
+    """
     
     def __init__(self, *args, **kwargs):
         proxy.ProxyClient.__init__(self, *args, **kwargs)
@@ -28,8 +28,10 @@ class ProxyClient(proxy.ProxyClient):
 
 
     def dataReceived(self, data):
-        #This is basically for hacker news which doesn't put
-        #crlf at the end of headers
+        """
+        This is basically for hacker news which doesn't put
+        crlf at the end of headers
+        """
         if not self.haveallheaders:
             if self.delimiter not in data and "\n" in data:
                 data = data.replace("\n", self.delimiter)
@@ -38,7 +40,11 @@ class ProxyClient(proxy.ProxyClient):
 
 
     def handleResponsePart(self, data):
-
+        """
+        Handle requests that aren't being parsed like normal, so we
+        write out data as we get the response. Otherwise we accumulate
+        the article so we can do article extraction.
+        """
         if self.shouldparse:
             self.buffer = self.buffer + data
         else:
@@ -46,13 +52,24 @@ class ProxyClient(proxy.ProxyClient):
 
 
     def handleEndHeaders(self):
-        # this flag used in dataReceived, this function is in the http client
+        """
+        This flag used in dataReceived, this function is in the http client
+        """
         self.haveallheaders = True;
         self.shouldparse = should_parse(self.father)
         
 
     def handleResponseEnd(self):
+        """
+        This is the main function. Here we are at the end of the response
+        and either we should parse it or we should just finish the response.
 
+        We also modify the headers acccordingly, because we take this opportunity
+        to gzip and do a few other things.
+        """
+
+        #bug in twisted (i think) which causes this method to be called twice, avoid problems
+        # with this check
         if not self._finished:
 
             if should_parse(self.father):

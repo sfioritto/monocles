@@ -3,6 +3,12 @@ import urlparse
 import gzip as gziplib
 from StringIO import StringIO
 
+"""
+This is a bag of helper functions for the proxy. It does stuff like parse headers,
+gzip and gunzip, etc.
+"""
+
+# don't parse anything on these sites. This ends up being webapps mostly.
 blacklist = ["www.facebook.com",
              "news.ycombinator.com",
              "www.google.com",
@@ -33,7 +39,12 @@ def should_parse(father):
     else:
         return False
 
+
 def get_ctype(typeheader):
+
+    """
+    Return the content type
+    """
 
     if typeheader:
         return typeheader[0]
@@ -43,6 +54,10 @@ def get_ctype(typeheader):
 
 def add_to_blacklist(uri):
 
+    """
+    Adds a domain to the blacklist in memory. It's logged
+    so I can determine if I want to add it permanently later.
+    """
     global blacklist
     parsed = urlparse.urlparse(uri)
     blacklist.append(parsed.netloc)
@@ -54,6 +69,9 @@ def not_homepage(uri):
 
 
 def valid_content_type(contype):
+    """
+    Only parse these content types.
+    """
     contypes = ["text/html", "application/xhtml+xml"]
     for ctype in contypes:
         if contype.startswith(ctype):

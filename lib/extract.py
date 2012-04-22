@@ -8,6 +8,10 @@ from lxml.etree import tounicode
 
 def styled_markup(orig, uri):
 
+    """
+    Add a style tag and navigation links to the extracted article.
+    """
+
     with open("styles.css") as styles:
         css = styles.read()
         
@@ -25,6 +29,11 @@ def styled_markup(orig, uri):
 
 
 def get_helper_urls(url):
+
+    """
+    Currently only one helper url, and that is for bypassing
+    and viewing the original article.
+    """
     
     bypassq = {"bypass" : "true"}
     url_parts = list(urlparse.urlparse(url))
@@ -43,13 +52,20 @@ def get_query_values(url):
 
 
 def helper_options(url):
-
+    """
+    Returns true if the bypass query value exists.
+    Used to return multiple values, that's why it's
+    called helper_optionS
+    """
     query = get_query_values(url)
     return "bypass" in query.keys()
 
 
-
 class Resource(object):
+
+    """
+    This is the main article extraction class.
+    """
 
     def __init__(self, content, uri):
         self.content = content
@@ -64,7 +80,9 @@ class Resource(object):
 
     @property
     def markup(self):
-
+        """
+        Returns the markup of the article.
+        """
         if not self._markup:
             try:
                 markup = Document(self.content).summary()
@@ -86,7 +104,9 @@ class Resource(object):
 
     @property
     def article(self):
-
+        """
+        Returns the article with some styles and links.
+        """
         # add styles and links to the article text
         markup = styled_markup(self.markup, self.uri)
         #todo: write an "encode" function, pass it the charset header (so content-type)
@@ -95,7 +115,9 @@ class Resource(object):
     
 
     def should_bypass(self):
-        #skip urls with a special query string
+        """
+        Skip urls with a special query string
+        """
         return self.bypass
  
 
