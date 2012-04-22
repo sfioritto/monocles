@@ -70,10 +70,7 @@ class ProxyClient(proxy.ProxyClient):
 
                     return proxy.ProxyClient.handleResponseEnd(self)
 
-                if len(resource.markup) > 500:
-                    markup = resource.article
-                else:
-                    markup = self.buffer
+                markup = resource.article
                 
                 encodings = self.father.requestHeaders.getRawHeaders("accept-encoding")
                 if accepts_gzipped(encodings):

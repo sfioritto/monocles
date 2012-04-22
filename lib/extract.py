@@ -55,6 +55,7 @@ class Resource(object):
         self.content = content
         self.uri = uri
         self.bypass = helper_options(uri)
+        self._markup = ""
 
 
     def set_content(self, content):
@@ -64,20 +65,30 @@ class Resource(object):
     @property
     def markup(self):
 
-        try:
-            markup = Document(self.content).summary()
-        except:
-            markup = self.content
+        if not self._markup:
+            try:
+                markup = Document(self.content).summary()
+                
+                # magic number.
+                # the extracted markup is shorter than about 300 characters, it's probably
+                # not an article. I just made this up.
+                if len(markup) < 300:
+                    self._markup = self.content
+                else:
+                    self._markup = markup
+            # sometimes readability library blows up
+            except:
+                self._markup = self.content
 
 
-        return markup
+        return self._markup
 
 
     @property
     def article(self):
 
+        # add styles and links to the article text
         markup = styled_markup(self.markup, self.uri)
-        
         #todo: write an "encode" function, pass it the charset header (so content-type)
         markup = markup.encode("utf-8")
         return markup
