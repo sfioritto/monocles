@@ -1,5 +1,11 @@
-A twisted proxy that does readability style article extraction automatically. You can try it out
-by configuring your computer to use 173.230.154.173:80 as your proxy server.
+A twisted proxy that does readability style article extraction automatically. You can try it out by configuring your computer to use 173.230.154.173:80 as your proxy server.
 
-Installation directions:
-coming soon...
+Installation directions: (These directions assume Ubuntu 10.04. This is meant for getting up and running quickly, probably don't do it this way in any sort of "production" environment.)
+
+sudo apt-get:
+* git-core
+
+* clone this repository into /var 
+
+
+
