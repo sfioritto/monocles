@@ -7,7 +7,9 @@ from monocles.lib.proxy import gunzip, \
     accepts_gzipped, \
     gzip, \
     should_parse, \
-    add_to_blacklist
+    add_to_blacklist, \
+    is_deflated, \
+    deflate
 
 
 log.startLogging(open('monocles.log', 'a'), setStdout=False)
@@ -73,10 +75,13 @@ class ProxyClient(proxy.ProxyClient):
         if not self._finished:
 
             if should_parse(self.father):
-
+                
                 if is_gzipped(self.father.responseHeaders):
                     self.father.responseHeaders.removeHeader("content-encoding")
                     self.buffer = gunzip(self.buffer)
+                elif is_deflated(self.father.responseHeaders):
+                    self.father.responseHeaders.removeHeader("content-encoding")
+                    self.buffer = deflate(self.buffer)
 
                 resource = Resource(self.buffer, self.father.uri)
                 

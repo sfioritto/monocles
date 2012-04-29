@@ -20,7 +20,8 @@ blacklist = ["www.facebook.com",
              "www.quora.com",
              "www.youtube.com",
              "vimeo.com",
-             "www.twitter.com"]
+             "www.twitter.com",
+             "cdn.api.twitter.com"]
 
 
 def should_parse(father):
@@ -97,11 +98,22 @@ def is_gzipped(headers):
         headers.getRawHeaders("content-encoding")[0] == "gzip"
 
 
+def is_deflated(headers):
+    return headers.hasHeader("content-encoding") and \
+        headers.getRawHeaders("content-encoding")[0] == "deflate"
+
+
 def gunzip(buffer):
 
     bi = io.BytesIO(buffer)
     gf = gziplib.GzipFile(fileobj=bi, mode="rb")
     return gf.read()
+
+
+def deflate(buffer):
+    # bypass gzip headers by setting negative wbit value
+    # http://bugs.python.org/issue5784
+    return gziplib.zlib.decompress(buffer, -15)
 
 
 def gzip(markup):
