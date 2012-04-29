@@ -19,7 +19,8 @@ blacklist = ["www.facebook.com",
              "code.google.com",
              "www.quora.com",
              "www.youtube.com",
-             "vimeo.com"]
+             "vimeo.com",
+             "www.twitter.com"]
 
 
 def should_parse(father):
