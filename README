@@ -2,10 +2,29 @@ A twisted proxy that does readability style article extraction automatically. Yo
 
 Installation directions: (These directions assume Ubuntu 10.04. This is meant for getting up and running quickly, probably don't do it this way in any sort of "production" environment.)
 
-sudo apt-get:
-* git-core
 
-* clone this repository into /var 
+setup your ubuntu installation with a user with sudo power
+sudo apt-get update
+sudo apt-get install:
+* git-core
+* python-setuptools
+* gcc
+* libxml2
+* libxslt-dev
+* python-dev
+* ncurses-dev
+* python-twisted
+
+sudo easy_install pip
+clone this repository into /var 
+cd /var/monocles
+sudo pip install -r config/requirements.txt
+sudo cp /var/monocles/config/monocles.pth /usr/lib/python2.6/dist-packages/monocles.pth
+sudo mkdir externals
+cd externals
+sudo clone https://github.com/buriy/python-readability
+cd ..
+sudo ./scripts/restart-prod.sh
 
 
 
