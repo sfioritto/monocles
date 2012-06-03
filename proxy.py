@@ -134,12 +134,19 @@ class ProxyRequest(proxy.ProxyRequest):
 
     def process(self):
 
-        self.requestHeaders.setRawHeaders("accept-charset", ["utf-8"])
-        return proxy.ProxyRequest.process(self)
+        print self.requestHeaders
+        self.setResponseCode(407, "Proxy Authentication Required")
+        self.responseHeaders.addRawHeader("Content-Type", "text/html")
+        # header example: WWW-Authenticate: Basic realm="My Server"
+        self.responseHeaders.addRawHeader("Proxy-Authenticate", 'Basic realm="Monocles"')
+        self.write("")
+        self.finish()
+
+#        self.requestHeaders.setRawHeaders("accept-charset", ["utf-8"])
+#        return proxy.ProxyRequest.process(self)
+
     
 
 class Proxy(http.HTTPChannel):
     requestFactory = ProxyRequest
-
-
 
