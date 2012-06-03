@@ -1,3 +1,4 @@
+import base64
 from monocles.lib.extract import Resource
 from twisted.web import proxy, http
 from twisted.python import log
@@ -134,18 +135,24 @@ class ProxyRequest(proxy.ProxyRequest):
 
     def process(self):
 
-        print self.requestHeaders
-        self.setResponseCode(407, "Proxy Authentication Required")
-        self.responseHeaders.addRawHeader("Content-Type", "text/html")
-        # header example: WWW-Authenticate: Basic realm="My Server"
-        self.responseHeaders.addRawHeader("Proxy-Authenticate", 'Basic realm="Monocles"')
-        self.write("")
-        self.finish()
+        if self.is_authenticated():
+            self.requestHeaders.setRawHeaders("accept-charset", ["utf-8"])
+            proxy.ProxyRequest.process(self)
+        else:
+            self.setResponseCode(407, "Proxy Authentication Required")
+            self.responseHeaders.addRawHeader("Content-Type", "text/html")
+            self.responseHeaders.addRawHeader("Proxy-Authenticate", 'Basic realm="Monocles"')
+            self.write("")
+            self.finish()
+            
 
-#        self.requestHeaders.setRawHeaders("accept-charset", ["utf-8"])
-#        return proxy.ProxyRequest.process(self)
-
-    
+    def is_authenticated(self):
+        authheaders = self.requestHeaders.getRawHeaders('proxy-authorization')
+        if authheaders > 0:
+            basic = authheaders[0]
+            if basic.startswith('Basic') and base64.b64encode("bob:mcgee") in basic:
+                return True
+        return False
 
 class Proxy(http.HTTPChannel):
     requestFactory = ProxyRequest
